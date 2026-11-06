@@ -1,0 +1,1 @@
+{"status": "ok", "problem": "D0", "mesh": "distorted", "n": 8, "seed": 1, "cycles": 5, "steps_per_cycle": 80, "dt": 0.1, "accepted_output_steps": 400, "wall_s": 21.5, "history_min_change": {"H": 0.0, "alpha": 0.0}, "attempts": 403, "accepted": 400, "cutbacks": 1, "stopped_early": false, "rejected_attempts": 1, "min_dt": 0.04999999999999894}

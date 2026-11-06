@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: "If you use MechanicsHarness, please cite it as below."
+title: "MechanicsHarness: AI agents on mechanics problems"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Teng
+    affiliation: Syracuse University
+version: 0.1.0
+# date-released: set at release
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/tengzhang48/agent-mechanics-benchmarks-public"
+url: "https://mechanicsharness.org"
+abstract: >-
+  MechanicsHarness evaluates AI agents on mechanics problems using reproducible
+  tasks, reference solutions, and documented human verification.
+keywords:
+  - AI agents
+  - solid mechanics
+  - finite elements
+  - Abaqus user element
+  - verification
+references:
+  - type: article
+    title: "Fracture of rock-like materials: A gradient-damage theory"
+    authors:
+      - family-names: Anand
+        given-names: Lallit
+    journal: "International Journal of Solids and Structures"
+    volume: 325
+    start: 113739
+    year: 2026
+    doi: 10.1016/j.ijsolstr.2025.113739
+  - type: article
+    title: "Fatigue failure theory for lithium diffusion induced fracture in lithium-ion battery electrode particles"
+    authors:
+      - family-names: Noii
+        given-names: "N."
+      - family-names: Milijasevic
+        given-names: "D."
+      - family-names: Waisman
+        given-names: "H."
+      - family-names: Khodadadian
+        given-names: "A."
+    journal: "Computer Methods in Applied Mechanics and Engineering"
+    volume: 428
+    start: 117068
+    year: 2024
+    doi: 10.1016/j.cma.2024.117068
+  - type: article
+    title: "An efficient FEniCS implementation for coupling lithium-ion battery charge/discharge processes with fatigue phase-field fracture"
+    authors:
+      - family-names: Noii
+        given-names: "N."
+      - family-names: Milijasevic
+        given-names: "D."
+      - family-names: Khodadadian
+        given-names: "A."
+      - family-names: Wick
+        given-names: "T."
+    journal: "Engineering Fracture Mechanics"
+    volume: 306
+    start: 110251
+    year: 2024
+    doi: 10.1016/j.engfracmech.2024.110251

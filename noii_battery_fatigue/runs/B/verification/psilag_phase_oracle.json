@@ -1,0 +1,124 @@
+{
+  "loading": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 1.7763568394002505e-15,
+    "phase_history": [
+      0.2898416180005976,
+      0.01449208090002988,
+      1.4492080900029878,
+      10.0
+    ],
+    "relaxation_diagonal": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "physical_history": [
+      1.4492080900029878,
+      1.4492080900029878,
+      1.4492080900029878,
+      10.0
+    ],
+    "history_scaled_error": 1.2717084824401996e-14,
+    "tangent_scaled_errors": {
+      "affine_strain": 2.9976021664879227e-15,
+      "c": 5.10702591327572e-15,
+      "vfrac": 7.216449660063518e-15,
+      "d": 5.551115123125783e-17,
+      "q": 0.0
+    }
+  },
+  "erased_accepted_psi_control": {
+    "phase_residual_difference": 0.13269973058172335,
+    "physical_history_bitwise_unchanged": true
+  },
+  "discarded_trials": "bitwise identical RHS, K, SVARS and PNEWDT",
+  "unloading": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 8.326672684688674e-16,
+    "phase_history": [
+      0.19173903436399778,
+      0.009586951718199888,
+      0.9586951718199886,
+      10.0
+    ],
+    "relaxation_diagonal": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "physical_history": [
+      0.9586951718199886,
+      0.9586951718199886,
+      0.9586951718199886,
+      10.0
+    ],
+    "history_scaled_error": 7.549516567451064e-15,
+    "tangent_scaled_errors": {
+      "affine_strain": 4.996003610813204e-16,
+      "c": 1.1934897514720433e-15,
+      "vfrac": 1.3322676295501878e-15,
+      "d": 5.551115123125783e-17,
+      "q": 0.0
+    }
+  },
+  "fatigue_floor": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 1.898849192697326e-15,
+    "phase_history": [
+      138363636363636.38,
+      6918181818181.817,
+      691818181818181.8,
+      1e+16
+    ],
+    "relaxation_diagonal": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "physical_history": [
+      691818181818181.8,
+      691818181818181.8,
+      691818181818181.8,
+      1e+16
+    ],
+    "history_scaled_error": 7.769382391590014e-15,
+    "tangent_scaled_errors": {
+      "affine_strain": 3.3882631142827623e-15,
+      "c": 7.123147764375958e-15,
+      "vfrac": 1.9368261765512716e-15,
+      "d": 5.551115123125783e-17,
+      "q": 0.0
+    }
+  },
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "theta": 0.01,
+  "relaxation_factor": 0.0,
+  "effective_relaxation_factor": 0.0,
+  "relaxation_cap": 1000.0,
+  "relaxation_form": "accepted_h",
+  "dt": 0.2,
+  "scope": "independent closed-form uniform-field phase row, mixed per-GP history branches"
+}

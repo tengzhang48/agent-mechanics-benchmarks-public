@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "scope": "Completeness and integrity of submitted-element evidence; reference limits are listed separately",
+  "recorded_at": "2026-10-21T03:31:36Z",
+  "completed_global_runs": 21,
+  "accepted_nominal_outputs": 21960,
+  "rejected_global_attempts": 0,
+  "audited_scalar_values": 4496916,
+  "passed_check_records": {
+    "element_checks": "passed",
+    "rollback_checks": "passed",
+    "limit_checks": "passed",
+    "history_time_checks": "passed",
+    "energy_bridge_checks": "passed",
+    "accumulator_checks": "passed",
+    "mutation_checks": "passed",
+    "reference_checks": "passed",
+    "reference_checks_q6": "passed",
+    "regeneration": "passed",
+    "output_audit": "passed"
+  },
+  "field_comparisons": 35,
+  "planned_field_comparisons_complete": 31,
+  "completed_independent_references": 18,
+  "failed_independent_references": [],
+  "pending_independent_references": [],
+  "source_sha256": {
+    "element/generated_kernel.for": "c307b340ecfc92de660e387b980e5bf8ee2e473070743ffa03ba579107b80043",
+    "element/enhanced_modes.f90": "7acec84a57dc650e3f8ab54503075506d47d90acf7675ed0d29a8de26d1c3aeb",
+    "element/accepted_damage.f90": "7dd05460943ff47a421166ee14d9e069f97fde7c3b2610d1c93da3f93ca80da0",
+    "element/uel.f90": "8859051ef753db10e4a5ae532e2ea0e98a730fbac58a30cf2106510649c8397a"
+  },
+  "contract_sha256": "9940e390ba330fef4759d87a7cad503a9650d5e879baf418180efe8deb04eb08",
+  "required_deliverables_present": true,
+  "known_limits": [
+    "Raw projected pressure gradient does not converge strongly in the distorted manufactured family",
+    "Approximately first-order manufactured concentration convergence",
+    "First-order accepted-history time error",
+    "Coarse Q1 host energy reconstruction error",
+    "Consistent-mass concentration can undershoot in unresolved low-mobility layers",
+    "Distorted-mesh damage bounds have only an empirical validation envelope"
+  ],
+  "unverified": [
+    "Hidden problems and organizer reference",
+    "Abaqus execution",
+    "Mesh/time resolutions beyond the measured envelope"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "D0_final_primary_q_max_absolute_difference": {
+    "ux": 1.8188575645616822e-15,
+    "uy": 1.27675647831893e-15,
+    "c": 5.029310301551959e-14,
+    "d": 2.799982468104645e-13,
+    "q": 3.51745000314041e-15
+  },
+  "D0_all_output_observables_max_absolute_difference": {
+    "d_max": 6.376577014349273e-12,
+    "d_min": 2.928144854949348e-13,
+    "D_int": 9.36855424509865e-13,
+    "C_int": 9.98590099499097e-12,
+    "E_el": 2.087758205714029e-17,
+    "A_damage": 0.0
+  },
+  "D0_final_history_max_absolute_difference": 3.0238034298690764e-12,
+  "floor_cycles": [
+    {
+      "file": "fields_cycle_001.npz",
+      "d_min": 1.0,
+      "d_max": 1.0000000000000002,
+      "H_min": 9.350649350649228e+17,
+      "H_max": 9.350649350649437e+17,
+      "alpha_min": 1.4420968814036077e-07,
+      "alpha_max": 1.4420968814047374e-07,
+      "fatigue_min": 1e-15,
+      "aux_min": 1.0694551389958249e-18,
+      "aux_max": 1.0694551389958465e-18,
+      "vfrac_constraint_max": 2.2311406006402716e-16
+    },
+    {
+      "file": "fields_cycle_002.npz",
+      "d_min": 1.0,
+      "d_max": 1.0000000000000002,
+      "H_min": 9.350649350649228e+17,
+      "H_max": 9.350649350649437e+17,
+      "alpha_min": 2.805733245039964e-07,
+      "alpha_max": 2.8057332450411146e-07,
+      "fatigue_min": 1e-15,
+      "aux_min": 1.0694551389958247e-18,
+      "aux_max": 1.0694551389958465e-18,
+      "vfrac_constraint_max": 2.2311406006402716e-16
+    }
+  ],
+  "largest_direct_FD_row_relative_error": 1.4786587213524347e-09
+}

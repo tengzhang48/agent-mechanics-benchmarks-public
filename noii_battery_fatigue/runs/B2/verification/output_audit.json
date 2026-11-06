@@ -1,0 +1,363 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_distorted_16_s1_spc80_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 24030,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 3.1763735522036263e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_distorted_32_s1_spc80_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 94110,
+      "observable_max_abs_errors": {
+        "D_int": 0.0,
+        "C_int": 0.0,
+        "E_el": 2.117582368135751e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 372510,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 0.0,
+        "E_el": 5.293955920339377e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_official_distorted_16_s4_spc40_cy1",
+      "status": "passed",
+      "cycles": 1,
+      "checked_scalar_values": 4806,
+      "observable_max_abs_errors": {
+        "D_int": 4.0897840669629204e-14,
+        "C_int": 3.481659405224491e-13,
+        "E_el": 2.6469779601696886e-20,
+        "A_damage": 0.0,
+        "d_max": 3.827493877395227e-13
+      },
+      "complement_max_error": 2.220446049250313e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_16_s0_spc10_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 96120,
+      "observable_max_abs_errors": {
+        "D_int": 6.938893903907228e-18,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_16_s0_spc40_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 96120,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_16_s0_spc80_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 96120,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_32_s0_spc160_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 376440,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_32_s0_spc320_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 376440,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_32_s0_spc320_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 94110,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 0.0,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_32_s0_spc40_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 376440,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_32_s0_spc40_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 94110,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 2.7755575615628914e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_32_s0_spc80_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 376440,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/D0_enhanced_accepted_H_structured_64_s0_spc80_cy20",
+      "status": "passed",
+      "cycles": 20,
+      "checked_scalar_values": 1490040,
+      "observable_max_abs_errors": {
+        "D_int": 1.3877787807814457e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 1.0587911840678754e-22,
+        "A_damage": 0.0,
+        "d_max": 5.551115123125783e-17
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_notch_enhanced_accepted_H_distorted_16_s2_spc80_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 24030,
+      "observable_max_abs_errors": {
+        "D_int": 5.551115123125783e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 3.1763735522036263e-22,
+        "A_damage": 3.469446951953614e-18,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_severe_enhanced_accepted_H_distorted_32_s3_spc160_cy2",
+      "status": "passed",
+      "cycles": 2,
+      "checked_scalar_values": 37644,
+      "observable_max_abs_errors": {
+        "D_int": 5.551115123125783e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 4.7976475528075605e-23,
+        "A_damage": 5.551115123125783e-17,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_severe_enhanced_accepted_H_distorted_64_s3_spc160_cy2",
+      "status": "passed",
+      "cycles": 2,
+      "checked_scalar_values": 149004,
+      "observable_max_abs_errors": {
+        "D_int": 0.0,
+        "C_int": 5.551115123125783e-17,
+        "E_el": 1.6543612251060553e-23,
+        "A_damage": 5.551115123125783e-17,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_severe_enhanced_accepted_H_structured_32_s0_spc160_cy2",
+      "status": "passed",
+      "cycles": 2,
+      "checked_scalar_values": 37644,
+      "observable_max_abs_errors": {
+        "D_int": 5.551115123125783e-17,
+        "C_int": 5.551115123125783e-17,
+        "E_el": 0.0,
+        "A_damage": 0.0,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_severe_enhanced_accepted_H_structured_32_s0_spc320_cy2",
+      "status": "passed",
+      "cycles": 2,
+      "checked_scalar_values": 37644,
+      "observable_max_abs_errors": {
+        "D_int": 5.551115123125783e-17,
+        "C_int": 5.551115123125783e-17,
+        "E_el": 3.308722450212111e-24,
+        "A_damage": 0.0,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_severe_enhanced_accepted_H_structured_32_s0_spc80_cy5",
+      "status": "passed",
+      "cycles": 5,
+      "checked_scalar_values": 94110,
+      "observable_max_abs_errors": {
+        "D_int": 5.551115123125783e-17,
+        "C_int": 1.1102230246251565e-16,
+        "E_el": 3.308722450212111e-24,
+        "A_damage": 5.551115123125783e-17,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    },
+    {
+      "path": "verification/runs/V_severe_enhanced_accepted_H_structured_64_s0_spc160_cy2",
+      "status": "passed",
+      "cycles": 2,
+      "checked_scalar_values": 149004,
+      "observable_max_abs_errors": {
+        "D_int": 1.1102230246251565e-16,
+        "C_int": 5.551115123125783e-17,
+        "E_el": 8.271806125530277e-25,
+        "A_damage": 5.551115123125783e-17,
+        "d_max": 0.0
+      },
+      "complement_max_error": 4.440892098500626e-16
+    }
+  ],
+  "failed_final_source_runs": [],
+  "excluded_predecessor_runs": [
+    {
+      "path": "verification/runs/D0_distorted_16_s1_spc80_cy5",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_distorted_32_s1_spc80_cy5",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_structured_16_s0_spc10_cy20",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_structured_16_s0_spc40_cy20",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_structured_32_s0_spc160_cy20",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_structured_32_s0_spc160_cy5",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_structured_32_s0_spc40_cy20",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/D0_structured_32_s0_spc40_cy5",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/V_notch_distorted_16_s2_spc80_cy5",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/V_severe_structured_32_s0_spc160_cy2",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/V_severe_structured_32_s0_spc320_cy2",
+      "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 409 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)",
+      "reason": "source differs from final submission; exploration evidence only"
+    },
+    {
+      "path": "verification/runs/V_severe_structured_32_s0_spc80_cy5",
+      "status": "ok",
+      "reason": "source differs from final submission; exploration evidence only"
+    }
+  ],
+  "scope": "completed runs with the exact final source hashes; reference Qp uses separate observables"
+}

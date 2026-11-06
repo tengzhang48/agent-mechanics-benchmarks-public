@@ -1,0 +1,31 @@
+{
+  "pnewdt": 1.0,
+  "dt": 9.76562499999112e-05,
+  "time": [
+    1.4013671874999998,
+    1.4013671874999998
+  ],
+  "H_min": 5.8524058486042675e-06,
+  "H_max": 13915.371261348062,
+  "old_H_max": 13915.371261348062,
+  "nodal_s_min": -0.0011902414445966105,
+  "nodal_s_max": 0.983052402258927,
+  "max_64_vs_80_reaction_error": 3.180608716939898e-19,
+  "norm_64_vs_80_reaction_error": 1.016057500228387e-18,
+  "worst_interpolation": {
+    "element": 943,
+    "gp": 0,
+    "H": 220.30132483878126,
+    "nodal_intactness": [
+      -0.0007047766425129583,
+      0.001266499516479679,
+      0.0007058536934312273,
+      0.0010882344377198157
+    ],
+    "interpolated_s_64": -1.439922608620852e-05,
+    "interpolated_s_80": "-1.4399226086208526092e-05",
+    "cancellation_condition": 59.88897236788337
+  },
+  "element_reaction_norm": 0.019260140456634593,
+  "note": "80-bit interpolation is a diagnostic, not a revised element or an accuracy oracle for H"
+}

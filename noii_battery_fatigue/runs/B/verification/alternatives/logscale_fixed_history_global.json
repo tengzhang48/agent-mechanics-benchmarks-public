@@ -1,0 +1,62 @@
+[
+  {
+    "H": 1.0,
+    "status": "ok",
+    "d_min": 0.4999974999874994,
+    "d_max": 0.49999749998750065,
+    "aux_min": 0.6931421805474451,
+    "aux_max": 0.6931421805474456,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 100000000.0,
+    "status": "ok",
+    "d_min": 0.9999999899951106,
+    "d_max": 0.9999999900038468,
+    "aux_min": 18.42067075390246,
+    "aux_max": 18.420670753902467,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 1000000000000.0,
+    "status": "ok",
+    "d_min": 0.9999999999964722,
+    "d_max": 1.0000000000001954,
+    "aux_min": 27.63101111587955,
+    "aux_max": 27.631011115879552,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 1000000000000000.0,
+    "status": "ok",
+    "d_min": 0.9999999999999716,
+    "d_max": 1.0000000000000284,
+    "aux_min": 34.53876639486068,
+    "aux_max": 34.538766394860694,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 1e+20,
+    "status": "ok",
+    "d_min": 0.9999999999884466,
+    "d_max": 1.0000000000062244,
+    "aux_min": 46.0516918598309,
+    "aux_max": 46.051691859830925,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  }
+]

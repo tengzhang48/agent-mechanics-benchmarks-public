@@ -1,0 +1,156 @@
+{
+  "scope": "Independent analytical unit-cell matrix; frozen heterogeneous H, not a fatigue path",
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "results": [
+    {
+      "case": "single_high_gp",
+      "H": [
+        [
+          1000000000000000.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "v_reference": [
+        1.6077112316990506e-15,
+        6.000060000599944e-15,
+        2.239252877069998e-14,
+        6.000060000599944e-15
+      ],
+      "v_observed": [
+        1.60771123169905e-15,
+        6.000060000599941e-15,
+        2.2392528770699976e-14,
+        6.0000600005999444e-15
+      ],
+      "v_max_relative_error": 3.944265083059839e-16,
+      "intact_constraint_max": 5.017125150887474e-16,
+      "d_min": 0.9999999999999772,
+      "d_max": 0.9999999999999979,
+      "H_bitwise_preserved": true,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "case": "alternating_high_gp",
+      "H": [
+        [
+          1000000000000000.0,
+          1.0,
+          1000000000000000.0,
+          1.0
+        ]
+      ],
+      "v_reference": [
+        1.5000150001499987e-15,
+        3.000030000299988e-15,
+        1.5000150001499983e-15,
+        3.0000300002999884e-15
+      ],
+      "v_observed": [
+        1.5000150001499985e-15,
+        3.000030000299986e-15,
+        1.5000150001499983e-15,
+        3.000030000299989e-15
+      ],
+      "v_max_relative_error": 6.573775138433029e-16,
+      "intact_constraint_max": 6.637059809630306e-16,
+      "d_min": 0.9999999999999963,
+      "d_max": 0.9999999999999984,
+      "H_bitwise_preserved": true,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "case": "uniform_high",
+      "H": [
+        [
+          1000000000000000.0,
+          1000000000000000.0,
+          1000000000000000.0,
+          1000000000000000.0
+        ]
+      ],
+      "v_reference": [
+        1.0000100001000002e-15,
+        1.0000100001e-15,
+        1.0000100001000002e-15,
+        1.0000100001e-15
+      ],
+      "v_observed": [
+        1.0000100000999996e-15,
+        1.0000100001000002e-15,
+        1.0000100000999992e-15,
+        1.0000100001000006e-15
+      ],
+      "v_max_relative_error": 9.860662707649503e-16,
+      "intact_constraint_max": 6.653245368377356e-16,
+      "d_min": 0.9999999999999983,
+      "d_max": 0.9999999999999996,
+      "H_bitwise_preserved": true,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "case": "two_element_jump",
+      "H": [
+        [
+          1000000000000000.0,
+          1000000000000000.0,
+          1000000000000000.0,
+          1000000000000000.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "v_reference": [
+        1.0000100001000002e-15,
+        2.0142157957248557e-15,
+        0.4929046377397364,
+        1.0000100001e-15,
+        2.0142157957248557e-15,
+        0.4929046377397364
+      ],
+      "v_observed": [
+        1.0000100000999996e-15,
+        2.0142157957248545e-15,
+        0.4929046377397365,
+        1.0000100001e-15,
+        2.0142157957248565e-15,
+        0.4929046377397367
+      ],
+      "v_max_relative_error": 5.916397624589702e-16,
+      "intact_constraint_max": 4.599035612496373e-16,
+      "d_min": 0.5070953622602634,
+      "d_max": 0.999999999999999,
+      "H_bitwise_preserved": true,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ]
+}

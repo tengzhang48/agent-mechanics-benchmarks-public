@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "problem": "D0",
+  "mesh": "structured",
+  "n": 16,
+  "seed": 0,
+  "cycles": 2,
+  "steps_per_cycle": 40,
+  "dt": 0.2,
+  "wall_s": 12.956925355014391,
+  "accepted_output_steps": 80,
+  "committed_subincrements": 80,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "d_max_over_run": 0.29138532059065564,
+  "d_min_over_run": 3.0292303666585037e-06,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "host": "unmodified fehost.solve, default tol=1e-8",
+  "attempts": 80,
+  "accepted": 80,
+  "cutbacks": 0,
+  "stopped_early": false,
+  "rejected_attempts": 0,
+  "min_dt": 0.19999999999999932,
+  "max_sweeps": 2,
+  "max_accepted_sweeps": 2
+}

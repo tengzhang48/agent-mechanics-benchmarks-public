@@ -1,0 +1,74 @@
+{
+ "status": "ok",
+ "problem": {
+  "id": "V_notch_sides",
+  "name": "Verification variant: precrack, side charging, restrained expansion",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 1.5e-06,
+   "alpha_T": 2e-05,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.6,
+   "T": 8.0,
+   "N_cyc": 3,
+   "steps_per_cycle": 80
+  },
+  "c_edges": [
+   "left",
+   "right"
+  ],
+  "notch": {
+   "x_end": 0.125
+  },
+  "constraints": [
+   [
+    0.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ],
+   [
+    1.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ]
+  ]
+ },
+ "mesh": "distorted",
+ "n": 16,
+ "seed": 3,
+ "cycles": 3,
+ "steps_per_cycle": 80,
+ "dt": 0.1,
+ "accepted_output_steps": 240,
+ "wall_s": 72.78611211798852,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": -0.010137292744844428
+ },
+ "uniform_strain": null,
+ "tol": 1e-08,
+ "attempts": 243,
+ "accepted": 240,
+ "cutbacks": 1,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "observed_linear_solves_total": 803,
+ "observed_linear_solves_max": 25,
+ "min_dt": 0.04999999999999999
+}

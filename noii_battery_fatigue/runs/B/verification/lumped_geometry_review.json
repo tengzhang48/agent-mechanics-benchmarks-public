@@ -1,0 +1,38 @@
+[
+  {
+    "mesh": "structured",
+    "n": 8,
+    "positive_offdiag_count": 0,
+    "max_positive": 0.0
+  },
+  {
+    "mesh": "structured",
+    "n": 16,
+    "positive_offdiag_count": 0,
+    "max_positive": 0.0
+  },
+  {
+    "mesh": "structured",
+    "n": 32,
+    "positive_offdiag_count": 0,
+    "max_positive": 0.0
+  },
+  {
+    "mesh": "distorted",
+    "n": 8,
+    "positive_offdiag_count": 2,
+    "max_positive": 0.026645338685019213
+  },
+  {
+    "mesh": "distorted",
+    "n": 16,
+    "positive_offdiag_count": 4,
+    "max_positive": 0.050037969430623615
+  },
+  {
+    "mesh": "distorted",
+    "n": 32,
+    "positive_offdiag_count": 74,
+    "max_positive": 0.084799695155276
+  }
+]

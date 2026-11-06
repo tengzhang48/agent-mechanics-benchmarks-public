@@ -1,0 +1,662 @@
+[
+ {
+  "path": "spatial_floor_C0p1/run.json",
+  "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 14 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 5.09e-04; per-component |R|=['1.271e-11', '1.961e-12', '2.653e-04', '4.341e-04', '2.842e-13', '4.822e-18']; dominant comp 3)",
+  "summary": {
+   "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 14 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 5.09e-04; per-component |R|=['1.271e-11', '1.961e-12', '2.653e-04', '4.341e-04', '2.842e-13', '4.822e-18']; dominant comp 3)",
+   "problem": {
+    "id": "V_notch_spatial_fatigue_floor",
+    "name": "Candidate-local spatial fatigue-floor stress case",
+    "parameters": {
+     "E": 10.0,
+     "nu": 0.28,
+     "beta": 0.035,
+     "c0": 0.35,
+     "kappa": 1e-05,
+     "D": 0.14,
+     "chi": 0.25,
+     "ell": 0.12,
+     "G_c": 1.5e-06,
+     "alpha_T": 1e-10,
+     "k_fg": 0.5
+    },
+    "loading": {
+     "A": 0.6,
+     "T": 8.0,
+     "N_cyc": 2,
+     "steps_per_cycle": 80
+    },
+    "c_edges": [
+     "left",
+     "right"
+    ],
+    "notch": {
+     "x_end": 0.125
+    },
+    "constraints": [
+     [
+      0.0,
+      0.0,
+      [
+       "ux",
+       "uy"
+      ]
+     ],
+     [
+      1.0,
+      0.0,
+      [
+       "ux",
+       "uy"
+      ]
+     ]
+    ]
+   },
+   "mesh": "distorted",
+   "n": 16,
+   "seed": 3,
+   "cycles": 2,
+   "steps_per_cycle": 80,
+   "dt": 0.1,
+   "accepted_output_steps": 13,
+   "wall_s": 347.2269371410075,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "nodal_damage": -4.440892098500626e-16
+   },
+   "uniform_strain": null,
+   "tol": 1e-08,
+   "attempts": 1062,
+   "accepted": 13,
+   "cutbacks": 24,
+   "stopped_early": false,
+   "max_sweeps": 2,
+   "observed_linear_solves_total": 2983,
+   "observed_linear_solves_max": 25,
+   "min_dt": 9.765624999991118e-05
+  },
+  "artifact_sha256": {
+   "attempts.json": "f1dd6285c9f58cf50e2f63c29ad5eca09fbb29a53a7c6d7fc93682c82bffdddc",
+   "failed_trial.npz": "6bf381851ce77abbfaf26b1a2b5569f13dbd36dfd193713947c4e3eef57e6ee0",
+   "increments.csv": "f4719392cd3f57640d0d87c52036ab5078d1658784532aac4a55bc015f548dbd",
+   "last_state.npz": "f33a45547cf8f07b0fb4fa74b3c1e5aafe73b93f43f622f916d67df27ccca6ce",
+   "observables.csv": "662d7094d32a5b86735b58a3b97a84873a40208144365353cab6fee3efcc8419",
+   "progress.json": "557d8d20a33fe8350b69a4a544fa56ba9e8cb4733de9fa3d33051686c46a525e",
+   "run.json": "bfbcadf237f7c0e827ef1a4274bfe0409b26a08368193c2c614f70f5186b8fbd"
+  },
+  "runtime_prop_names": [
+   "E",
+   "nu",
+   "beta",
+   "c0",
+   "kappa",
+   "D",
+   "chi",
+   "ell",
+   "G_c",
+   "alpha_T",
+   "k_fg",
+   "psi_predictor_floor_fraction",
+   "phase_relaxation_factor",
+   "phase_relaxation_cap"
+  ],
+  "runtime_props": [
+   10.0,
+   0.28,
+   0.035,
+   0.35,
+   1e-05,
+   0.14,
+   0.25,
+   0.12,
+   1.5e-06,
+   1e-10,
+   0.5,
+   0.01,
+   0.1,
+   1000.0
+  ],
+  "runtime_props_evidence": "Reconstructed from frozen contract, stored problem parameters, and coefficient-coded sweep folder/driver."
+ },
+ {
+  "path": "spatial_floor_C0p3/run.json",
+  "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 3 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 1.51e-02; per-component |R|=['3.957e-08', '8.261e-09', '3.816e-07', '1.507e-02', '8.723e-10', '5.688e-18']; dominant comp 3)",
+  "summary": {
+   "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 3 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 1.51e-02; per-component |R|=['3.957e-08', '8.261e-09', '3.816e-07', '1.507e-02', '8.723e-10', '5.688e-18']; dominant comp 3)",
+   "problem": {
+    "id": "V_notch_spatial_fatigue_floor",
+    "name": "Candidate-local spatial fatigue-floor stress case",
+    "parameters": {
+     "E": 10.0,
+     "nu": 0.28,
+     "beta": 0.035,
+     "c0": 0.35,
+     "kappa": 1e-05,
+     "D": 0.14,
+     "chi": 0.25,
+     "ell": 0.12,
+     "G_c": 1.5e-06,
+     "alpha_T": 1e-10,
+     "k_fg": 0.5
+    },
+    "loading": {
+     "A": 0.6,
+     "T": 8.0,
+     "N_cyc": 2,
+     "steps_per_cycle": 80
+    },
+    "c_edges": [
+     "left",
+     "right"
+    ],
+    "notch": {
+     "x_end": 0.125
+    },
+    "constraints": [
+     [
+      0.0,
+      0.0,
+      [
+       "ux",
+       "uy"
+      ]
+     ],
+     [
+      1.0,
+      0.0,
+      [
+       "ux",
+       "uy"
+      ]
+     ]
+    ]
+   },
+   "mesh": "distorted",
+   "n": 16,
+   "seed": 3,
+   "cycles": 2,
+   "steps_per_cycle": 80,
+   "dt": 0.1,
+   "accepted_output_steps": 2,
+   "wall_s": 73.18821460899198,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "nodal_damage": 0.0
+   },
+   "uniform_strain": null,
+   "tol": 1e-08,
+   "attempts": 45,
+   "accepted": 2,
+   "cutbacks": 16,
+   "stopped_early": false,
+   "max_sweeps": 2,
+   "observed_linear_solves_total": 388,
+   "observed_linear_solves_max": 25,
+   "min_dt": 9.765624999999446e-05
+  },
+  "artifact_sha256": {
+   "attempts.json": "fd5203b69f5998032dc6c6a030cb8548e9d76e5d271a059d0a009660788bb12d",
+   "failed_trial.npz": "047111cdb24380d1379432c3c6c188e8ec54f0cbd060120540d78101a4d33264",
+   "increments.csv": "8b710e426f617627a2ab61227181d35596c05c9f4f2456db342a6acc1dcee357",
+   "last_state.npz": "7cdd0db9c3ba12ed63b03a19fb80feaf1d744dc1c61c7b03f35feadc1dc1dd48",
+   "observables.csv": "9d2f8844385807eedee0b7424506a666919923caca22955670a7376cdda93d12",
+   "progress.json": "526f69b276e0c3aade24c7f3b08c7ce8a21360f1faa4ee897665c44ba69f443d",
+   "run.json": "d0634ca3a0dc9dbbef700608d020c63afac6a1f8746e49e008e59a1235d2b932"
+  },
+  "runtime_prop_names": [
+   "E",
+   "nu",
+   "beta",
+   "c0",
+   "kappa",
+   "D",
+   "chi",
+   "ell",
+   "G_c",
+   "alpha_T",
+   "k_fg",
+   "psi_predictor_floor_fraction",
+   "phase_relaxation_factor",
+   "phase_relaxation_cap"
+  ],
+  "runtime_props": [
+   10.0,
+   0.28,
+   0.035,
+   0.35,
+   1e-05,
+   0.14,
+   0.25,
+   0.12,
+   1.5e-06,
+   1e-10,
+   0.5,
+   0.01,
+   0.3,
+   1000.0
+  ],
+  "runtime_props_evidence": "Reconstructed from frozen contract, stored problem parameters, and coefficient-coded sweep folder/driver."
+ },
+ {
+  "path": "spatial_floor_C1p0/run.json",
+  "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 2 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 2.55e-05; per-component |R|=['2.504e-10', '7.024e-10', '1.960e-09', '2.553e-05', '1.397e-11', '3.366e-18']; dominant comp 3)",
+  "summary": {
+   "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 2 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 2.55e-05; per-component |R|=['2.504e-10', '7.024e-10', '1.960e-09', '2.553e-05', '1.397e-11', '3.366e-18']; dominant comp 3)",
+   "problem": {
+    "id": "V_notch_spatial_fatigue_floor",
+    "name": "Candidate-local spatial fatigue-floor stress case",
+    "parameters": {
+     "E": 10.0,
+     "nu": 0.28,
+     "beta": 0.035,
+     "c0": 0.35,
+     "kappa": 1e-05,
+     "D": 0.14,
+     "chi": 0.25,
+     "ell": 0.12,
+     "G_c": 1.5e-06,
+     "alpha_T": 1e-10,
+     "k_fg": 0.5
+    },
+    "loading": {
+     "A": 0.6,
+     "T": 8.0,
+     "N_cyc": 2,
+     "steps_per_cycle": 80
+    },
+    "c_edges": [
+     "left",
+     "right"
+    ],
+    "notch": {
+     "x_end": 0.125
+    },
+    "constraints": [
+     [
+      0.0,
+      0.0,
+      [
+       "ux",
+       "uy"
+      ]
+     ],
+     [
+      1.0,
+      0.0,
+      [
+       "ux",
+       "uy"
+      ]
+     ]
+    ]
+   },
+   "mesh": "distorted",
+   "n": 16,
+   "seed": 3,
+   "cycles": 2,
+   "steps_per_cycle": 80,
+   "dt": 0.1,
+   "accepted_output_steps": 1,
+   "wall_s": 43.49415404300089,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "nodal_damage": 0.0
+   },
+   "uniform_strain": null,
+   "tol": 1e-08,
+   "attempts": 18,
+   "accepted": 1,
+   "cutbacks": 11,
+   "stopped_early": false,
+   "max_sweeps": 2,
+   "observed_linear_solves_total": 198,
+   "observed_linear_solves_max": 25,
+   "min_dt": 9.765624999999446e-05
+  },
+  "artifact_sha256": {
+   "attempts.json": "313a64382a327d53d50d83591884ada4bce34ce71be54dc70bfd028467ba6d23",
+   "failed_trial.npz": "c21a9cc44b376fc461996411adb81bc5f5f73e9bb187d342c429c7249f7f4396",
+   "increments.csv": "dd673d5feea9f5eebdf4754978b96e622eaf0e1660d0222159c7d2ad9760e01d",
+   "last_state.npz": "f286921166a204a18c571c5cafee54a4b6f39e999a6128c7735860149a4f94a9",
+   "observables.csv": "b59d6318c13e21f1f7074f92f4be61eeaf95b61fd8e2c7810bbae4f73acdea06",
+   "progress.json": "2d99d44aeb252610f30ed8ca6bf50f4b4032b8e1289b649555021d4959b75071",
+   "run.json": "2664716e68df2d4814ee9d518fb5c045b231ea689669040d01755dd7b324028a"
+  },
+  "runtime_prop_names": [
+   "E",
+   "nu",
+   "beta",
+   "c0",
+   "kappa",
+   "D",
+   "chi",
+   "ell",
+   "G_c",
+   "alpha_T",
+   "k_fg",
+   "psi_predictor_floor_fraction",
+   "phase_relaxation_factor",
+   "phase_relaxation_cap"
+  ],
+  "runtime_props": [
+   10.0,
+   0.28,
+   0.035,
+   0.35,
+   1e-05,
+   0.14,
+   0.25,
+   0.12,
+   1.5e-06,
+   1e-10,
+   0.5,
+   0.01,
+   1.0,
+   1000.0
+  ],
+  "runtime_props_evidence": "Reconstructed from frozen contract, stored problem parameters, and coefficient-coded sweep folder/driver."
+ },
+ {
+  "path": "uniform_oracle_n8_c2_spc20/run.json",
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": {
+    "id": "V_uniform_fatigue_floor",
+    "parameters": {
+     "E": 10.0,
+     "nu": 0.28,
+     "beta": 0.035,
+     "c0": 0.35,
+     "kappa": 1e-05,
+     "D": 0.14,
+     "chi": 0.25,
+     "ell": 0.12,
+     "G_c": 3.5e-06,
+     "alpha_T": 1e-10,
+     "k_fg": 0.5
+    },
+    "loading": {
+     "A": 0.0,
+     "T": 8.0,
+     "N_cyc": 2,
+     "steps_per_cycle": 80
+    },
+    "c_edges": [
+     "all_nodes"
+    ],
+    "notch": null,
+    "constraints": []
+   },
+   "mesh": "structured",
+   "n": 8,
+   "seed": 1,
+   "cycles": 2,
+   "steps_per_cycle": 20,
+   "dt": 0.4,
+   "accepted_output_steps": 40,
+   "wall_s": 3.639513973001158,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "nodal_damage": -2.220446049250313e-16
+   },
+   "uniform_strain": 0.03,
+   "tol": 1e-08,
+   "attempts": 48,
+   "accepted": 40,
+   "cutbacks": 2,
+   "stopped_early": false,
+   "max_sweeps": 2,
+   "observed_linear_solves_total": 101,
+   "observed_linear_solves_max": 20,
+   "min_dt": 0.09999999999999998
+  },
+  "artifact_sha256": {
+   "attempts.json": "9bb9c687985420cf249172ca079aad3d51bf35cd3330e41b48fd763ac2370dfc",
+   "fields_cycle_001.npz": "70a6d5d7bf2610aa6f8f0c64d1b257dd1d6df90016a7d1bec07fdb224f5c5b47",
+   "fields_cycle_002.npz": "e11d24204073c97f05e8fe2fa11f71acd3c08b9889ce5ceea469f4754ba8559c",
+   "increments.csv": "e8b3d9c83d195b1bae67b97935055b0b5fa7ac9ae9d8cf21a6178cfb92f9ae36",
+   "last_state.npz": "863b64366f2afc627a7ce4f46f09738752b4ae62d37df9d68933ca843f4239de",
+   "observables.csv": "79fd0c545107ddd54a8cbe8aae3397c70f2977bdd711051bc4f187246339df66",
+   "progress.json": "4f1382cb1b593d3e09a1f41fe70c61dd2d3adab5e25f15565a5c704ec531f1e4",
+   "run.json": "6ec4142d600d9f59b4dc6dcec16bd628c94b5c14b687c678c046fabb68125ab6"
+  },
+  "runtime_prop_names": [
+   "E",
+   "nu",
+   "beta",
+   "c0",
+   "kappa",
+   "D",
+   "chi",
+   "ell",
+   "G_c",
+   "alpha_T",
+   "k_fg",
+   "psi_predictor_floor_fraction",
+   "phase_relaxation_factor",
+   "phase_relaxation_cap"
+  ],
+  "runtime_props": [
+   10.0,
+   0.28,
+   0.035,
+   0.35,
+   1e-05,
+   0.14,
+   0.25,
+   0.12,
+   3.5e-06,
+   1e-10,
+   0.5,
+   0.01,
+   0.1,
+   1000.0
+  ],
+  "runtime_props_evidence": "Reconstructed from frozen contract, stored problem parameters, and coefficient-coded sweep folder/driver."
+ },
+ {
+  "path": "uniform_oracle_n8_c2_spc320/run.json",
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": {
+    "id": "V_uniform_fatigue_floor",
+    "parameters": {
+     "E": 10.0,
+     "nu": 0.28,
+     "beta": 0.035,
+     "c0": 0.35,
+     "kappa": 1e-05,
+     "D": 0.14,
+     "chi": 0.25,
+     "ell": 0.12,
+     "G_c": 3.5e-06,
+     "alpha_T": 1e-10,
+     "k_fg": 0.5
+    },
+    "loading": {
+     "A": 0.0,
+     "T": 8.0,
+     "N_cyc": 2,
+     "steps_per_cycle": 80
+    },
+    "c_edges": [
+     "all_nodes"
+    ],
+    "notch": null,
+    "constraints": []
+   },
+   "mesh": "structured",
+   "n": 8,
+   "seed": 1,
+   "cycles": 2,
+   "steps_per_cycle": 320,
+   "dt": 0.025,
+   "accepted_output_steps": 640,
+   "wall_s": 21.587502359994687,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "nodal_damage": -3.3306690738754696e-16
+   },
+   "uniform_strain": 0.03,
+   "tol": 1e-08,
+   "attempts": 640,
+   "accepted": 640,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "max_sweeps": 2,
+   "observed_linear_solves_total": 698,
+   "observed_linear_solves_max": 9,
+   "min_dt": 0.024999999999998582
+  },
+  "artifact_sha256": {
+   "attempts.json": "0de3ef42f95065767908efc0cab7d121eb79afd48fd9401b529a3d2c57c1293c",
+   "fields_cycle_001.npz": "288e5a3e52602a0f4e2df0ab75ca0f9f6ddeeeeca4705be706157917e0e623be",
+   "fields_cycle_002.npz": "9ee4d7eff9d309e5956dee2bafd77cd7c96aa7993cc5609b5e1a5719d74db4e7",
+   "increments.csv": "edaf2bcae5c6f59a1574f963df13c4efdd4eecde14c6747fbd6042ed4ff94892",
+   "last_state.npz": "b4995690cb7b8f4ee3884433250cb330b5f4c32d2ae34ccc8c63c9b58f5ec561",
+   "observables.csv": "7159af42e5a776c772486d34482ba9dbb7f46c0587beaa7b50d282dc1c377116",
+   "progress.json": "2791509a58de64d82a8c89e639f0effc15c2ac88d628df1308e92fbc7dfb709c",
+   "run.json": "e79d1cfa621d4ad541f26bbd9334bbeab762ab741c90441e9f4401cb95b0d236"
+  },
+  "runtime_prop_names": [
+   "E",
+   "nu",
+   "beta",
+   "c0",
+   "kappa",
+   "D",
+   "chi",
+   "ell",
+   "G_c",
+   "alpha_T",
+   "k_fg",
+   "psi_predictor_floor_fraction",
+   "phase_relaxation_factor",
+   "phase_relaxation_cap"
+  ],
+  "runtime_props": [
+   10.0,
+   0.28,
+   0.035,
+   0.35,
+   1e-05,
+   0.14,
+   0.25,
+   0.12,
+   3.5e-06,
+   1e-10,
+   0.5,
+   0.01,
+   0.1,
+   1000.0
+  ],
+  "runtime_props_evidence": "Reconstructed from frozen contract, stored problem parameters, and coefficient-coded sweep folder/driver."
+ },
+ {
+  "path": "uniform_oracle_n8_c2_spc80/run.json",
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": {
+    "id": "V_uniform_fatigue_floor",
+    "parameters": {
+     "E": 10.0,
+     "nu": 0.28,
+     "beta": 0.035,
+     "c0": 0.35,
+     "kappa": 1e-05,
+     "D": 0.14,
+     "chi": 0.25,
+     "ell": 0.12,
+     "G_c": 3.5e-06,
+     "alpha_T": 1e-10,
+     "k_fg": 0.5
+    },
+    "loading": {
+     "A": 0.0,
+     "T": 8.0,
+     "N_cyc": 2,
+     "steps_per_cycle": 80
+    },
+    "c_edges": [
+     "all_nodes"
+    ],
+    "notch": null,
+    "constraints": []
+   },
+   "mesh": "structured",
+   "n": 8,
+   "seed": 1,
+   "cycles": 2,
+   "steps_per_cycle": 80,
+   "dt": 0.1,
+   "accepted_output_steps": 160,
+   "wall_s": 5.474742129998049,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "nodal_damage": -2.220446049250313e-16
+   },
+   "uniform_strain": 0.03,
+   "tol": 1e-08,
+   "attempts": 160,
+   "accepted": 160,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "max_sweeps": 2,
+   "observed_linear_solves_total": 177,
+   "observed_linear_solves_max": 8,
+   "min_dt": 0.09999999999999966
+  },
+  "artifact_sha256": {
+   "attempts.json": "c8c1904e1147f6e68cc4fa725e29492622157507f9a938afe0d9b86fb6dd9a6c",
+   "fields_cycle_001.npz": "01dfd8de123b1a43e925d95c3845d8af4da07d04593b0739e337f53505dc868f",
+   "fields_cycle_002.npz": "87c2bbbc405d0f5d3d7f9790f1921f61c9c071cd37b871db38e350b75c625b7d",
+   "increments.csv": "1974f06d10d935dcc8434e907a454629d490006ab43290646b6f5b950b218343",
+   "last_state.npz": "deff8f4641c9123b2961f8bdee63d28bd54a71c8fdc8559a783b2267338a934d",
+   "observables.csv": "83de2e65e8b839f219020c9c36bc158024a75e5a4f83e6bc6e11e10cf9d41839",
+   "progress.json": "ed8d93f69caf772c5f32c17cad382cfb0a9070cb3bb2ebbb6c1c1781c361a51f",
+   "run.json": "eeb2b621a4ba5a7eb5044306c9e42fc37b001896e47d0e875e8da751de408438"
+  },
+  "runtime_prop_names": [
+   "E",
+   "nu",
+   "beta",
+   "c0",
+   "kappa",
+   "D",
+   "chi",
+   "ell",
+   "G_c",
+   "alpha_T",
+   "k_fg",
+   "psi_predictor_floor_fraction",
+   "phase_relaxation_factor",
+   "phase_relaxation_cap"
+  ],
+  "runtime_props": [
+   10.0,
+   0.28,
+   0.035,
+   0.35,
+   1e-05,
+   0.14,
+   0.25,
+   0.12,
+   3.5e-06,
+   1e-10,
+   0.5,
+   0.01,
+   0.1,
+   1000.0
+  ],
+  "runtime_props_evidence": "Reconstructed from frozen contract, stored problem parameters, and coefficient-coded sweep folder/driver."
+ }
+]

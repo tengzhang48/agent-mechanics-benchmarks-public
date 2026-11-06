@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "problem": "D0",
+  "mesh": "distorted",
+  "n": 16,
+  "seed": 4,
+  "cycles": 1,
+  "steps_per_cycle": 40,
+  "dt": 0.2,
+  "accepted_output_steps": 40,
+  "wall_s": 6.46,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "attempts": 40,
+  "accepted": 40,
+  "cutbacks": 0,
+  "stopped_early": false,
+  "rejected_attempts": 0,
+  "min_dt": 0.19999999999999932,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "source_sha256": {
+    "verification/runs/D0_enhanced_accepted_H_official_distorted_16_s4_spc40_cy1/source_snapshot/0_generated_kernel.for": "c307b340ecfc92de660e387b980e5bf8ee2e473070743ffa03ba579107b80043",
+    "verification/runs/D0_enhanced_accepted_H_official_distorted_16_s4_spc40_cy1/source_snapshot/1_enhanced_modes.f90": "7acec84a57dc650e3f8ab54503075506d47d90acf7675ed0d29a8de26d1c3aeb",
+    "verification/runs/D0_enhanced_accepted_H_official_distorted_16_s4_spc40_cy1/source_snapshot/2_accepted_damage.f90": "7dd05460943ff47a421166ee14d9e069f97fde7c3b2610d1c93da3f93ca80da0",
+    "verification/runs/D0_enhanced_accepted_H_official_distorted_16_s4_spc40_cy1/source_snapshot/3_uel.f90": "8859051ef753db10e4a5ae532e2ea0e98a730fbac58a30cf2106510649c8397a"
+  },
+  "invocation": "python host/run_problem.py . --mesh distorted --n 16 --seed 4 --cycles 1 --steps-per-cycle 40 --out tmp/official_enhanced_final",
+  "source_note": "Official host entrypoint output copied verbatim; this summary adds source hashes and named parameters. The original host summary is official_host_run.json. Sources were frozen before this command and remain byte-identical to the deterministic regeneration."
+}

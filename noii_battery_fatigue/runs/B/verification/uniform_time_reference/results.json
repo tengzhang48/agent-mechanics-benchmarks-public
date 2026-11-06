@@ -1,0 +1,256 @@
+{
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "kappa": 1e-05,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 1e-10,
+    "k_fg": 0.5,
+    "strain_amplitude": 0.03,
+    "T": 8.0
+  },
+  "scope": "Independent uniform quasistatic solution; finest time is a reference, not exact continuum",
+  "records": [
+    {
+      "spc": 20,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.767800938617852e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 1.6,
+      "final_alpha_relative_difference_to_finest_implicit": -0.013535940191022666
+    },
+    {
+      "spc": 40,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.794791946842469e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 1.2,
+      "final_alpha_relative_difference_to_finest_implicit": -0.003916151722821004
+    },
+    {
+      "spc": 80,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.805733244984039e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 1.0,
+      "final_alpha_relative_difference_to_finest_implicit": -1.659477357629502e-05
+    },
+    {
+      "spc": 160,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.805733244984041e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.95,
+      "final_alpha_relative_difference_to_finest_implicit": -1.6594773575517863e-05
+    },
+    {
+      "spc": 320,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8057790706218844e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.925,
+      "final_alpha_relative_difference_to_finest_implicit": -2.6218833815150333e-07
+    },
+    {
+      "spc": 640,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8057790706218833e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.925,
+      "final_alpha_relative_difference_to_finest_implicit": -2.6218833848457024e-07
+    },
+    {
+      "spc": 1280,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.805779070621881e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.925,
+      "final_alpha_relative_difference_to_finest_implicit": -2.6218833926172636e-07
+    },
+    {
+      "spc": 2560,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.805779718848561e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.925,
+      "final_alpha_relative_difference_to_finest_implicit": -3.11557122323336e-08
+    },
+    {
+      "spc": 10240,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8057797188485724e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.92265625,
+      "final_alpha_relative_difference_to_finest_implicit": -3.1155708013486105e-08
+    },
+    {
+      "spc": 40960,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8057797938400097e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.9224609375,
+      "final_alpha_relative_difference_to_finest_implicit": -4.4282231215220236e-09
+    },
+    {
+      "spc": 163840,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8057798060977576e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.922314453125,
+      "final_alpha_relative_difference_to_finest_implicit": -5.947409231765732e-11
+    },
+    {
+      "spc": 655360,
+      "method": "implicit scalar bracketing",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.805779806264629e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.922314453125,
+      "final_alpha_relative_difference_to_finest_implicit": 0.0
+    },
+    {
+      "spc": 20,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 8.437840404825653e-06,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.4,
+      "final_alpha_relative_difference_to_finest_implicit": 29.073066981186454
+    },
+    {
+      "spc": 40,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 7.893852363250978e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.2,
+      "final_alpha_relative_difference_to_finest_implicit": 1.813425467538797
+    },
+    {
+      "spc": 80,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 3.051181211704694e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.1,
+      "final_alpha_relative_difference_to_finest_implicit": 0.08746281689394975
+    },
+    {
+      "spc": 160,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 3.0504686198937275e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.1,
+      "final_alpha_relative_difference_to_finest_implicit": 0.08720884407349705
+    },
+    {
+      "spc": 320,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.829581888433146e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.075,
+      "final_alpha_relative_difference_to_finest_implicit": 0.008483232403117658
+    },
+    {
+      "spc": 640,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8269248949054614e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.325,
+      "final_alpha_relative_difference_to_finest_implicit": 0.007536260897459179
+    },
+    {
+      "spc": 1280,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.813409514574096e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.825,
+      "final_alpha_relative_difference_to_finest_implicit": 0.002719282636660214
+    },
+    {
+      "spc": 2560,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.811550762391094e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.853125,
+      "final_alpha_relative_difference_to_finest_implicit": 0.0020568100581450643
+    },
+    {
+      "spc": 10240,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.808507423389744e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.890625,
+      "final_alpha_relative_difference_to_finest_implicit": 0.0009721422611372876
+    },
+    {
+      "spc": 40960,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.808792190776464e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.88671875,
+      "final_alpha_relative_difference_to_finest_implicit": 0.0010736353954465816
+    },
+    {
+      "spc": 163840,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.809191168366358e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.881640625,
+      "final_alpha_relative_difference_to_finest_implicit": 0.0012158338634102872
+    },
+    {
+      "spc": 655360,
+      "method": "accepted-H lag",
+      "cycles": 2,
+      "final_H": 9.350649350649349e+17,
+      "final_alpha": 2.8092898602911045e-07,
+      "final_W": 4.90751870332351e-70,
+      "floor_onset": 0.88038330078125,
+      "final_alpha_relative_difference_to_finest_implicit": 0.001251008371590201
+    }
+  ]
+}

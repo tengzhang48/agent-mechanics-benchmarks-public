@@ -1,0 +1,27 @@
+{
+  "active_fatigue_tangent_relative_errors": [
+    4.64987121806445e-13,
+    6.660499044929669e-12,
+    7.95764718642778e-11
+  ],
+  "frozen_history_tangent_relative_errors": [
+    5.807016429451863e-13,
+    7.440921062931637e-12,
+    8.381787523794596e-11
+  ],
+  "fatigue_floor_tangent_relative_errors": [
+    4.64987121806445e-13,
+    6.660499044929669e-12,
+    7.95764718642778e-11
+  ],
+  "affine_patch_force_max_error": 1.3010426069826053e-18,
+  "local_mass_balance_error": 5.551115123125783e-17,
+  "equibiaxial_tensile_energy_and_rigid_motion": true,
+  "three_cycle_history_matches_analytic_alpha_H_W": true,
+  "fatigue_floor_history_matches_analytic_H": true,
+  "repeat_after_trial_calls_bitwise_equal": true,
+  "zero_dtime_finite_rejection_unchanged_state": true,
+  "reversed_geometry_finite_rejection_unchanged_state": true,
+  "nonfinite_input_finite_rejection_unchanged_state": true,
+  "H_1e22_damage_saturation_finite": true
+}

@@ -1,0 +1,44 @@
+{
+  "id": "D0_Gc_3.5e-08",
+  "name": "D0 smooth square, cyclic charging on the top edge, no crack",
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-08,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "loading": {
+    "A": 0.45,
+    "T": 8.0,
+    "N_cyc": 20,
+    "steps_per_cycle": 40
+  },
+  "c_edges": [
+    "top"
+  ],
+  "notch": null,
+  "constraints": [
+    [
+      0.0,
+      0.0,
+      [
+        "ux",
+        "uy"
+      ]
+    ],
+    [
+      1.0,
+      0.0,
+      [
+        "uy"
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,74 @@
+{
+ "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 8 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 2.49e-04; per-component |R|=['9.473e-11', '3.560e-11', '1.268e-04', '2.144e-04', '2.048e-12', '3.739e-18']; dominant comp 3)",
+ "problem": {
+  "id": "V_notch_spatial_fatigue_floor",
+  "name": "Candidate-local spatial fatigue-floor stress case",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 1.5e-06,
+   "alpha_T": 1e-10,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.6,
+   "T": 8.0,
+   "N_cyc": 2,
+   "steps_per_cycle": 80
+  },
+  "c_edges": [
+   "left",
+   "right"
+  ],
+  "notch": {
+   "x_end": 0.125
+  },
+  "constraints": [
+   [
+    0.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ],
+   [
+    1.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ]
+  ]
+ },
+ "mesh": "distorted",
+ "n": 16,
+ "seed": 3,
+ "cycles": 2,
+ "steps_per_cycle": 80,
+ "dt": 0.1,
+ "accepted_output_steps": 7,
+ "wall_s": 80.37220038997475,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": -1.1102230246251565e-16
+ },
+ "uniform_strain": null,
+ "tol": 1e-08,
+ "attempts": 56,
+ "accepted": 7,
+ "cutbacks": 19,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "observed_linear_solves_total": 631,
+ "observed_linear_solves_max": 25,
+ "min_dt": 9.76562500000222e-05
+}

@@ -1,0 +1,268 @@
+[
+ {
+  "step": 1,
+  "dt": 0.1,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 2,
+  "dt": 0.1,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 3,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 4,
+  "dt": 0.10000000000000002,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 5,
+  "dt": 0.10000000000000002,
+  "converged": true,
+  "linear_solves": 4,
+  "assemblies": 13
+ },
+ {
+  "step": 6,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 4,
+  "assemblies": 13
+ },
+ {
+  "step": 7,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 8,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 8,
+  "assemblies": 22
+ },
+ {
+  "step": 9,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 22
+ },
+ {
+  "step": 10,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 6,
+  "assemblies": 18
+ },
+ {
+  "step": 11,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 6,
+  "assemblies": 18
+ },
+ {
+  "step": 12,
+  "dt": 0.09999999999999996,
+  "converged": true,
+  "linear_solves": 8,
+  "assemblies": 23
+ },
+ {
+  "step": 13,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 6,
+  "assemblies": 17
+ },
+ {
+  "step": 14,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 29
+ },
+ {
+  "step": 15,
+  "dt": 0.09999999999999981,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 20
+ },
+ {
+  "step": 16,
+  "dt": 0.10000000000000009,
+  "converged": false,
+  "linear_solves": 11,
+  "assemblies": 62
+ },
+ {
+  "step": 16,
+  "dt": 0.050000000000000044,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 19
+ },
+ {
+  "step": 16,
+  "dt": 0.050000000000000044,
+  "converged": false,
+  "linear_solves": 20,
+  "assemblies": 245
+ },
+ {
+  "step": 16,
+  "dt": 0.025000000000000022,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 16,
+  "dt": 0.025000000000000022,
+  "converged": true,
+  "linear_solves": 9,
+  "assemblies": 41
+ },
+ {
+  "step": 17,
+  "dt": 0.025000000000000022,
+  "converged": true,
+  "linear_solves": 6,
+  "assemblies": 20
+ },
+ {
+  "step": 17,
+  "dt": 0.025000000000000022,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 16
+ },
+ {
+  "step": 17,
+  "dt": 0.050000000000000044,
+  "converged": false,
+  "linear_solves": 11,
+  "assemblies": 93
+ },
+ {
+  "step": 17,
+  "dt": 0.025000000000000022,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 16
+ },
+ {
+  "step": 17,
+  "dt": 0.025000000000000022,
+  "converged": false,
+  "linear_solves": 11,
+  "assemblies": 82
+ },
+ {
+  "step": 17,
+  "dt": 0.012500000000000011,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 17,
+  "dt": 0.012500000000000011,
+  "converged": false,
+  "linear_solves": 12,
+  "assemblies": 77
+ },
+ {
+  "step": 17,
+  "dt": 0.006249999999999868,
+  "converged": false,
+  "linear_solves": 25,
+  "assemblies": 197
+ },
+ {
+  "step": 17,
+  "dt": 0.003124999999999934,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 17,
+  "dt": 0.003124999999999934,
+  "converged": false,
+  "linear_solves": 10,
+  "assemblies": 43
+ },
+ {
+  "step": 17,
+  "dt": 0.001562499999999967,
+  "converged": false,
+  "linear_solves": 25,
+  "assemblies": 192
+ },
+ {
+  "step": 17,
+  "dt": 0.0007812500000001221,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 17,
+  "dt": 0.0007812500000001221,
+  "converged": false,
+  "linear_solves": 25,
+  "assemblies": 287
+ },
+ {
+  "step": 17,
+  "dt": 0.00039062499999992234,
+  "converged": false,
+  "linear_solves": 14,
+  "assemblies": 152
+ },
+ {
+  "step": 17,
+  "dt": 0.00019531250000009992,
+  "converged": true,
+  "linear_solves": 4,
+  "assemblies": 13
+ },
+ {
+  "step": 17,
+  "dt": 0.00019531250000009992,
+  "converged": false,
+  "linear_solves": 21,
+  "assemblies": 243
+ },
+ {
+  "step": 17,
+  "dt": 9.76562499999112e-05,
+  "converged": false,
+  "linear_solves": 25,
+  "assemblies": 238
+ },
+ {
+  "step": 17,
+  "dt": 9.76562499999112e-05,
+  "converged": false,
+  "linear_solves": 25,
+  "assemblies": 238
+ }
+]

@@ -1,0 +1,62 @@
+{
+ "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 1 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)",
+ "problem": {
+  "id": "V_uniform_fatigue_floor",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 3.5e-06,
+   "alpha_T": 1e-10,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.0,
+   "T": 8.0,
+   "N_cyc": 2,
+   "steps_per_cycle": 80
+  },
+  "c_edges": [
+   "all_nodes"
+  ],
+  "notch": null,
+  "constraints": []
+ },
+ "mesh": "structured",
+ "n": 8,
+ "seed": 1,
+ "cycles": 2,
+ "steps_per_cycle": 20,
+ "dt": 0.4,
+ "accepted_output_steps": 0,
+ "wall_s": 1.5957860649796203,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": 0.0
+ },
+ "uniform_strain": 0.03,
+ "tol": 1e-08,
+ "element_source_sha256": {
+  "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+  "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+  "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+  "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+  "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+  "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+ },
+ "source_identity_note": "supplied alternate-module identity",
+ "attempts": 65,
+ "accepted": 0,
+ "cutbacks": 11,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "observed_linear_solves_total": 59,
+ "observed_linear_solves_max": 2,
+ "min_dt": 0.00039062499999999867
+}

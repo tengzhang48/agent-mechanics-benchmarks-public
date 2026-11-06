@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "n": 16,
+  "order": 2,
+  "cycles": 2,
+  "spc": 40,
+  "distorted": false,
+  "wall_s": 74.45149970499915,
+  "accepted_output_steps": 80,
+  "attempts": 80,
+  "accepted": 80,
+  "cutbacks": 0,
+  "stopped_early": false
+}

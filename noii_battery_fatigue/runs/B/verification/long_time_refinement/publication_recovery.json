@@ -1,0 +1,12 @@
+{
+  "original_controller_exit_code": 1,
+  "reason": "EXDEV while publishing staged completion records across mounts",
+  "physics_cli_statuses": {
+    "80": "ok",
+    "160": "ok",
+    "320": "ok"
+  },
+  "recovered_without_repeating_simulations": true,
+  "recovery_script": "verification/run_studies.py",
+  "interpretation": "Only completion-record publication failed; per-case CLI output, fields, and source-matched staged summaries were preserved."
+}

@@ -1,0 +1,58 @@
+{
+  "implicit_t0.8": {
+    "points": 4096,
+    "W_turns": 2,
+    "positive_W_increase": 9.094464467430967e-09,
+    "alpha_end": 9.09446446742921e-09,
+    "H_plateau_steps": 0
+  },
+  "implicit_t1.0": {
+    "points": 5120,
+    "W_turns": 2,
+    "positive_W_increase": 1.077524430310043e-08,
+    "alpha_end": 1.0775244303099142e-08,
+    "H_plateau_steps": 0
+  },
+  "implicit_t8.0": {
+    "points": 40960,
+    "W_turns": 3,
+    "positive_W_increase": 1.4421434302036502e-07,
+    "alpha_end": 1.4421434302036402e-07,
+    "H_plateau_steps": 20480
+  },
+  "implicit_t16.0": {
+    "points": 81920,
+    "W_turns": 5,
+    "positive_W_increase": 2.805779793840014e-07,
+    "alpha_end": 2.8057797938400097e-07,
+    "H_plateau_steps": 61440
+  },
+  "lag_t0.8": {
+    "points": 4096,
+    "W_turns": 72,
+    "positive_W_increase": 9.395453576158946e-09,
+    "alpha_end": 9.395453576158962e-09,
+    "H_plateau_steps": 0
+  },
+  "lag_t1.0": {
+    "points": 5120,
+    "W_turns": 72,
+    "positive_W_increase": 1.1076483996744624e-08,
+    "alpha_end": 1.107648399674464e-08,
+    "H_plateau_steps": 0
+  },
+  "lag_t8.0": {
+    "points": 40960,
+    "W_turns": 73,
+    "positive_W_increase": 1.4451558271400922e-07,
+    "alpha_end": 1.4451558271400948e-07,
+    "H_plateau_steps": 20480
+  },
+  "lag_t16.0": {
+    "points": 81920,
+    "W_turns": 75,
+    "positive_W_increase": 2.808792190776456e-07,
+    "alpha_end": 2.808792190776464e-07,
+    "H_plateau_steps": 61440
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "scope": "constant p_eff, nonconstant degradation; prescribed u,c,d",
+  "pressure": 0.23674242424242428,
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "results": [
+    {
+      "mesh": "structured",
+      "n": 8,
+      "q_L2": 4.411390500355719e-05,
+      "grad_q_L2": 0.002733638710638891,
+      "flux_L2": 0.00023919338718090296,
+      "missing_product_gradient_error": 0.11572045124239627,
+      "constraint_max": 1.6653345369377348e-16,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "structured",
+      "n": 16,
+      "q_L2": 1.1028476250893474e-05,
+      "grad_q_L2": 0.0013668193553194468,
+      "flux_L2": 0.00011959669359045159,
+      "missing_product_gradient_error": 0.11572045124239626,
+      "constraint_max": 2.220446049250313e-16,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "structured",
+      "n": 32,
+      "q_L2": 2.7571190627270462e-06,
+      "grad_q_L2": 0.0006834096776597232,
+      "flux_L2": 5.9798346795225775e-05,
+      "missing_product_gradient_error": 0.11572045124239629,
+      "constraint_max": 3.3306690738754696e-16,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 8,
+      "q_L2": 5.1934592573035096e-05,
+      "grad_q_L2": 0.0028810180514435156,
+      "flux_L2": 0.0002520890795013076,
+      "missing_product_gradient_error": 0.11572045124239627,
+      "constraint_max": 2.220446049250313e-16,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 16,
+      "q_L2": 1.3041611368785008e-05,
+      "grad_q_L2": 0.001458006706410269,
+      "flux_L2": 0.00012757558681089854,
+      "missing_product_gradient_error": 0.11572045124239627,
+      "constraint_max": 2.220446049250313e-16,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 32,
+      "q_L2": 3.48354381386614e-06,
+      "grad_q_L2": 0.0007408263769753094,
+      "flux_L2": 6.482230798533957e-05,
+      "missing_product_gradient_error": 0.11572045124239627,
+      "constraint_max": 3.3306690738754696e-16,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ]
+}

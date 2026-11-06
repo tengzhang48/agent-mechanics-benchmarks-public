@@ -1,0 +1,17 @@
+{
+  "generator": "abaqus_ufl",
+  "pinned_commit": "a02ed7c",
+  "package_modifications": [],
+  "output_transformations": [
+    "Rename UEL entry to CHEM_UEL_CORE for checked wrapper"
+  ],
+  "python_tangent_checks": {
+    "active_undiminished": true,
+    "active_fatigue": true,
+    "unloading_frozen": true,
+    "fatigue_floor": true,
+    "compression": true
+  },
+  "sha256": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+  "generated_lines": 3986
+}

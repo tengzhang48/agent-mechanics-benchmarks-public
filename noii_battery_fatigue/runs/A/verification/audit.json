@@ -1,0 +1,85 @@
+{
+  "selected_source_sha256": "ba0d3006baeb9969e41772907d0463b27973bb27e6626d29554e794df255c506",
+  "host_hashes_unchanged": true,
+  "selected_runs_finite_and_history_monotone": [
+    {
+      "name": "selected_D0_d16_spc160",
+      "cycles": 20,
+      "n": 16,
+      "steps_per_cycle": 160,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_d16_spc40",
+      "cycles": 20,
+      "n": 16,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_d16_spc80",
+      "cycles": 20,
+      "n": 16,
+      "steps_per_cycle": 80,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_d32_spc40",
+      "cycles": 20,
+      "n": 32,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_d8_spc40",
+      "cycles": 20,
+      "n": 8,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_s16_spc160",
+      "cycles": 20,
+      "n": 16,
+      "steps_per_cycle": 160,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_s16_spc40",
+      "cycles": 20,
+      "n": 16,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_s16_spc80",
+      "cycles": 20,
+      "n": 16,
+      "steps_per_cycle": 80,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_s32_spc40",
+      "cycles": 20,
+      "n": 32,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_s64_spc40_5cyc",
+      "cycles": 5,
+      "n": 64,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    },
+    {
+      "name": "selected_D0_s8_spc40",
+      "cycles": 20,
+      "n": 8,
+      "steps_per_cycle": 40,
+      "status": "ok"
+    }
+  ],
+  "rollback_bitwise_equal": true,
+  "required_global_checks_pass": true
+}

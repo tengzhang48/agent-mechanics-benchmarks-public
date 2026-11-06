@@ -1,0 +1,64 @@
+solve_steps_staggered: step 1 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)
+Traceback (most recent call last):
+  File "<workspace>/host/hostfe/driver.py", line 690, in _assemble_free
+    R, K = asm(Uv, Uv - U_prev)
+           ~~~^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/driver.py", line 122, in <lambda>
+    return lambda U, DU: assemble_batched(
+                         ~~~~~~~~~~~~~~~~^
+        nodes, elems, dof_per_node, batch_fn, U, DU)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/driver.py", line 108, in assemble_batched
+    R_all, K_all = batch_fn(nodes[elems], U[gm], DU[gm])
+                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/verification/manufactured.py", line 77, in batch
+    R,K=el.element_rk_batch(coords,U,DU)
+        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/compiled_element.py", line 244, in element_rk_batch
+    self._check_pnewdt(_pn, "element_rk_batch")   # wrapper returns min over elements
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/compiled_element.py", line 198, in _check_pnewdt
+    raise exc
+hostfe.bounds.IncrementTooLarge: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<workspace>/host/hostfe/driver.py", line 1005, in solve_steps_staggered
+    U_new, R, last_sweep, rfinal, n_rounds = _try_increment(
+                                             ~~~~~~~~~~~~~~^
+        U.copy(), U_attempt_start, frac_try, step, lo_arr, hi_arr)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/driver.py", line 838, in _try_increment
+    Rt, _ = _assemble_free(
+            ~~~~~~~~~~~~~~^
+        U_work + alpha * du, U_prev, is_con)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/driver.py", line 692, in _assemble_free
+    raise _StaggeredAttemptFailed(
+        f"element requested a smaller increment: {exc}") from exc
+hostfe.driver._StaggeredAttemptFailed: element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<workspace>/verification/manufactured.py", line 131, in <module>
+    run(n,mesh)
+    ~~~^^^^^^^^
+  File "<workspace>/verification/manufactured.py", line 83, in run
+    U,report=fehost.solve(nodes,elems,el,lambda frac:bc,1,dt,U0=U0,batch_fn=batch,
+             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        residual_scale=fehost.residual_weights(el,contract))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/fehost.py", line 113, in solve
+    return solve_steps_staggered(
+        nodes, elems, dpn, element.element_rk, dirichlet_fn, [list(range(dpn))], n_steps,
+    ...<4 lines>...
+        step_callback=step_callback, max_field_newton=max_field_newton, verbose=verbose,
+        return_report=True)
+  File "<workspace>/host/hostfe/driver.py", line 1042, in solve_steps_staggered
+    _abort(step, exc.R, exc.reason, extra=extra, report=report)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/host/hostfe/driver.py", line 710, in _abort
+    raise StaggeredSolveFailed(msg, reason=reason, report=report)
+hostfe.driver.StaggeredSolveFailed: solve_steps_staggered: step 1 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)

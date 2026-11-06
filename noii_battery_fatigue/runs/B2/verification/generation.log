@@ -1,0 +1,209 @@
+Verifying ChemoFatigueQuad, regime 0
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.66e-09, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.05e-11, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 2.03e-11, norm = 4.37e-02 [PASS]
+  d(pressure_resid)/d(F): err = 8.13e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 8.44e-12, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 1.57e-11, norm = 1.82e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 7.96e-07, norm = 1.36e+03 [PASS]
+  d(phase_storage)/d(c): err = 2.90e-09, norm = 5.60e+01 [PASS]
+  d(phase_storage)/d(intact): err = 3.11e-10, norm = 3.60e+00 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, field 'intact'): OK
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying ChemoFatigueQuad, regime 1
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 1.71e-10, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.82e-12, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 1.61e-11, norm = 3.48e-02 [PASS]
+  d(pressure_resid)/d(F): err = 1.69e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 1.28e-11, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 4.98e-12, norm = 2.32e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(c): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(intact): err = 1.97e-08, norm = 3.10e+01 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, field 'intact'): OK
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying ChemoFatigueQuad, regime 2
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.66e-09, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.05e-11, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 2.03e-11, norm = 4.37e-02 [PASS]
+  d(pressure_resid)/d(F): err = 8.13e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 8.44e-12, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 1.57e-11, norm = 1.82e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 1.47e-06, norm = 2.06e+03 [PASS]
+  d(phase_storage)/d(c): err = 3.03e-09, norm = 8.49e+01 [PASS]
+  d(phase_storage)/d(intact): err = 3.30e-09, norm = 5.10e+00 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, field 'intact'): OK
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying ChemoFatigueQuad, regime 3
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.66e-09, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.05e-11, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 2.03e-11, norm = 4.37e-02 [PASS]
+  d(pressure_resid)/d(F): err = 8.13e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 8.44e-12, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 1.57e-11, norm = 1.82e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 7.96e+08, norm = 1.36e+18 [PASS]
+  d(phase_storage)/d(c): err = 2.77e+03, norm = 5.60e+16 [PASS]
+  d(phase_storage)/d(intact): err = 2.14e+06, norm = 2.60e+15 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, field 'intact'): OK
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying LumpedCoreQuad, regime 0
+Verifying LumpedCoreMaterial:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.66e-09, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.05e-11, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 2.03e-11, norm = 4.37e-02 [PASS]
+  d(pressure_resid)/d(F): err = 8.13e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 8.44e-12, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 1.57e-11, norm = 1.82e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying LumpedCoreQuad, regime 1
+Verifying LumpedCoreMaterial:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 1.71e-10, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.82e-12, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 1.61e-11, norm = 3.48e-02 [PASS]
+  d(pressure_resid)/d(F): err = 1.69e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 1.28e-11, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 4.98e-12, norm = 2.32e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying LumpedCoreQuad, regime 2
+Verifying LumpedCoreMaterial:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.66e-09, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.05e-11, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 2.03e-11, norm = 4.37e-02 [PASS]
+  d(pressure_resid)/d(F): err = 8.13e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 8.44e-12, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 1.57e-11, norm = 1.82e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying LumpedCoreQuad, regime 3
+Verifying LumpedCoreMaterial:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.66e-09, norm = 6.26e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.05e-11, norm = 3.05e-01 [PASS]
+  d(stress_PK1)/d(intact): err = 2.03e-11, norm = 4.37e-02 [PASS]
+  d(pressure_resid)/d(F): err = 8.13e-09, norm = 2.90e+00 [PASS]
+  d(pressure_resid)/d(c): err = 8.44e-12, norm = 2.03e-01 [PASS]
+  d(pressure_resid)/d(intact): err = 1.57e-11, norm = 1.82e-02 [PASS]
+  d(pressure_resid)/d(p): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(solvent_flux)/d(c): err = 2.63e-12, norm = 7.50e-03 [PASS]
+  d(solvent_flux)/d(intact): err = 1.33e-11, norm = 3.92e-02 [PASS]
+  d(solvent_flux)/d(grad_c): err = 6.95e-12, norm = 6.86e-02 [PASS]
+  d(solvent_flux)/d(grad_p): err = 3.61e-12, norm = 9.75e-02 [PASS]
+  d(solvent_storage)/d(c): err = 2.88e-10, norm = 1.00e+01 [PASS]
+  d(phase_flux)/d(grad_intact): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(species_flux)/d(grad_intact): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(species_storage)/d(damage): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_storage)/d(intact): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  Operator sign (species_storage/species_flux, 'intact'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+  Generated: tmp/regenerated_final/generated_kernel.for
+  Material:  LumpedCoreMaterial
+  Fields:    u, c, damage, p, intact
+  Element:   Quad4
+  NDOFEL:    24
+  F-bar:     False
+  Tangent blocks: 16
+Traceback (most recent call last):
+  File "<workspace>/element/build.py", line 84, in <module>
+    main()
+    ~~~~^^
+  File "<workspace>/element/build.py", line 79, in main
+    print(f"Generated {generated.relative_to(ROOT)}, {len(text.splitlines())} lines, "
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "<env>/lib/python3.13/pathlib/_local.py", line 385, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: 'tmp/regenerated_final/generated_kernel.for' is not in the subpath of '<workspace>'

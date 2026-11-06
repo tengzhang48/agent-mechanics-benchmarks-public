@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "residual_max_error": 7.416289804496046e-14,
+  "state_max_error": 7.460698725481052e-13,
+  "tangent_max_normalized_error": 2.337229575491203e-09,
+  "scope": "Current-H enhanced Gauss alternative, independent non-affine residual and full condensed tangent"
+}

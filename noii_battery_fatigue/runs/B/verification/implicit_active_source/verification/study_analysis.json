@@ -1,0 +1,10 @@
+{
+  "completed_runs": 17,
+  "ok_runs": 17,
+  "output_files_audited": 107,
+  "mesh_reference": "D0_structured_64_s1_c1_spc80",
+  "time_reference": "D0_structured_16_s1_c5_spc320",
+  "all_differences_are_self_convergence_not_independent_full_PDE_error": true,
+  "max_intact_constraint": 4.440892098500626e-16,
+  "max_bridge_relative_error": 4.891910110551135e-12
+}

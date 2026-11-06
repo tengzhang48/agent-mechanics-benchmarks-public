@@ -1,0 +1,168 @@
+{
+  "name": "selected_full_integration",
+  "status": "ok",
+  "n": 8,
+  "spc": 40,
+  "cycles": 20,
+  "distorted": false,
+  "force_reject": null,
+  "injected": false,
+  "wall_s": 23.214,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0,
+    "d": -0.00036636655909982885
+  },
+  "max_linear_solves_per_attempt": 3,
+  "mean_linear_solves_per_attempt": 2.0575,
+  "rejected_attempts": 0,
+  "d_max": 1.1598106329257867,
+  "d_max_free": 1.1598106329257867,
+  "d_min": 0.0,
+  "H_max": 72.43639047002691,
+  "alpha_max": 0.0004049550751502982,
+  "accepted_subincrements": 800,
+  "contract": {
+    "source": "element/uel.f90",
+    "compile_flags": [
+      "-ffree-line-length-none"
+    ],
+    "dof_per_node": 6,
+    "dof_names": [
+      "ux",
+      "uy",
+      "c",
+      "d",
+      "q",
+      "z"
+    ],
+    "abaqus_dofs": [
+      1,
+      2,
+      11,
+      12,
+      13,
+      14
+    ],
+    "prop_names": [
+      "E",
+      "nu",
+      "beta",
+      "c0",
+      "kappa",
+      "D",
+      "chi",
+      "ell",
+      "G_c",
+      "alpha_T",
+      "k_fg"
+    ],
+    "props": [
+      10.0,
+      0.28,
+      0.035,
+      0.35,
+      1e-05,
+      0.14,
+      0.25,
+      0.12,
+      3.5e-06,
+      0.0001,
+      0.5
+    ],
+    "jprops": [
+      0
+    ],
+    "nsvars": 27,
+    "svars_initial": null,
+    "history_slots": {
+      "H": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25
+      ],
+      "alpha": [
+        2,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26
+      ]
+    },
+    "lflags": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "residual_scale": {
+      "ux": 0.1,
+      "uy": 0.1,
+      "c": 0.1,
+      "d": 1.0,
+      "q": 0.1,
+      "z": 1.0
+    }
+  },
+  "problem": {
+    "id": "D0",
+    "name": "D0 smooth square, cyclic charging on the top edge, no crack",
+    "parameters": {
+      "E": 10.0,
+      "nu": 0.28,
+      "beta": 0.035,
+      "c0": 0.35,
+      "kappa": 1e-05,
+      "D": 0.14,
+      "chi": 0.25,
+      "ell": 0.12,
+      "G_c": 3.5e-06,
+      "alpha_T": 0.0001,
+      "k_fg": 0.5
+    },
+    "loading": {
+      "A": 0.45,
+      "T": 8.0,
+      "N_cyc": 20,
+      "steps_per_cycle": 40
+    },
+    "c_edges": [
+      "top"
+    ],
+    "notch": null,
+    "constraints": [
+      [
+        0.0,
+        0.0,
+        [
+          "ux",
+          "uy"
+        ]
+      ],
+      [
+        1.0,
+        0.0,
+        [
+          "uy"
+        ]
+      ]
+    ]
+  },
+  "source_sha256": "ba0d3006baeb9969e41772907d0463b27973bb27e6626d29554e794df255c506",
+  "attempts": 800,
+  "accepted": 800,
+  "cutbacks": 0,
+  "stopped_early": false
+}

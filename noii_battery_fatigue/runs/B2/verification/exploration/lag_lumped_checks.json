@@ -1,0 +1,94 @@
+{
+  "independent_residual_max_abs": 2.5587171270657905e-16,
+  "independent_svars_max_abs": 4.991562718714704e-13,
+  "tangent_relative_errors_by_block": {
+    "ux_ux": 1.6195100190227806e-09,
+    "ux_uy": 6.670476432438535e-10,
+    "ux_c": 1.928896039889235e-09,
+    "ux_d": 0.0,
+    "ux_p": 0.0,
+    "ux_s": 4.382502680102513e-09,
+    "uy_ux": 1.2290018828980135e-09,
+    "uy_uy": 9.160061428109801e-10,
+    "uy_c": 1.9398421795248596e-09,
+    "uy_d": 0.0,
+    "uy_p": 0.0,
+    "uy_s": 6.610205885475169e-09,
+    "c_ux": 0.0,
+    "c_uy": 0.0,
+    "c_c": 1.7080308428463756e-09,
+    "c_d": 0.0,
+    "c_p": 4.978075089080324e-09,
+    "c_s": 7.979624790742026e-08,
+    "d_ux": 0.0,
+    "d_uy": 0.0,
+    "d_c": 0.0,
+    "d_d": 0.0,
+    "d_p": 0.0,
+    "d_s": 1.2468797419627292e-09,
+    "p_ux": 5.557853840736973e-09,
+    "p_uy": 3.4850210710972258e-09,
+    "p_c": 1.3779483803665961e-09,
+    "p_d": 0.0,
+    "p_p": 9.995546586909644e-11,
+    "p_s": 9.07276114175291e-09,
+    "s_ux": 0.0,
+    "s_uy": 0.0,
+    "s_c": 0.0,
+    "s_d": 3.6857074676475428e-09,
+    "s_p": 0.0,
+    "s_s": 3.992224508789535e-09
+  },
+  "pure_shear_closed_form": {
+    "psi_plus": 0.00028125000000000003,
+    "H": 19.390333963440934,
+    "alpha": 0.00010125180000000001,
+    "max_state_abs_error": 3.552713678800501e-15
+  },
+  "biaxial_tension_compression_closed_form": [
+    {
+      "strain": 0.004,
+      "psi_plus": 0.00024242424242424242,
+      "pressure": 0.023200999053030306,
+      "H": 17.939775084145122
+    },
+    {
+      "strain": -0.004,
+      "psi_plus": 0.0,
+      "pressure": -0.023200999053030306,
+      "H": 0.0
+    }
+  ],
+  "rigid_motion_max_residual": 6.101506724037471e-16,
+  "discarded_trial_exact_replay": true,
+  "accepted_cyclic_history": {
+    "H_min_change": 0.0,
+    "alpha_min_change": 0.0,
+    "alpha_max": 0.0010676420380627235
+  },
+  "near_failure_and_exhaustion_states_checked": 24,
+  "exhausted_fatigue_newton": {
+    "iterations": 2,
+    "residual_norm": 5.1460446768263756e-17,
+    "s_min": 7.466741334080006e-17,
+    "s_max": 7.46674133408001e-17,
+    "H": 1.3392857142857148e+16,
+    "d_min": 0.9999999999999999
+  },
+  "guard_pnewdt": {
+    "zero_dt": 0.5,
+    "negative_dt": 0.5,
+    "inverted": 0.5,
+    "zero_area": 0.5,
+    "bad_Gc": 0.5
+  },
+  "noncommitting_request_flags_checked": [
+    2,
+    5
+  ],
+  "broken_control_detection": [
+    "wrong pressure residual magnitude",
+    "wrong history length sign"
+  ],
+  "status": "passed"
+}

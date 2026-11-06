@@ -1,0 +1,13 @@
+{
+  "origin": "tmp/lumped_candidate",
+  "archived_utc": "2026-10-20T20:50:04.647130+00:00",
+  "meaning": "Historical numerical alternative; not the delivered production element",
+  "source_sha256": {
+    "uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "generated_model.for": "c01af3958986091358dcb17fc061dc2f9db929f2949671e7898e63447fef4d0b",
+    "model.py": "00799afb42312e51155141d81d14e0b32b922fb66f894e96111fd218cd0205e2",
+    "generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+    "lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+    "uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9"
+  }
+}

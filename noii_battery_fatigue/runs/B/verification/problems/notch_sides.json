@@ -1,0 +1,11 @@
+{
+  "id": "V_notch_sides",
+  "name": "Verification variant: precrack, side charging, restrained expansion",
+  "parameters": {"E": 10.0, "nu": 0.28, "beta": 0.035, "c0": 0.35, "kappa": 1e-5,
+                 "D": 0.14, "chi": 0.25, "ell": 0.12, "G_c": 1.5e-6,
+                 "alpha_T": 2e-5, "k_fg": 0.5},
+  "loading": {"A": 0.6, "T": 8.0, "N_cyc": 3, "steps_per_cycle": 80},
+  "c_edges": ["left", "right"],
+  "notch": {"x_end": 0.125},
+  "constraints": [[0.0, 0.0, ["ux", "uy"]], [1.0, 0.0, ["ux", "uy"]]]
+}

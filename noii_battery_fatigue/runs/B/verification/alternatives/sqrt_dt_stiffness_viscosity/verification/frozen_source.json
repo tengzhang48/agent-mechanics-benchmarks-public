@@ -1,0 +1,56 @@
+{
+  "recorded_utc": "2026-10-20T21:03:04.069269+00:00",
+  "source_files": {
+    "element/generate.py": {
+      "sha256": "68d4bce6117a6c8c878d385c5b0d77a6a59a6f060ce70e88a390e44f2483e5ef",
+      "modified_utc": "2026-10-20T20:48:21.377538+00:00"
+    },
+    "element/generated_model.for": {
+      "sha256": "1957502791ed5714cec876a0602d9be82b956ff9316e60101b7bd38f45058132",
+      "modified_utc": "2026-10-20T20:59:27.007503+00:00"
+    },
+    "element/lump_reaction.py": {
+      "sha256": "dd6305903c6dd81274317b8e4a6be10913376a782d0d234bc4f729b5752d4186",
+      "modified_utc": "2026-10-20T20:59:26.700500+00:00"
+    },
+    "element/model.py": {
+      "sha256": "8527ecd9c72f778c2147f665991f91be4c2be37b3f68c6f64fb08971dee0ad75",
+      "modified_utc": "2026-10-20T20:59:26.699499+00:00"
+    },
+    "element/uel.f90": {
+      "sha256": "f74b5c1d58279c747f738b54bb83dc0996eacfe58cbf3ba3041e42096be2a931",
+      "modified_utc": "2026-10-20T20:47:53.445243+00:00"
+    },
+    "element/uel_contract.json": {
+      "sha256": "9a4e596cb7cd2f9cb31976691fe007c10b358ebf43055685ec8870a060a38e2d",
+      "modified_utc": "2026-10-20T20:59:26.699499+00:00"
+    },
+    "check_element.py": {
+      "sha256": "5fdf5ff4d4a69746f2cb5b572a338625e3c84b847fda6ac81f68de346ae0f2b7",
+      "modified_utc": "2026-10-20T20:59:52.991773+00:00"
+    }
+  },
+  "generation": {
+    "generator": "abaqus_ufl",
+    "pinned_commit": "a02ed7c",
+    "package_modifications": [],
+    "output_transformations": [
+      "Rename UEL entry to CHEM_UEL_CORE for checked wrapper",
+      "Lump nodal d/vfrac reaction with generated GP H chain rule; add gamma*(d_i-dold_i), gamma=(C/sqrt(DTIME))*(1+min(a*Hphase,Hcap)) with exact H-chain rule, and exact damage diagonal"
+    ],
+    "python_tangent_checks": {
+      "active_undiminished": true,
+      "active_fatigue": true,
+      "unloading_frozen": true,
+      "fatigue_floor": true,
+      "compression": true
+    },
+    "sha256": "1957502791ed5714cec876a0602d9be82b956ff9316e60101b7bd38f45058132",
+    "generated_lines_before_output_extension": 4066,
+    "postprocessed_total_lines": 4097,
+    "assembly_extension_original_lines_replaced": 5,
+    "assembly_extension_replacement_lines": 15,
+    "assembly_extension_added_lines": 21,
+    "handwritten_wrapper_lines": 91
+  }
+}

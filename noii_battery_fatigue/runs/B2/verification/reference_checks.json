@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "quadrature_order": 3,
+  "geometry_area_error": 0.0,
+  "quadratic_physical_kinematics_max_error": 4.996003610813204e-16,
+  "analytical_pressure_gradient_flux_error": 5.4643789493269423e-17,
+  "assembled_tangent_relative_error": 9.505621981824699e-11
+}

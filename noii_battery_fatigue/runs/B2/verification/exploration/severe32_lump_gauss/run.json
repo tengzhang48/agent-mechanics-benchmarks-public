@@ -1,0 +1,53 @@
+{
+  "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 16 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)",
+  "problem": "V_severe",
+  "mesh": "structured",
+  "n": 32,
+  "seed": 0,
+  "cycles": 5,
+  "steps_per_cycle": 80,
+  "dt": 0.1,
+  "wall_s": 215.70963102200767,
+  "accepted_output_steps": 15,
+  "committed_subincrements": 26,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "d_max_over_run": 0.9998785984466256,
+  "d_min_over_run": 5.5719131384737514e-06,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 1e-07,
+    "alpha_T": 1e-06,
+    "k_fg": 0.5
+  },
+  "host": "unmodified fehost.solve, default tol=1e-8",
+  "source_sha256": {
+    "tmp/lump_gauss/core.for": "f5584b3fd9e210d62de7c53c44707effcca89f3cf2b86d2bf09cbbd9d170ee6b",
+    "verification/exploration/lump_gauss_damage.f90": "409a7a52011ec53038136430a5596a7bedcd1f0f288148a63bf70a44aee20746",
+    "tmp/lump_gauss/uel.f90": "423088c2b9ad666d081e83deb0389e7e477fd7e946f86755cc52b226fa3f0d84"
+  },
+  "compiled_module": "challenge_ee4f59283a8f",
+  "newton_linear_solves": {
+    "min": 3,
+    "max": 10,
+    "mean": 5.0,
+    "total": 130
+  },
+  "attempts": 39,
+  "accepted": 15,
+  "cutbacks": 13,
+  "stopped_early": false,
+  "rejected_attempts": 13,
+  "min_dt": 9.76562499999112e-05,
+  "max_sweeps": 2,
+  "max_accepted_sweeps": 2
+}

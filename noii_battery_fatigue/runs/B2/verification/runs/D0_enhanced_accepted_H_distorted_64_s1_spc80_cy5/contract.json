@@ -1,0 +1,110 @@
+{
+  "source": [
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/0_generated_kernel.for",
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/1_enhanced_modes.f90",
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/2_accepted_damage.f90",
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/3_uel.f90"
+  ],
+  "compile_flags": [
+    "-ffixed-line-length-none"
+  ],
+  "dof_per_node": 6,
+  "dof_names": [
+    "ux",
+    "uy",
+    "c",
+    "d",
+    "p",
+    "s"
+  ],
+  "abaqus_dofs": [
+    1,
+    2,
+    11,
+    12,
+    13,
+    14
+  ],
+  "prop_names": [
+    "E",
+    "nu",
+    "beta",
+    "c0",
+    "kappa",
+    "D",
+    "chi",
+    "ell",
+    "G_c",
+    "alpha_T",
+    "k_fg"
+  ],
+  "props": [
+    10.0,
+    0.28,
+    0.035,
+    0.35,
+    1e-05,
+    0.14,
+    0.25,
+    0.12,
+    3.5e-06,
+    0.0001,
+    0.5
+  ],
+  "jprops": [],
+  "nsvars": 12,
+  "svars_initial": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "history_slots": {
+    "H": [
+      1,
+      4,
+      7,
+      10
+    ],
+    "alpha": [
+      2,
+      5,
+      8,
+      11
+    ]
+  },
+  "lflags": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "residual_scale": {
+    "ux": 0.01,
+    "uy": 0.01,
+    "c": 1.0,
+    "d": 1.0,
+    "p": 0.01,
+    "s": 1.0
+  },
+  "time_scheme": "Backward Euler concentration, first-order accepted-history split",
+  "damage_reaction": "Gauss-point H_n, row-sum lumped reaction on nodal intactness",
+  "formulation_id": "enhanced_accepted_H",
+  "element_local_variables": [
+    "ux_xi2",
+    "ux_eta2",
+    "uy_xi2",
+    "uy_eta2"
+  ],
+  "local_variable_treatment": "Four zero-mean enhanced strain modes; exact static condensation, recomputed each call; no retained local state"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "checked_elements": [
+    716,
+    723,
+    686,
+    689,
+    717,
+    722,
+    749,
+    754,
+    718,
+    721,
+    719,
+    720
+  ],
+  "pnewdt": 1.0,
+  "residual_max_abs_error": 1.1514227071796057e-16,
+  "state_max_abs_error": 7.069900220812997e-12,
+  "nodal_intactness_min": -0.014315996127535405,
+  "note": "Independent residual/state at twelve large local phase-residual elements in the actual failed trial. This is not a claim that a classical tangent exists at a history switch."
+}

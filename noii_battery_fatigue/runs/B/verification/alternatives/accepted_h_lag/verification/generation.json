@@ -1,0 +1,23 @@
+{
+  "generator": "abaqus_ufl",
+  "pinned_commit": "a02ed7c",
+  "package_modifications": [],
+  "output_transformations": [
+    "Rename UEL entry to CHEM_UEL_CORE for checked wrapper",
+    "Lump phase reaction to nodal d/vfrac with GP H; multiply generated H chain-rule tangent by -a*vfrac_node(row) and add nodal diagonals"
+  ],
+  "python_tangent_checks": {
+    "active_undiminished": true,
+    "active_fatigue": true,
+    "unloading_frozen": true,
+    "fatigue_floor": true,
+    "compression": true
+  },
+  "sha256": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+  "generated_lines_before_output_extension": 3969,
+  "postprocessed_total_lines": 3984,
+  "assembly_extension_original_lines_replaced": 5,
+  "assembly_extension_replacement_lines": 10,
+  "assembly_extension_added_lines": 10,
+  "handwritten_wrapper_lines": 89
+}

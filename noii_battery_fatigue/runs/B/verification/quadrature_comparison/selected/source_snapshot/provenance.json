@@ -1,0 +1,11 @@
+{
+  "n_gauss_points": 9,
+  "element_source_sha256": {
+    "element/generated_model.for": "6d64cffe7b354ff34ef38d44682589c6aef577dd2b6fa2e027e1628e03d2fd7e",
+    "element/uel.f90": "969695d2c10cc8a10564f2a84a0497ff7ba59f6359371c61ca66f3ad247f5da4",
+    "element/uel_contract.json": "b5712f37c974a37f026916892cd160d46a1ed8887a951e616e6140ef1d16fda4"
+  },
+  "generation_script": "verification/quadrature_study.py",
+  "base_model_sha256": "075425d860aa2015a22d5873389b40b860202cc7ff56797c074ca3e93641b6b8",
+  "base_extension_sha256": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24"
+}

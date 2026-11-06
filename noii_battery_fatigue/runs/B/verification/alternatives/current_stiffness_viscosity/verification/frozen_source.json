@@ -1,0 +1,64 @@
+{
+  "recorded_utc": "2026-10-20 20:58:59 UTC",
+  "generation": {
+    "generator": "abaqus_ufl",
+    "pinned_commit": "a02ed7c",
+    "package_modifications": [],
+    "output_transformations": [
+      "Rename UEL entry to CHEM_UEL_CORE for checked wrapper",
+      "Lump nodal d/vfrac reaction with generated GP H chain rule; add gamma*(d_i-dold_i), gamma=eta*(1+min(a*Hphase,Hcap)) with exact H-chain rule, and exact damage diagonal"
+    ],
+    "python_tangent_checks": {
+      "active_undiminished": true,
+      "active_fatigue": true,
+      "unloading_frozen": true,
+      "fatigue_floor": true,
+      "compression": true
+    },
+    "sha256": "5b1a9102d3ace2ec5894f68e3a1f054d0cc3b4abcd1c7f0d618a3adcb8cbf0f2",
+    "generated_lines_before_output_extension": 4066,
+    "postprocessed_total_lines": 4095,
+    "assembly_extension_original_lines_replaced": 5,
+    "assembly_extension_replacement_lines": 15,
+    "assembly_extension_added_lines": 19,
+    "handwritten_wrapper_lines": 91
+  },
+  "source_files": {
+    "element/generate.py": {
+      "sha256": "68d4bce6117a6c8c878d385c5b0d77a6a59a6f060ce70e88a390e44f2483e5ef",
+      "modified_utc": "2026-10-20T20:48:21.377538+00:00"
+    },
+    "element/generated_model.for": {
+      "sha256": "5b1a9102d3ace2ec5894f68e3a1f054d0cc3b4abcd1c7f0d618a3adcb8cbf0f2",
+      "modified_utc": "2026-10-20T20:56:17.681530+00:00"
+    },
+    "element/lump_reaction.py": {
+      "sha256": "629d63522e8d3f10a3b4380561ffedac85ecbcc079ec791c234420ed506bf514",
+      "modified_utc": "2026-10-20T20:56:17.365527+00:00"
+    },
+    "element/model.py": {
+      "sha256": "3bc84668a840cf9e60d1a85a80bd2b10b76d9a46d59638532e8c86d8cfe0e522",
+      "modified_utc": "2026-10-20T20:47:53.444243+00:00"
+    },
+    "element/uel.f90": {
+      "sha256": "f74b5c1d58279c747f738b54bb83dc0996eacfe58cbf3ba3041e42096be2a931",
+      "modified_utc": "2026-10-20T20:47:53.445243+00:00"
+    },
+    "element/uel_contract.json": {
+      "sha256": "3157afcca37f3d269575d924564e2abf18236504effc7d44c07398e238aee768",
+      "modified_utc": "2026-10-20T20:47:53.444243+00:00"
+    },
+    "check_element.py": {
+      "sha256": "a8fca27b44ab4d540ce476f81e6647501ab6ef8c519eda5b65efb96823b28d79",
+      "modified_utc": "2026-10-20T20:56:00.800354+00:00"
+    },
+    "run_case.py": {
+      "sha256": "1061eadc992f70a4f7373b62452735faed4e9b24feb2c4a4628b641311f67c89",
+      "modified_utc": "2026-10-20T20:51:35.575580+00:00"
+    },
+    "eta_study.py": {
+      "sha256": "fb0a5148ac55db3f938d5bb3c3b79046ab69ba87b563cf28326e9b7b7a0efea7",
+      "modified_utc": "2026-10-20T20:49:00.374949+00:00"
+    }
+  }
+}

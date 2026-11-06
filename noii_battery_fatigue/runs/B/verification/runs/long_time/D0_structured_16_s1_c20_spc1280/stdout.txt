@@ -1,0 +1,1 @@
+{"status": "ok", "problem": "D0", "mesh": "structured", "n": 16, "seed": 1, "cycles": 20, "steps_per_cycle": 1280, "dt": 0.00625, "accepted_output_steps": 25600, "wall_s": 3588.22, "history_min_change": {"H": 0.0, "alpha": 0.0}, "attempts": 25600, "accepted": 25600, "cutbacks": 0, "stopped_early": false, "rejected_attempts": 0, "min_dt": 0.0062499999999943165}

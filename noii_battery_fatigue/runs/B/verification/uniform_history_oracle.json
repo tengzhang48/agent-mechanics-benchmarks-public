@@ -1,0 +1,74 @@
+{
+  "loading_hand_values": {
+    "expected_H_alpha_W": [
+      1.4492080900029878,
+      0.0020754914424242423,
+      0.0020754914424242423
+    ],
+    "computed_first_point": [
+      1.4492080900029782,
+      0.002075491442424234,
+      0.002075491442424234,
+      0.005765151515151491
+    ],
+    "expected_current_psi": 0.005765151515151515,
+    "max_point_scaled_error": 1.2717084824401996e-14
+  },
+  "unloading_frozen_history": {
+    "expected_H_alpha_W": [
+      1.4492080900029878,
+      0.0020754914424242423,
+      0.0005188728606060606
+    ],
+    "computed_first_point": [
+      1.4492080900029878,
+      0.0020754914424242423,
+      0.0005188728606060493,
+      0.0014412878787878475
+    ],
+    "expected_current_psi": 0.0014412878787878787,
+    "max_point_scaled_error": 1.1275702593849246e-17
+  },
+  "reloading_accumulated_increase": {
+    "expected_H_alpha_W": [
+      2.1337751328249275,
+      0.003632110024242424,
+      0.0020754914424242423
+    ],
+    "computed_first_point": [
+      2.1337751328249146,
+      0.003632110024242416,
+      0.002075491442424234,
+      0.005765151515151491
+    ],
+    "expected_current_psi": 0.005765151515151515,
+    "max_point_scaled_error": 1.1030556950437788e-14
+  },
+  "fatigue_floor": {
+    "expected_H_alpha_W": [
+      691818181818181.8,
+      0.10107549144242424,
+      0.0020754914424242423
+    ],
+    "computed_first_point": [
+      691818181818178.9,
+      0.10107549144242424,
+      0.002075491442424234,
+      0.005765151515151491
+    ],
+    "expected_current_psi": 0.005765151515151515,
+    "max_point_scaled_error": 7.769382391590014e-15
+  },
+  "discarded_trial_repeat": "bitwise-identical RHS, tangent, SVARS and PNEWDT",
+  "full_W_accumulation_broken_control": {
+    "wrong_alpha": 0.0041509828848484845,
+    "expected_alpha": 0.003632110024242424,
+    "separation": 0.0005188728606060605,
+    "compiled_erased_W_alpha": 0.004150982884848477
+  },
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  }
+}

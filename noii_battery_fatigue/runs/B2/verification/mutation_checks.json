@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "controls": [
+    {
+      "mutation": "WrongPressure",
+      "material_verify_passes": true,
+      "compiled_independent_oracle_rejects": true,
+      "residual_max_error": 0.0018939500473484912,
+      "state_max_error": 7.993605777301127e-15
+    },
+    {
+      "mutation": "WrongDeviator",
+      "material_verify_passes": true,
+      "compiled_independent_oracle_rejects": true,
+      "residual_max_error": 0.1428557142857163,
+      "state_max_error": 0.7142857142857242
+    }
+  ]
+}

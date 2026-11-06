@@ -1,0 +1,48 @@
+{
+  "id": "V_notch_spatial_fatigue_floor",
+  "name": "Candidate-local spatial fatigue-floor stress case",
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 1.5e-06,
+    "alpha_T": 1e-10,
+    "k_fg": 0.5
+  },
+  "loading": {
+    "A": 0.6,
+    "T": 8.0,
+    "N_cyc": 2,
+    "steps_per_cycle": 80
+  },
+  "c_edges": [
+    "left",
+    "right"
+  ],
+  "notch": {
+    "x_end": 0.125
+  },
+  "constraints": [
+    [
+      0.0,
+      0.0,
+      [
+        "ux",
+        "uy"
+      ]
+    ],
+    [
+      1.0,
+      0.0,
+      [
+        "ux",
+        "uy"
+      ]
+    ]
+  ]
+}

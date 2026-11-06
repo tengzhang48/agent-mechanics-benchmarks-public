@@ -1,0 +1,100 @@
+{
+  "fresh": {
+    "residual_relative_error": 1.8096635301390052e-14,
+    "state_relative_error": 2.2329290262199558e-14,
+    "tangent_max_row_relative_error": 1.2384776548515027e-09
+  },
+  "fatigue_loading": {
+    "residual_relative_error": 1.1709113137266663e-14,
+    "state_relative_error": 2.0226671146375418e-14,
+    "tangent_max_row_relative_error": 1.2384776548515027e-09
+  },
+  "frozen_unloading": {
+    "residual_relative_error": 1.1491311887627704e-16,
+    "state_relative_error": 3.5778671692021646e-23,
+    "tangent_max_row_relative_error": 1.2384776548515027e-09
+  },
+  "fatigue_floor": {
+    "residual_relative_error": 2.34215340666946e-14,
+    "state_relative_error": 1.7887596046034433e-14,
+    "tangent_max_row_relative_error": 1.2384776548515027e-09
+  },
+  "distinct_point_state": {
+    "residual_relative_error": 1.6259760355828823e-14,
+    "state_relative_error": 2.5813815855099704e-14,
+    "tangent_max_row_relative_error": 1.2384776548515027e-09
+  },
+  "broken_controls": {
+    "pressure_divisor_rejected": true,
+    "dev3_rejected": true
+  },
+  "free_swelling": {
+    "residual_inf": 4.507437643154372e-16
+  },
+  "rigid_rotation": {
+    "residual_inf": 7.207783763382714e-16
+  },
+  "concentration_balance": 1.1102230246251565e-16,
+  "discarded_trial_hidden_memory": "bitwise identical R, K, SVARS and PNEWDT",
+  "zero_time": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "negative_time": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "inverted_geometry": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "zero_Gc": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "nonfinite_U": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "noncommitting_lflags": [
+    2,
+    5
+  ],
+  "large_history_roundoff": [
+    {
+      "H": 1.0,
+      "dstar": 0.4999974999875,
+      "residual_inf": 1.7264203065141155e-17,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 10000.0,
+      "dstar": 0.9999000089991901,
+      "residual_inf": 5.56687601840656e-17,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 100000000.0,
+      "dstar": 0.9999999899999001,
+      "residual_inf": 4.3846511214462266e-17,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 1000000000000.0,
+      "dstar": 0.999999999999,
+      "residual_inf": 2.7755575615628914e-17,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 1000000000000000.0,
+      "dstar": 0.999999999999999,
+      "residual_inf": 2.8470473810109504e-17,
+      "pnewdt": 1.0
+    }
+  ]
+}

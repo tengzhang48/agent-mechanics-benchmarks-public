@@ -1,0 +1,91 @@
+{
+  "source": [
+    "element/generated_model.for",
+    "element/uel.f90"
+  ],
+  "compile_flags": [
+    "-ffixed-line-length-none"
+  ],
+  "dof_per_node": 6,
+  "dof_names": [
+    "ux",
+    "uy",
+    "c",
+    "d",
+    "q",
+    "vfrac"
+  ],
+  "abaqus_dofs": [
+    1,
+    2,
+    11,
+    12,
+    13,
+    14
+  ],
+  "prop_names": [
+    "E",
+    "nu",
+    "beta",
+    "c0",
+    "kappa",
+    "D",
+    "chi",
+    "ell",
+    "G_c",
+    "alpha_T",
+    "k_fg",
+    "psi_predictor_floor_fraction",
+    "phase_relaxation_factor",
+    "phase_relaxation_cap"
+  ],
+  "props": [
+    10.0,
+    0.28,
+    0.035,
+    0.35,
+    1e-05,
+    0.14,
+    0.25,
+    0.12,
+    3.5e-06,
+    0.0001,
+    0.5,
+    0.01,
+    0.5,
+    1000.0
+  ],
+  "jprops": [],
+  "nsvars": 16,
+  "svars_initial": null,
+  "history_slots": {
+    "H": [
+      1,
+      5,
+      9,
+      13
+    ],
+    "alpha": [
+      2,
+      6,
+      10,
+      14
+    ]
+  },
+  "lflags": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "residual_scale": {
+    "ux": 0.01,
+    "uy": 0.01,
+    "c": 1.0,
+    "d": 1.0,
+    "q": 0.001,
+    "vfrac": 0.001
+  }
+}

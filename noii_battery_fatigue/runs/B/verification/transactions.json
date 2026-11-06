@@ -1,0 +1,35 @@
+{
+  "bitwise_identical_final_U": true,
+  "bitwise_identical_final_svars": true,
+  "bitwise_identical_all_output_fields": true,
+  "bitwise_identical_accepted_times": true,
+  "before_summary": {
+    "attempts": 43,
+    "accepted": 40,
+    "cutbacks": 1,
+    "stopped_early": false
+  },
+  "after_summary": {
+    "attempts": 43,
+    "accepted": 40,
+    "cutbacks": 1,
+    "stopped_early": false
+  },
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "forced_reject_at_time": 2.0,
+  "forced_reject_dt": 0.4,
+  "mesh": "distorted",
+  "n": 8,
+  "seed": 5,
+  "cycles": 2,
+  "steps_per_cycle": 20,
+  "element_source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "comparison_method": "Identical dtype, shape, and C-ordered scalar bytes, including signed zero"
+}

@@ -1,0 +1,96 @@
+{
+  "recorded_utc": "2026-10-20T21:10:32.622426+00:00",
+  "origin": "tmp/lumped_psilag_candidate/spatial_floor_distorted16_s3_c2_spc80",
+  "durable_path": "verification/custom_runs/selected/spatial_floor_distorted16_s3_c2_spc80",
+  "source_sha256": {
+    "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+    "element/model.py": "d57b914cc03d62ce742dd4fcaa5e01a65340bedf801ea007982ef6ad73614e91",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "summary": {
+    "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 8 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 2.49e-04; per-component |R|=['9.473e-11', '3.560e-11', '1.268e-04', '2.144e-04', '2.048e-12', '3.739e-18']; dominant comp 3)",
+    "problem": {
+      "id": "V_notch_spatial_fatigue_floor",
+      "name": "Candidate-local spatial fatigue-floor stress case",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 1.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.6,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "left",
+        "right"
+      ],
+      "notch": {
+        "x_end": 0.125
+      },
+      "constraints": [
+        [
+          0.0,
+          0.0,
+          [
+            "ux",
+            "uy"
+          ]
+        ],
+        [
+          1.0,
+          0.0,
+          [
+            "ux",
+            "uy"
+          ]
+        ]
+      ]
+    },
+    "mesh": "distorted",
+    "n": 16,
+    "seed": 3,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 7,
+    "wall_s": 80.37220038997475,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -1.1102230246251565e-16
+    },
+    "uniform_strain": null,
+    "tol": 1e-08,
+    "attempts": 56,
+    "accepted": 7,
+    "cutbacks": 19,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 631,
+    "observed_linear_solves_max": 25,
+    "min_dt": 9.76562500000222e-05
+  },
+  "artifact_sha256": {
+    "attempts.json": "2d599f69016186ab1d504a055c1c185a8f66c322b30a28ab77bf74ed1b7ba906",
+    "branch_diagnosis.json": "cfcfcf6a59ef27a80fdde4c3001f15dccf01fa3358c9777072645923c9b144c9",
+    "failed_trial.npz": "4a6fb827c9e2226ca540b41fea252176ed5939f47dc91a964faf70555f0ba0fa",
+    "increments.csv": "7bb14837651aef92b26d9af538bd1d61e09821d4d0b1fc00785b169f5c2ba3fb",
+    "last_state.npz": "452b3967196cc8d57bf5d8368ae6f41e5ac9d7db209ca4d93f0621028ae443f9",
+    "observables.csv": "ef002bc9fb7f5ac166e014a36bea037cedbf823d7d708658199fa3339e803851",
+    "run.json": "ef420cf6984c4b8641c07929ab2d69c2c962d432c14d7c867dc8470e871c0b47"
+  }
+}

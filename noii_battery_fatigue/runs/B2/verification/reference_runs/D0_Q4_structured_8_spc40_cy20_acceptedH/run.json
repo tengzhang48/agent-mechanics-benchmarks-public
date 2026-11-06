@@ -1,0 +1,28 @@
+{
+  "status": "ok",
+  "n": 8,
+  "order": 4,
+  "cycles": 20,
+  "spc": 40,
+  "distorted": false,
+  "wall_s": 1085.404711288982,
+  "accepted_output_steps": 800,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "lag_history": true,
+  "attempts": 800,
+  "accepted": 800,
+  "cutbacks": 0,
+  "stopped_early": false
+}

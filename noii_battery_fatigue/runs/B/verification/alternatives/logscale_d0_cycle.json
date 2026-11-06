@@ -1,0 +1,69 @@
+{
+ "status": "ok",
+ "problem": {
+  "id": "D0",
+  "name": "D0 smooth square, cyclic charging on the top edge, no crack",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 3.5e-06,
+   "alpha_T": 0.0001,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.45,
+   "T": 8.0,
+   "N_cyc": 20,
+   "steps_per_cycle": 40
+  },
+  "c_edges": [
+   "top"
+  ],
+  "notch": null,
+  "constraints": [
+   [
+    0.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ],
+   [
+    1.0,
+    0.0,
+    [
+     "uy"
+    ]
+   ]
+  ]
+ },
+ "mesh": "structured",
+ "n": 8,
+ "seed": 1,
+ "cycles": 1,
+ "steps_per_cycle": 40,
+ "dt": 0.2,
+ "accepted_output_steps": 40,
+ "wall_s": 2.9592533810064197,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": 0.0
+ },
+ "uniform_strain": null,
+ "tol": 1e-08,
+ "attempts": 40,
+ "accepted": 40,
+ "cutbacks": 0,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "max_newton_iterations": 0,
+ "min_dt": 0.19999999999999932
+}

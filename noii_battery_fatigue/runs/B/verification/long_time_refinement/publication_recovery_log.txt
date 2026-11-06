@@ -1,0 +1,1 @@
+RECOVER D0_structured_16_s1_c20_spc320: completed simulation record published

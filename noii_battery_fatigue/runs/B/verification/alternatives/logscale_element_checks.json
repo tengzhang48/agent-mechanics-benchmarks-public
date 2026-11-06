@@ -1,0 +1,105 @@
+{
+  "fresh": {
+    "residual_relative_error": 2.7505071245599355e-14,
+    "state_relative_error": 2.1098097563320828e-14,
+    "tangent_max_row_relative_error": 1.2518532859314722e-09
+  },
+  "fatigue_loading": {
+    "residual_relative_error": 2.440541108415088e-14,
+    "state_relative_error": 1.9425133179804998e-14,
+    "tangent_max_row_relative_error": 1.2518532859314722e-09
+  },
+  "frozen_unloading": {
+    "residual_relative_error": 7.971979432303946e-17,
+    "state_relative_error": 1.8865117801247777e-23,
+    "tangent_max_row_relative_error": 1.4474444980082133e-08
+  },
+  "fatigue_floor": {
+    "residual_relative_error": 1.9480779957881493e-14,
+    "state_relative_error": 1.7887596046034433e-14,
+    "tangent_max_row_relative_error": 1.2518532859314722e-09
+  },
+  "distinct_point_state": {
+    "residual_relative_error": 2.23420792766908e-14,
+    "state_relative_error": 2.5813815855099704e-14,
+    "tangent_max_row_relative_error": 1.2518532859314722e-09
+  },
+  "broken_controls": {
+    "pressure_divisor_rejected": true,
+    "dev3_rejected": true
+  },
+  "free_swelling": {
+    "residual_inf": 4.507437643154374e-16
+  },
+  "rigid_rotation": {
+    "residual_inf": 7.207783763382716e-16
+  },
+  "concentration_balance": 1.3877787807814457e-16,
+  "discarded_trial_hidden_memory": "bitwise identical R, K, SVARS and PNEWDT",
+  "zero_time": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "negative_time": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "inverted_geometry": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "zero_Gc": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "nonfinite_U": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "extreme_z": {
+    "pnewdt": 0.5,
+    "finite": true,
+    "state_preserved": true
+  },
+  "noncommitting_lflags": [
+    2,
+    5
+  ],
+  "large_history_roundoff": [
+    {
+      "H": 1.0,
+      "dstar": 0.4999974999875,
+      "residual_inf": 2.6516061603684124e-17,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 10000.0,
+      "dstar": 0.9999000089991901,
+      "residual_inf": 4.24256985658946e-16,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 100000000.0,
+      "dstar": 0.9999999899999001,
+      "residual_inf": 5.52454498084517e-16,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 1000000000000.0,
+      "dstar": 0.999999999999,
+      "residual_inf": 8.881784197001252e-16,
+      "pnewdt": 1.0
+    },
+    {
+      "H": 1000000000000000.0,
+      "dstar": 0.999999999999999,
+      "residual_inf": 2.75532561312891e-17,
+      "pnewdt": 1.0
+    }
+  ]
+}

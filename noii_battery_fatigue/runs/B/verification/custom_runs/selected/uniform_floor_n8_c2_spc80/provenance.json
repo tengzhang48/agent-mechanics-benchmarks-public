@@ -1,0 +1,75 @@
+{
+  "recorded_utc": "2026-10-20T21:10:32.622426+00:00",
+  "origin": "tmp/lumped_psilag_candidate/uniform_floor_n8_c2_spc80",
+  "durable_path": "verification/custom_runs/selected/uniform_floor_n8_c2_spc80",
+  "source_sha256": {
+    "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+    "element/model.py": "d57b914cc03d62ce742dd4fcaa5e01a65340bedf801ea007982ef6ad73614e91",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "summary": {
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 160,
+    "wall_s": 5.408540018979693,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "attempts": 160,
+    "accepted": 160,
+    "cutbacks": 0,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 175,
+    "observed_linear_solves_max": 7,
+    "min_dt": 0.09999999999999966
+  },
+  "artifact_sha256": {
+    "attempts.json": "80dc7f0c89c94877d21a5baf1c6adf31b7266b2cae2b8d51213e16a245df19a6",
+    "fields_cycle_001.npz": "1120a3bfb23566900d79d4dbe19485c8f3851243d130c34f1f9233fe75dad3d0",
+    "fields_cycle_002.npz": "2a2f03d81f9a63091f517faa8052fb1e110344e871c24768b0b8682f2f610279",
+    "increments.csv": "6a9621a1488474ff3f8053abaf65d079d566438758cde2acad0e433dce059a7a",
+    "last_state.npz": "f01bf43e3ddffce5ef53d451eae270b97f73c7a0c86280aa4c278a59dc8db1b9",
+    "observables.csv": "9a0652dc59cb80685f59a93de701703c3bfd39a9395b4c2f86969f1230a03972",
+    "run.json": "6dfc6be98e1b0c1ededa756b2cdd420c91948da21f7c6e79f9b94d2b5ef7e893"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "generator": "abaqus_ufl",
+  "pinned_commit": "a02ed7c",
+  "package_modifications": [],
+  "output_transformations": [
+    "Rename UEL entry to CHEM_UEL_CORE for checked wrapper",
+    "Lump nodal d/vfrac reaction with generated GP H chain rule; add gamma*(d_i-dold_i), gamma=eta*(1+min(a*Hphase,Hcap)) with exact H-chain rule, and exact damage diagonal"
+  ],
+  "python_tangent_checks": {
+    "active_undiminished": true,
+    "active_fatigue": true,
+    "unloading_frozen": true,
+    "fatigue_floor": true,
+    "compression": true
+  },
+  "sha256": "5b1a9102d3ace2ec5894f68e3a1f054d0cc3b4abcd1c7f0d618a3adcb8cbf0f2",
+  "generated_lines_before_output_extension": 4066,
+  "postprocessed_total_lines": 4095,
+  "assembly_extension_original_lines_replaced": 5,
+  "assembly_extension_replacement_lines": 15,
+  "assembly_extension_added_lines": 19,
+  "handwritten_wrapper_lines": 91
+}

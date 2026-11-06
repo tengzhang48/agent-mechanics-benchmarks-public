@@ -1,0 +1,79 @@
+{
+ "status": "ok",
+ "problem": {
+  "id": "V_notch_spatial_fatigue_floor",
+  "name": "Candidate-local spatial fatigue-floor stress case",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 1.5e-06,
+   "alpha_T": 1e-10,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.6,
+   "T": 8.0,
+   "N_cyc": 2,
+   "steps_per_cycle": 80
+  },
+  "c_edges": [
+   "left",
+   "right"
+  ],
+  "notch": {
+   "x_end": 0.125
+  },
+  "constraints": [
+   [
+    0.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ],
+   [
+    1.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ]
+  ]
+ },
+ "mesh": "distorted",
+ "n": 16,
+ "seed": 3,
+ "cycles": 2,
+ "steps_per_cycle": 80,
+ "dt": 9.76562500000222e-05,
+ "accepted_output_steps": 1,
+ "wall_s": 9.099432649993105,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": 0.0
+ },
+ "uniform_strain": null,
+ "tol": 1e-08,
+ "restart": {
+  "t_start": 0.7070312500000001,
+  "duration": 9.76562500000222e-05,
+  "steps": 1
+ },
+ "attempts": 6,
+ "accepted": 1,
+ "cutbacks": 2,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "observed_linear_solves_total": 61,
+ "observed_linear_solves_max": 25,
+ "min_dt": 2.441406250000555e-05
+}

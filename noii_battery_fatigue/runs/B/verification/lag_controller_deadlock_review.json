@@ -1,0 +1,74 @@
+[
+  {
+    "dt": 0.00625,
+    "physical_time_start": 0.9499999999999987,
+    "history_proxy_max": 0.05421829596614708,
+    "element": 0,
+    "gp": 2,
+    "H_old": 2.0224800770634803,
+    "H_new": 2.614857972937962,
+    "alpha_old_over_threshold": 0.22545125317905504,
+    "alpha_new_over_threshold": 0.2500483353669124,
+    "nodal_damage_change_max": 0.05929248831564693,
+    "solver": {
+      "attempts": 1,
+      "accepted": 1,
+      "cutbacks": 0,
+      "stopped_early": false
+    }
+  },
+  {
+    "dt": 0.0001,
+    "physical_time_start": 0.9499999999999987,
+    "history_proxy_max": 0.05067672860845385,
+    "element": 0,
+    "gp": 2,
+    "H_old": 2.0224800770634803,
+    "H_new": 2.5691647891249825,
+    "alpha_old_over_threshold": 0.22545125317905504,
+    "alpha_new_over_threshold": 0.2456788802499247,
+    "nodal_damage_change_max": 0.05929248831564693,
+    "solver": {
+      "attempts": 1,
+      "accepted": 1,
+      "cutbacks": 0,
+      "stopped_early": false
+    }
+  },
+  {
+    "dt": 1e-05,
+    "physical_time_start": 0.9499999999999987,
+    "history_proxy_max": 0.050660694996455646,
+    "element": 0,
+    "gp": 2,
+    "H_old": 2.0224800770634803,
+    "H_new": 2.5689605505329487,
+    "alpha_old_over_threshold": 0.22545125317905504,
+    "alpha_new_over_threshold": 0.24565934973603665,
+    "nodal_damage_change_max": 0.05929248831564693,
+    "solver": {
+      "attempts": 1,
+      "accepted": 1,
+      "cutbacks": 0,
+      "stopped_early": false
+    }
+  },
+  {
+    "dt": 1e-06,
+    "physical_time_start": 0.9499999999999987,
+    "history_proxy_max": 0.05065933306010245,
+    "element": 0,
+    "gp": 2,
+    "H_old": 2.0224800770634803,
+    "H_new": 2.5689432030572736,
+    "alpha_old_over_threshold": 0.22545125317905504,
+    "alpha_new_over_threshold": 0.2456576908668131,
+    "nodal_damage_change_max": 0.05929248831564693,
+    "solver": {
+      "attempts": 1,
+      "accepted": 1,
+      "cutbacks": 0,
+      "stopped_early": false
+    }
+  }
+]

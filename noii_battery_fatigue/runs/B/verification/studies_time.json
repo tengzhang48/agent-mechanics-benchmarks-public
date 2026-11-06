@@ -1,0 +1,352 @@
+{
+ "D0_structured_16_s1_c5_spc20": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 16,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 20,
+   "dt": 0.4,
+   "accepted_output_steps": 100,
+   "wall_s": 61.63,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 130,
+   "accepted": 100,
+   "cutbacks": 10,
+   "stopped_early": false,
+   "rejected_attempts": 10,
+   "min_dt": 0.19999999999999576,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "16",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "20",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_16_s1_c5_spc20"
+   ],
+   "elapsed_including_compile_s": 67.0297071620007
+  }
+ },
+ "D0_structured_16_s1_c5_spc40": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 16,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 40,
+   "dt": 0.2,
+   "accepted_output_steps": 200,
+   "wall_s": 47.84,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 200,
+   "accepted": 200,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "rejected_attempts": 0,
+   "min_dt": 0.19999999999999576,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "16",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "40",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_16_s1_c5_spc40"
+   ],
+   "elapsed_including_compile_s": 53.07284267200157
+  }
+ },
+ "D0_structured_16_s1_c5_spc160": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 16,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 160,
+   "dt": 0.05,
+   "accepted_output_steps": 800,
+   "wall_s": 170.51,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 800,
+   "accepted": 800,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "rejected_attempts": 0,
+   "min_dt": 0.04999999999999894,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "16",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "160",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_16_s1_c5_spc160"
+   ],
+   "elapsed_including_compile_s": 175.73306718099047
+  }
+ },
+ "D0_structured_16_s1_c5_spc320": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 16,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 320,
+   "dt": 0.025,
+   "accepted_output_steps": 1600,
+   "wall_s": 339.47,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 1600,
+   "accepted": 1600,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "rejected_attempts": 0,
+   "min_dt": 0.02499999999999947,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "16",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "320",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_16_s1_c5_spc320"
+   ],
+   "elapsed_including_compile_s": 344.8060739770008
+  }
+ },
+ "D0_structured_16_s1_c5_spc10": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 16,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 10,
+   "dt": 0.8,
+   "accepted_output_steps": 50,
+   "wall_s": 58.42,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 115,
+   "accepted": 50,
+   "cutbacks": 16,
+   "stopped_early": false,
+   "rejected_attempts": 16,
+   "min_dt": 0.19999999999999576,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "16",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "10",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_16_s1_c5_spc10"
+   ],
+   "elapsed_including_compile_s": 63.87436694800272
+  }
+ },
+ "D0_structured_32_s1_c5_spc40": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 32,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 40,
+   "dt": 0.2,
+   "accepted_output_steps": 200,
+   "wall_s": 280.75,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 200,
+   "accepted": 200,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "rejected_attempts": 0,
+   "min_dt": 0.19999999999999576,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "32",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "40",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_32_s1_c5_spc40"
+   ],
+   "elapsed_including_compile_s": 286.1891795400006
+  }
+ },
+ "D0_structured_32_s1_c5_spc160": {
+  "status": "ok",
+  "summary": {
+   "status": "ok",
+   "problem": "D0",
+   "mesh": "structured",
+   "n": 32,
+   "seed": 1,
+   "cycles": 5,
+   "steps_per_cycle": 160,
+   "dt": 0.05,
+   "accepted_output_steps": 800,
+   "wall_s": 996.98,
+   "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+   },
+   "attempts": 800,
+   "accepted": 800,
+   "cutbacks": 0,
+   "stopped_early": false,
+   "rejected_attempts": 0,
+   "min_dt": 0.04999999999999894,
+   "element_source_sha256": {
+    "element/generated_model.for": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+    "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "element/model.py": "aa5f851698b7e14d0eaadfbcb20c840306544724ded7c73dcbf961bec11401f5",
+    "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+   },
+   "command": [
+    "<env>/bin/python",
+    "<workspace>/host/run_problem.py",
+    "<workspace>",
+    "--mesh",
+    "structured",
+    "--n",
+    "32",
+    "--seed",
+    "1",
+    "--cycles",
+    "5",
+    "--steps-per-cycle",
+    "160",
+    "--out",
+    "<workspace>/tmp/public_runs/D0_structured_32_s1_c5_spc160"
+   ],
+   "elapsed_including_compile_s": 1002.3980532230053
+  }
+ }
+}

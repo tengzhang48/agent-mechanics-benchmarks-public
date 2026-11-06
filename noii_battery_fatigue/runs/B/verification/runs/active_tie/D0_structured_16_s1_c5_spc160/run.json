@@ -1,0 +1,47 @@
+{
+ "status": "ok",
+ "problem": "D0",
+ "mesh": "structured",
+ "n": 16,
+ "seed": 1,
+ "cycles": 5,
+ "steps_per_cycle": 160,
+ "dt": 0.05,
+ "accepted_output_steps": 800,
+ "wall_s": 173.04,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0
+ },
+ "attempts": 800,
+ "accepted": 800,
+ "cutbacks": 0,
+ "stopped_early": false,
+ "rejected_attempts": 0,
+ "min_dt": 0.04999999999999894,
+ "element_source_sha256": {
+  "element/generated_model.for": "3a2932ebc621ffaca412212be1985fc3cb433a88d5a2c1e42502536d7e70f3ae",
+  "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9",
+  "element/uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+  "element/model.py": "d8665a959e71e892910e4244ef2cb048e8a9abdd92c4a28e15d9cc3ac8e3990c",
+  "element/generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f"
+ },
+ "command": [
+  "<env>/bin/python",
+  "<workspace>/host/run_problem.py",
+  "<workspace>",
+  "--mesh",
+  "structured",
+  "--n",
+  "16",
+  "--seed",
+  "1",
+  "--cycles",
+  "5",
+  "--steps-per-cycle",
+  "160",
+  "--out",
+  "<workspace>/tmp/public_runs/active_tie/D0_structured_16_s1_c5_spc160"
+ ],
+ "elapsed_including_compile_s": 178.40663173000212
+}

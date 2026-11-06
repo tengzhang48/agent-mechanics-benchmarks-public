@@ -1,0 +1,143 @@
+{
+  "date_utc": "2026-10-20T20:15:16Z",
+  "python": "3.13.14 | packaged by conda-forge | (main, Jun 12 2026, 09:50:25) [GCC 14.3.0]",
+  "executable": "<env>/bin/python",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "sympy": "1.14.0",
+  "gfortran": "GNU Fortran (conda-forge gcc 14.3.0-19) 14.3.0",
+  "meson": "1.11.1",
+  "ninja": "1.13.2",
+  "selected_source_sha256": "ba0d3006baeb9969e41772907d0463b27973bb27e6626d29554e794df255c506",
+  "implicit_source_sha256": "fcd4c37a1a127c82846c2a9b4ba3bca51a34dda9eb86f0f03874c793e4ddda94",
+  "contract": {
+    "source": "element/uel.f90",
+    "compile_flags": [
+      "-ffree-line-length-none"
+    ],
+    "dof_per_node": 6,
+    "dof_names": [
+      "ux",
+      "uy",
+      "c",
+      "d",
+      "q",
+      "z"
+    ],
+    "abaqus_dofs": [
+      1,
+      2,
+      11,
+      12,
+      13,
+      14
+    ],
+    "prop_names": [
+      "E",
+      "nu",
+      "beta",
+      "c0",
+      "kappa",
+      "D",
+      "chi",
+      "ell",
+      "G_c",
+      "alpha_T",
+      "k_fg"
+    ],
+    "props": [
+      10.0,
+      0.28,
+      0.035,
+      0.35,
+      1e-05,
+      0.14,
+      0.25,
+      0.12,
+      3.5e-06,
+      0.0001,
+      0.5
+    ],
+    "jprops": [
+      1
+    ],
+    "nsvars": 27,
+    "svars_initial": null,
+    "history_slots": {
+      "H": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25
+      ],
+      "alpha": [
+        2,
+        5,
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26
+      ]
+    },
+    "lflags": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "residual_scale": {
+      "ux": 0.1,
+      "uy": 0.1,
+      "c": 0.1,
+      "d": 1.0,
+      "q": 0.1,
+      "z": 1.0
+    }
+  },
+  "host_sha256": {
+    "host/README.md": "d6ab9b1144bfbb02a21771cceba260b66b79e948dacd5890f299409d8bf2f219",
+    "host/dev_problem/d0.json": "1fff292f092a9c3758589b52bf855b269bbd86c5b88e44274b3932343ce04cc2",
+    "host/fehost.py": "d22e61080c58018c99c2f509148c8cd1329c24abe1a0625c548605165ce0eb8f",
+    "host/hostfe/__init__.py": "661b57156898c2ebcdb64ecf7c4a8cb3b31f14e15450803449861bdd820a85a2",
+    "host/hostfe/bounds.py": "26ddf47f4de097095f8704194e03e8f0555c3da31087d40a6b5d2a9861acae60",
+    "host/hostfe/compiled_element.py": "18b7b0e8821c536463c85e78d80d69e0b07063f980ec4f6514f83938a72b479b",
+    "host/hostfe/drive_uel.f90": "402ad76d47ba457d39effcde62843b4565008c75f4c8f053bd89983d99108052",
+    "host/hostfe/driver.py": "23edeef5bf2510e629c80ab4d0aadf26b214d10624b402bb0eae802671f9c545",
+    "host/hostfe/mesh.py": "f93b2b1619890a545d2c4597a008807b14c739d0cffa0c48b02a6cb869d9c8ff",
+    "host/meshes.py": "2011ac1f2abb3343cb81048b5ed38adb8dedd77382029ac5fbb346bdb1406bd0",
+    "host/observables.py": "b056c304cd48e01a1ac77d229859b5362d7fdca0a6dac7bb79b2ee5c4cdfdf3c",
+    "host/run_problem.py": "04dab90154610e4aa80b1a9a5e3b6528edf0afe2e98400e019b907818dc0771f"
+  },
+  "finalized_utc": "2026-10-20T20:39:32Z",
+  "verification_source_sha256": {
+    "verification/audit_outputs.py": "e6ce011e251c764d82fe2ad42327433afb1cd09217905929b3c15eeceec2c5c3",
+    "verification/common.py": "d15ead0f72df494ca13978f47827c0124c26875c5f5f65d43d616f3cd730ffc8",
+    "verification/compare_q2.py": "ff45bb763a76249f53bc32faadf2157f426def9ddebd1b8fc99737353dd0f5b4",
+    "verification/damage_sweep.py": "2f32cd4fd29eebe51f06d6e603d8834d00129ac70b22da113ac47a824c10731e",
+    "verification/field_convergence.py": "738e6936edc7c61832d350674c08d82d7f0115ae711f5a88e041de1e7ab0e663",
+    "verification/global_checks.py": "fdbc0fe44f52abf14aacbe49f4d7449f6df058fdb3948f56cba277b447b03461",
+    "verification/lag_experiment.py": "558751c493796f676237330bbef1ffa5d4e5b3179f60d811df9f07cad4a0a314",
+    "verification/manufactured.py": "fab1043614116ac52dfe6b0f69fddcd5dc768ea971183ed660100bffb7aa58f1",
+    "verification/q2_reference.py": "a75d79c0e87341384ce673e421ac423cc158a082e93059264786af3700afd3c5",
+    "verification/reference_1d.py": "68294d80b1e867144e816b583853171454a8e3adff91ce37ea40e3e4f4f74d4d",
+    "verification/run_host.py": "043404fe1d32c456506328f208c34ae63291be367a48f6b0ac843b599a3815c4",
+    "verification/summarize.py": "a8e6aefdf6cd3dcd67946a8d7a9dc4536754795a33fe9d561a691eade0ac5b46",
+    "verification/test_element.py": "c1c3e264beb72aaf5cdd3ed4c53248d6f87f66952e340a743605f42eca42d94f",
+    "verification/test_reference.py": "be1e6cff7b603b6a65dacff49d1ec6191d8030e68dfb07f0a990b2696af2f601",
+    "verification/uniform_history.py": "932b8ff6c17dc2cd53c45575269dba9f787b5eb6e4cb033c5a7e607773a3a7a3",
+    "verification/alternatives/uel_implicit.f90": "fcd4c37a1a127c82846c2a9b4ba3bca51a34dda9eb86f0f03874c793e4ddda94",
+    "verification/alternatives/uel_lagged.f90": "ba0d3006baeb9969e41772907d0463b27973bb27e6626d29554e794df255c506",
+    "verification/q2_reference.f90": "7dd6cabd89bfa96d259e54584dcf684372a83ab208fa732da42abcf9a1050ce5"
+  },
+  "selected_source_sha256_final": "ba0d3006baeb9969e41772907d0463b27973bb27e6626d29554e794df255c506"
+}

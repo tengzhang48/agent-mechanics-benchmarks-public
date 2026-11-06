@@ -1,0 +1,23 @@
+START D0_structured_16_s1_c20_spc80
+START D0_structured_16_s1_c20_spc160
+START D0_structured_16_s1_c20_spc320
+Traceback (most recent call last):
+  File "<workspace>/verification/run_studies.py", line 114, in <module>
+    if not target.exists():
+    ^^
+  File "<workspace>/verification/run_studies.py", line 106, in main
+    # Freeze this run's element sources before launching subprocesses. The
+  File "<env>/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "<env>/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "<env>/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "<workspace>/verification/run_studies.py", line 66, in execute
+    publish_record(staged,durable/'run.json')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<env>/lib/python3.13/pathlib/_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+OSError: [Errno 18] Invalid cross-device link: '<workspace>/tmp/public_runs/long_time/D0_structured_16_s1_c20_spc80/durable_run.json' -> '<workspace>/verification/runs/long_time/D0_structured_16_s1_c20_spc80/run.json'

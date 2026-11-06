@@ -1,0 +1,22 @@
+[
+  {
+    "spc": 80,
+    "status": "ok",
+    "wall_s": 5.408540018979693,
+    "cutbacks": 0,
+    "onset_alpha_crit": 0.6,
+    "alpha_cycle1": 1.460994816649221e-07,
+    "alpha_cycle2": 2.824631180285579e-07,
+    "H_max": 9.350649350649437e+17
+  },
+  {
+    "spc": 320,
+    "status": "ok",
+    "wall_s": 21.507101956987754,
+    "cutbacks": 0,
+    "onset_alpha_crit": 0.825,
+    "alpha_cycle1": 1.450726129694511e-07,
+    "alpha_cycle2": 2.814362493330887e-07,
+    "H_max": 9.350649350649437e+17
+  }
+]

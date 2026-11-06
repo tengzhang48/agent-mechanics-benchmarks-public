@@ -1,0 +1,44 @@
+{
+  "interpolation": {
+    "status": "passed",
+    "polynomial_max_abs_errors": {
+      "Q2_structured": 8.881784197001252e-16,
+      "Q3_structured": 1.7763568394002505e-15,
+      "Q4_structured": 1.3322676295501878e-15,
+      "Q2_distorted": 8.881784197001252e-16,
+      "Q3_distorted": 1.3322676295501878e-15,
+      "Q4_distorted": 1.3322676295501878e-15
+    }
+  },
+  "comparison": {
+    "comparison_version": 2,
+    "production": "verification/runs/V_severe_enhanced_accepted_H_structured_64_s0_spc160_cy2",
+    "reference": "verification/reference_runs/V_severe_Q3_structured_16_spc160_cy2_acceptedH_q6",
+    "cycle": 2,
+    "production_dt": 0.05,
+    "reference_dt": 0.05,
+    "reference_lag_history": true,
+    "primary_L2_errors": {
+      "ux": 3.0584850229248006e-05,
+      "uy": 2.165818033155127e-05,
+      "c": 0.009120070976943144,
+      "d": 0.008388574668871086
+    },
+    "primary_relative_L2_errors": {
+      "ux": 0.008491146826517613,
+      "uy": 0.006613523352296217,
+      "c": 0.018394406887329746,
+      "d": 0.017755558267485216
+    },
+    "observable_relative_errors": {
+      "d_max": -0.0002106552808352132,
+      "D_int": 0.0011951266530738588,
+      "C_int": -0.001995237609987471,
+      "E_el": 0.5246139767841326
+    },
+    "host_Q1_energy": 8.320893725837615e-09,
+    "independently_recovered_enhanced_energy": 4.922955626533382e-09,
+    "reference_sampled_on_production_nodes_Q1_energy": 8.93176517646494e-09,
+    "reference_energy": 5.457705263458801e-09
+  }
+}

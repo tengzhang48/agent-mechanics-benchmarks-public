@@ -1,0 +1,60 @@
+{
+  "status": "ok",
+  "problem": "D0",
+  "mesh": "distorted",
+  "n": 64,
+  "seed": 1,
+  "cycles": 5,
+  "steps_per_cycle": 80,
+  "dt": 0.1,
+  "wall_s": 2806.103602852003,
+  "accepted_output_steps": 400,
+  "committed_subincrements": 400,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "d_max_over_run": 0.18510938122390863,
+  "d_min_over_run": -3.0270151072073773e-16,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "host": "unmodified fehost.solve, default tol=1e-8",
+  "source_sha256": {
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/0_generated_kernel.for": "c307b340ecfc92de660e387b980e5bf8ee2e473070743ffa03ba579107b80043",
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/1_enhanced_modes.f90": "7acec84a57dc650e3f8ab54503075506d47d90acf7675ed0d29a8de26d1c3aeb",
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/2_accepted_damage.f90": "7dd05460943ff47a421166ee14d9e069f97fde7c3b2610d1c93da3f93ca80da0",
+    "verification/runs/D0_enhanced_accepted_H_distorted_64_s1_spc80_cy5/source_snapshot/3_uel.f90": "8859051ef753db10e4a5ae532e2ea0e98a730fbac58a30cf2106510649c8397a"
+  },
+  "compiled_module": "challenge_639c671b63f9",
+  "original_source_paths": [
+    "element/generated_kernel.for",
+    "element/enhanced_modes.f90",
+    "element/accepted_damage.f90",
+    "element/uel.f90"
+  ],
+  "newton_linear_solves": {
+    "min": 2,
+    "max": 2,
+    "mean": 2.0,
+    "total": 800
+  },
+  "attempts": 400,
+  "accepted": 400,
+  "cutbacks": 0,
+  "stopped_early": false,
+  "rejected_attempts": 0,
+  "min_dt": 0.09999999999999788,
+  "max_sweeps": 2,
+  "max_accepted_sweeps": 2
+}

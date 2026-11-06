@@ -1,0 +1,124 @@
+{
+  "status": "passed",
+  "scope": "distorted n=8 seed=6, uniform prescribed shear, beta=0, inactive fatigue",
+  "runs": [
+    {
+      "steps": 16,
+      "dt": 0.0625,
+      "damage": 0.8978442543877588,
+      "continuum_damage": 0.9090900826371149,
+      "damage_max_error": 0.011245828249356382,
+      "analytical_split_damage_error": 3.3306690738754696e-16,
+      "H_max_error": 3.552713678800501e-14,
+      "alpha": 6.500942532132898e-05,
+      "continuum_alpha": 4.3947070400397844e-05,
+      "alpha_max_error": 2.1062354920931392e-05,
+      "H_alpha_min_change": [
+        0.039062499999999924,
+        0.0
+      ],
+      "solver": {
+        "attempts": 16,
+        "accepted": 16,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "steps": 32,
+      "dt": 0.03125,
+      "damage": 0.9037042266293192,
+      "continuum_damage": 0.9090900826371149,
+      "damage_max_error": 0.005385856007796064,
+      "analytical_split_damage_error": 3.3306690738754696e-16,
+      "H_max_error": 4.085620730620576e-14,
+      "alpha": 5.351644625166413e-05,
+      "continuum_alpha": 4.3947070400397844e-05,
+      "alpha_max_error": 9.56937585126648e-06,
+      "H_alpha_min_change": [
+        0.009765624999999981,
+        0.0
+      ],
+      "solver": {
+        "attempts": 32,
+        "accepted": 32,
+        "cutbacks": 0,
+        "stopped_early": false
+      },
+      "damage_rate": 1.062142354106304,
+      "alpha_rate": 1.1381700137479533
+    },
+    {
+      "steps": 64,
+      "dt": 0.015625,
+      "damage": 0.9064532697963456,
+      "continuum_damage": 0.9090900826371149,
+      "damage_max_error": 0.0026368128407695535,
+      "analytical_split_damage_error": 2.220446049250313e-16,
+      "H_max_error": 4.618527782440651e-14,
+      "alpha": 4.850087524661646e-05,
+      "continuum_alpha": 4.3947070400397844e-05,
+      "alpha_max_error": 4.553804846218814e-06,
+      "H_alpha_min_change": [
+        0.0024414062499999952,
+        0.0
+      ],
+      "solver": {
+        "attempts": 64,
+        "accepted": 64,
+        "cutbacks": 0,
+        "stopped_early": false
+      },
+      "damage_rate": 1.0303804862461163,
+      "alpha_rate": 1.0713523641243006
+    },
+    {
+      "steps": 128,
+      "dt": 0.0078125,
+      "damage": 0.9077853330648473,
+      "continuum_damage": 0.9090900826371149,
+      "damage_max_error": 0.0013047495722676716,
+      "analytical_split_damage_error": 3.3306690738754696e-16,
+      "H_max_error": 4.085620730620576e-14,
+      "alpha": 4.6165679308722584e-05,
+      "continuum_alpha": 4.3947070400397844e-05,
+      "alpha_max_error": 2.218608908324903e-06,
+      "H_alpha_min_change": [
+        0.0006103515624999988,
+        0.0
+      ],
+      "solver": {
+        "attempts": 128,
+        "accepted": 128,
+        "cutbacks": 0,
+        "stopped_early": false
+      },
+      "damage_rate": 1.0150222442933314,
+      "alpha_rate": 1.0374170912290435
+    },
+    {
+      "steps": 256,
+      "dt": 0.00390625,
+      "damage": 0.9084410768555159,
+      "continuum_damage": 0.9090900826371149,
+      "damage_max_error": 0.0006490057815992101,
+      "analytical_split_damage_error": 3.3306690738754696e-16,
+      "H_max_error": 4.618527782440651e-14,
+      "alpha": 4.504623184288539e-05,
+      "continuum_alpha": 4.3947070400397844e-05,
+      "alpha_max_error": 1.0991614424876717e-06,
+      "H_alpha_min_change": [
+        0.0001525878906249997,
+        0.0
+      ],
+      "solver": {
+        "attempts": 256,
+        "accepted": 256,
+        "cutbacks": 0,
+        "stopped_early": false
+      },
+      "damage_rate": 1.0074696935137695,
+      "alpha_rate": 1.0132520729038774
+    }
+  ]
+}

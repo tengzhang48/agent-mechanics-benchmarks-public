@@ -1,0 +1,174 @@
+{
+  "loading": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 1.7208456881689926e-15,
+    "phase_history": [
+      0.2898416180005976,
+      0.01449208090002988,
+      1.4492080900029878,
+      10.0
+    ],
+    "relaxation_diagonal": [
+      0.08640014465779532,
+      0.049914709294457967,
+      0.10237161335436809,
+      0.22161434907210786
+    ],
+    "physical_history": [
+      1.4492080900029878,
+      1.4492080900029878,
+      1.4492080900029878,
+      10.0
+    ],
+    "history_scaled_error": 1.2717084824401996e-14,
+    "tangent_scaled_errors": {
+      "affine_strain": 2.886579864025407e-15,
+      "c": 5.051514762044462e-15,
+      "vfrac": 7.105427357601002e-15,
+      "d": 3.885780586188048e-16,
+      "q": 0.0
+    },
+    "isolated_relaxation": {
+      "tangent_matrix_absolute_error": 6.050715484207103e-15,
+      "residual_absolute_error": 1.1796119636642288e-16,
+      "accepted_old_damage_absolute_error": 1.1102230246251565e-16,
+      "accepted_old_damage_tangent_absolute_error": 8.049116928532385e-15,
+      "physical_history_bitwise_unchanged": true,
+      "old_damage_shift_tangent_bitwise_unchanged": false
+    }
+  },
+  "erased_accepted_psi_control": {
+    "phase_residual_difference": 0.13022701709691803,
+    "physical_history_bitwise_unchanged": true
+  },
+  "discarded_trials": "bitwise identical RHS, K, SVARS and PNEWDT",
+  "unloading": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 8.049116928532385e-16,
+    "phase_history": [
+      0.19173903436399778,
+      0.009586951718199888,
+      0.9586951718199886,
+      10.0
+    ],
+    "relaxation_diagonal": [
+      0.08392609794151401,
+      0.047101551800635535,
+      0.09388939025753781,
+      0.21888060104440982
+    ],
+    "physical_history": [
+      0.9586951718199886,
+      0.9586951718199886,
+      0.9586951718199886,
+      10.0
+    ],
+    "history_scaled_error": 7.549516567451064e-15,
+    "tangent_scaled_errors": {
+      "affine_strain": 4.440892098500626e-16,
+      "c": 1.1379786002407855e-15,
+      "vfrac": 1.3322676295501878e-15,
+      "d": 2.7755575615628914e-16,
+      "q": 0.0
+    }
+  },
+  "fatigue_floor": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 1.8988491926973417e-15,
+    "phase_history": [
+      138363636363636.38,
+      6918181818181.817,
+      691818181818181.8,
+      1e+16
+    ],
+    "relaxation_diagonal": [
+      29.750791271135633,
+      28.403145710421178,
+      27.96947430160995,
+      29.317119862324407
+    ],
+    "physical_history": [
+      691818181818181.8,
+      691818181818181.8,
+      691818181818181.8,
+      1e+16
+    ],
+    "history_scaled_error": 7.769382391590014e-15,
+    "tangent_scaled_errors": {
+      "affine_strain": 3.3882631142827623e-15,
+      "c": 7.123147764375958e-15,
+      "vfrac": 1.9368261765512716e-15,
+      "d": 2.479478970171468e-16,
+      "q": 0.0
+    }
+  },
+  "capped_relaxation": {
+    "branches": [
+      "accepted_energy",
+      "predictor_floor",
+      "current_cap",
+      "frozen_H"
+    ],
+    "phase_residual_scaled_error": 4.1447448207745557e-16,
+    "phase_history": [
+      0.2898416180005976,
+      0.01449208090002988,
+      1.4492080900029878,
+      2000.0
+    ],
+    "relaxation_diagonal": [
+      4.9740365098402535,
+      1.3595529262420856,
+      4.990007978536826,
+      18.462521592854323
+    ],
+    "physical_history": [
+      1.4492080900029878,
+      1.4492080900029878,
+      1.4492080900029878,
+      2000.0
+    ],
+    "history_scaled_error": 1.2717084824401996e-14,
+    "tangent_scaled_errors": {
+      "affine_strain": 2.886579864025407e-15,
+      "c": 5.051514762044462e-15,
+      "vfrac": 6.895200263056934e-16,
+      "d": 5.505199717431718e-16,
+      "q": 0.0
+    },
+    "isolated_relaxation": {
+      "tangent_matrix_absolute_error": 3.0531621068169423e-14,
+      "residual_absolute_error": 2.042810365310288e-14,
+      "accepted_old_damage_absolute_error": 2.19824158875781e-14,
+      "accepted_old_damage_tangent_absolute_error": 1.3999868972436325e-14,
+      "physical_history_bitwise_unchanged": true,
+      "old_damage_shift_tangent_bitwise_unchanged": false
+    }
+  },
+  "source_sha256": {
+    "element/generated_model.for": "1957502791ed5714cec876a0602d9be82b956ff9316e60101b7bd38f45058132",
+    "element/uel.f90": "f74b5c1d58279c747f738b54bb83dc0996eacfe58cbf3ba3041e42096be2a931"
+  },
+  "theta": 0.01,
+  "relaxation_factor": 0.1,
+  "effective_relaxation_factor": 0.1118033988749895,
+  "relaxation_cap": 1000.0,
+  "relaxation_form": "current_reaction_sqrt",
+  "dt": 0.8,
+  "scope": "independent closed-form uniform-field phase row, mixed per-GP history branches"
+}

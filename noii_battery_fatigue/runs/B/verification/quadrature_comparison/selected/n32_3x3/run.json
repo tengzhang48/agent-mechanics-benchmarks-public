@@ -1,0 +1,76 @@
+{
+ "status": "ok",
+ "problem": {
+  "id": "D0",
+  "name": "D0 smooth square, cyclic charging on the top edge, no crack",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 3.5e-06,
+   "alpha_T": 0.0001,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.45,
+   "T": 8.0,
+   "N_cyc": 20,
+   "steps_per_cycle": 40
+  },
+  "c_edges": [
+   "top"
+  ],
+  "notch": null,
+  "constraints": [
+   [
+    0.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ],
+   [
+    1.0,
+    0.0,
+    [
+     "uy"
+    ]
+   ]
+  ]
+ },
+ "mesh": "structured",
+ "n": 32,
+ "seed": 1,
+ "cycles": 3,
+ "steps_per_cycle": 80,
+ "dt": 0.1,
+ "accepted_output_steps": 240,
+ "wall_s": 376.84800105702016,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": -5.551115123125783e-17
+ },
+ "uniform_strain": null,
+ "tol": 1e-08,
+ "element_source_sha256": {
+  "element/generated_model.for": "6d64cffe7b354ff34ef38d44682589c6aef577dd2b6fa2e027e1628e03d2fd7e",
+  "element/uel.f90": "969695d2c10cc8a10564f2a84a0497ff7ba59f6359371c61ca66f3ad247f5da4",
+  "element/uel_contract.json": "b5712f37c974a37f026916892cd160d46a1ed8887a951e616e6140ef1d16fda4"
+ },
+ "source_identity_note": "supplied alternate-module identity",
+ "attempts": 240,
+ "accepted": 240,
+ "cutbacks": 0,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "observed_linear_solves_total": 519,
+ "observed_linear_solves_max": 3,
+ "min_dt": 0.09999999999999966
+}

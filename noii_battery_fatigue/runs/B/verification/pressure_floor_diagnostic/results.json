@@ -1,0 +1,49 @@
+{
+  "recorded_utc": "2026-10-20T23:24:08.482565+00:00",
+  "scope": "Read-only frozen-state recovery diagnostic; only two independent linear global L2 projection solves, no nonlinear or time-path solve.",
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "input_sha256": {
+    "verification/custom_runs/selected/spatial_floor_distorted16_s3_c2_spc80/failed_trial.npz": "4a6fb827c9e2226ca540b41fea252176ed5939f47dc91a964faf70555f0ba0fa",
+    "verification/custom_runs/selected/spatial_floor_distorted16_s3_c2_spc80/last_state.npz": "452b3967196cc8d57bf5d8368ae6f41e5ac9d7db209ca4d93f0621028ae443f9",
+    "verification/custom_runs/selected/spatial_floor_distorted16_s3_c2_spc80/run.json": "ef420cf6984c4b8641c07929ab2d69c2c962d432c14d7c867dc8470e871c0b47",
+    "verification/custom_runs/selected/spatial_floor_distorted16_s3_c2_spc80/provenance.json": "82d6d22ba7135fb87139623c69950b52c6afbbf57fce270bf83e3a404d48a02c"
+  },
+  "artifact_sha256": {
+    "verification/pressure_floor_diagnostic/diagnose.py": "0d383a3ce545ca96cc3584ea06268b3941f59f7ec5d2a1657cbcdacc9f5abaee",
+    "verification/pressure_floor_diagnostic/summary.json": "3021af71a6009a1244f67fb412b19778fd8e914d82e57688e6a95e9ad39ea4c1",
+    "verification/pressure_floor_diagnostic/gp_values.json": "9cdf2499944934e2cc38acbc6912fcc75054a010877552cd8688a1666b1a4c95",
+    "verification/pressure_floor_diagnostic/projection_fields.npz": "e6340f66b452da750cc9832805176b9215522d11c8d0867063c9c4508a13cc68",
+    "verification/pressure_floor_diagnostic/artifact_manifest.json": "390b3a2d01a48d41114dcc5f9d23f9adabe4b47510095242a098a731aa190cc7"
+  },
+  "compiled_source_matches_failed_trial_provenance": true,
+  "assessment": {
+    "local_low_g_equivalent_pressure_amplification_supported": true,
+    "gradient_discrepancy_concentrated_at_low_g": false,
+    "causal_role_in_failed_global_solve_established": false,
+    "alternative_recovery_validated_as_solver_fix": false
+  },
+  "key_numbers": {
+    "trial_q_mass_equation_residual_l2": 2.0480525398431682e-12,
+    "trial_vs_exact_qD_gradient_relative_l2": 1.2015394210235374e-05,
+    "low_g_threshold": 0.0001,
+    "low_g_area_fraction": 0.07291515482181014,
+    "low_g_pressure_quotient_error_squared_fraction": 0.9841015235080177,
+    "low_g_gradient_difference_squared_fraction": 0.00017325338012479086,
+    "low_g_species_drift_difference_squared_fraction": 0.00019501337290204235,
+    "maximum_meaningful_qD_over_g_p_amplification": 2852.0471918965495,
+    "current_drift_l2": 1.1916864280589504e-05,
+    "alternative_drift_l2": 0.00017596575889052444,
+    "alternative_over_current_drift_l2": 14.76611252316954
+  },
+  "conclusion": "At this frozen unconverged state, projection creates large q/g amplification near the degradation floor. However, the largest absolute gradient/flux differences between the two recovery choices occur outside the lowest-g region, and effective-pressure-first recovery gives a much larger global drift norm. Neither recovery is an exact gradient reference; this does not establish the cause of nonlinear failure or validate a replacement.",
+  "limitations": [
+    "Unconverged failed Newton state only; neither recovered gradient is an exact physical/reference gradient.",
+    "No path solve, mesh/time convergence study, replacement formulation, or evidence that pressure recovery caused the nonlinear failure.",
+    "q/g is a diagnostic quotient rather than a required constitutive unknown; normalized ratios exclude |p_eff|<.01 global p_rms.",
+    "Two projections use the existing2x2 quadrature and fixed Q1 mesh; finite-h recovery, interpolation, and quadrature effects are not separated."
+  ]
+}

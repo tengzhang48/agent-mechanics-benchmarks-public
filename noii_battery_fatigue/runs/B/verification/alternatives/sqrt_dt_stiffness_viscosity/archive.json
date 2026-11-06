@@ -1,0 +1,15 @@
+{
+  "origin": "tmp/lumped_psilag_sqrtstiff_candidate",
+  "archived_utc": "2026-10-20T21:01:59.654492+00:00",
+  "meaning": "Historical numerical alternative; not the delivered production element. All completed run outcomes and actual failed-trial inputs are archived.",
+  "source_sha256": {
+    "uel_contract.json": "9a4e596cb7cd2f9cb31976691fe007c10b358ebf43055685ec8870a060a38e2d",
+    "generated_model.for": "1957502791ed5714cec876a0602d9be82b956ff9316e60101b7bd38f45058132",
+    "model.py": "8527ecd9c72f778c2147f665991f91be4c2be37b3f68c6f64fb08971dee0ad75",
+    "generate.py": "68d4bce6117a6c8c878d385c5b0d77a6a59a6f060ce70e88a390e44f2483e5ef",
+    "lump_reaction.py": "dd6305903c6dd81274317b8e4a6be10913376a782d0d234bc4f729b5752d4186",
+    "uel.f90": "f74b5c1d58279c747f738b54bb83dc0996eacfe58cbf3ba3041e42096be2a931"
+  },
+  "finalized_utc": "2026-10-20T21:08:35.758581+00:00",
+  "completed_runs": 6
+}

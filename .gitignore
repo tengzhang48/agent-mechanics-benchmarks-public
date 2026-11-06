@@ -1,0 +1,12 @@
+# Build products and local environments
+__pycache__/
+*.pyc
+*.so
+*.o
+*.mod
+_build/
+build/
+.venv/
+# Outputs of reruns (host and scorer)
+noii_battery_fatigue/host/out/
+noii_battery_fatigue/scoring/out/

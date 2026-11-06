@@ -1,0 +1,235 @@
+{
+  "scope": "independent analytical elliptic damage PDE with frozen spatial H",
+  "exact": "d=.4+.1*cos(pi*x)*cos(pi*y)",
+  "source_sha256": {
+    "element/generated_model.for": "c01af3958986091358dcb17fc061dc2f9db929f2949671e7898e63447fef4d0b",
+    "element/uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9"
+  },
+  "results": [
+    {
+      "mesh": "structured",
+      "n": 8,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 0.0020173532075980494,
+      "intact_constraint_max": 1.1102230246251565e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 0.03323192900279537,
+      "d_L2": 0.0022819589351844517,
+      "grad_d_L2": 0.026151293593749993,
+      "D_int": 0.4002200100319488,
+      "D_int_error": 0.00022001003194876967,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "structured",
+      "n": 16,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 0.000506462001641006,
+      "intact_constraint_max": 1.5543122344752192e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 0.11836152299656533,
+      "d_L2": 0.0005792222372807672,
+      "grad_d_L2": 0.012718156448232229,
+      "D_int": 0.4000558676750116,
+      "D_int_error": 5.58676750115894e-05,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "structured",
+      "n": 32,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 0.00012675090891367535,
+      "intact_constraint_max": 2.4424906541753444e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 0.4794473060173914,
+      "d_L2": 0.00014535669508860277,
+      "grad_d_L2": 0.0063117324828541235,
+      "D_int": 0.40001402156772603,
+      "D_int_error": 1.4021567726008044e-05,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "structured",
+      "n": 64,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 3.1696232533073854e-05,
+      "intact_constraint_max": 3.885780586188048e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 1.9965236099960748,
+      "d_L2": 3.637370362541121e-05,
+      "grad_d_L2": 0.003149860623216541,
+      "D_int": 0.4000035088165277,
+      "D_int_error": 3.508816527664216e-06,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 8,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 0.004508665093639785,
+      "intact_constraint_max": 1.5543122344752192e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 0.029274216009071097,
+      "d_L2": 0.0024446282954283353,
+      "grad_d_L2": 0.03205061725784104,
+      "D_int": 0.4002265074917833,
+      "D_int_error": 0.00022650749178326768,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 16,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 0.000987374430590937,
+      "intact_constraint_max": 3.1086244689504383e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 0.11056342997471802,
+      "d_L2": 0.0006624477907273279,
+      "grad_d_L2": 0.015381354323307684,
+      "D_int": 0.4000620988782919,
+      "D_int_error": 6.209887829189409e-05,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 32,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 0.00017370602353522502,
+      "intact_constraint_max": 5.662137425588298e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 0.4724264079995919,
+      "d_L2": 0.000165235389968714,
+      "grad_d_L2": 0.007360545077112938,
+      "D_int": 0.40001562355376225,
+      "D_int_error": 1.5623553762222908e-05,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "mesh": "distorted",
+      "n": 64,
+      "seed": 7,
+      "history_scale": 1.0,
+      "nodal_d_max_error": 4.409744238403901e-05,
+      "intact_constraint_max": 7.327471962526033e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 1.9640118620009162,
+      "d_L2": 4.1588143273526055e-05,
+      "grad_d_L2": 0.003623509058811182,
+      "D_int": 0.40000394870164624,
+      "D_int_error": 3.948701646216968e-06,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ],
+  "rates": {
+    "structured": [
+      {
+        "coarse": 8,
+        "fine": 16,
+        "d_L2_order": 1.9780839339545357,
+        "grad_d_L2_order": 1.0399927513580394
+      },
+      {
+        "coarse": 16,
+        "fine": 32,
+        "d_L2_order": 1.9945194677525384,
+        "grad_d_L2_order": 1.0107815964748914
+      },
+      {
+        "coarse": 32,
+        "fine": 64,
+        "d_L2_order": 1.9986297873612158,
+        "grad_d_L2_order": 1.0027480664530846
+      }
+    ],
+    "distorted": [
+      {
+        "coarse": 8,
+        "fine": 16,
+        "d_L2_order": 1.883736459234601,
+        "grad_d_L2_order": 1.0591696040229952
+      },
+      {
+        "coarse": 16,
+        "fine": 32,
+        "d_L2_order": 2.00328404141779,
+        "grad_d_L2_order": 1.0632980251735884
+      },
+      {
+        "coarse": 32,
+        "fine": 64,
+        "d_L2_order": 1.9902785334033155,
+        "grad_d_L2_order": 1.0224251063611158
+      }
+    ]
+  },
+  "broken_control": {
+    "history_scaled_1p1": "detected",
+    "result": {
+      "mesh": "structured",
+      "n": 64,
+      "seed": 7,
+      "history_scale": 1.1,
+      "nodal_d_max_error": 0.024335012360278352,
+      "intact_constraint_max": 4.551914400963142e-15,
+      "history_bitwise_unchanged": true,
+      "wall_s": 1.992784103989834,
+      "d_L2": 0.022793133242438028,
+      "grad_d_L2": 0.0061105688697106,
+      "D_int": 0.4227649824042691,
+      "D_int_error": 0.022764982404269052,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  }
+}

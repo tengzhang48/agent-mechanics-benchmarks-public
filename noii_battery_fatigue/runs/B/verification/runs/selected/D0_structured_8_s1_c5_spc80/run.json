@@ -1,0 +1,48 @@
+{
+ "status": "ok",
+ "problem": "D0",
+ "mesh": "structured",
+ "n": 8,
+ "seed": 1,
+ "cycles": 5,
+ "steps_per_cycle": 80,
+ "dt": 0.1,
+ "accepted_output_steps": 400,
+ "wall_s": 17.6,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0
+ },
+ "attempts": 400,
+ "accepted": 400,
+ "cutbacks": 0,
+ "stopped_early": false,
+ "rejected_attempts": 0,
+ "min_dt": 0.09999999999999788,
+ "element_source_sha256": {
+  "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+  "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+  "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852",
+  "element/model.py": "075425d860aa2015a22d5873389b40b860202cc7ff56797c074ca3e93641b6b8",
+  "element/generate.py": "9b7c500468512755f11aae268a645261675f22164df099f40dd263aad46d1ca5",
+  "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24"
+ },
+ "command": [
+  "<env>/bin/python",
+  "<workspace>/host/run_problem.py",
+  "<workspace>/tmp/study_source/5fc325dcdb844f25",
+  "--mesh",
+  "structured",
+  "--n",
+  "8",
+  "--seed",
+  "1",
+  "--cycles",
+  "5",
+  "--steps-per-cycle",
+  "80",
+  "--out",
+  "<workspace>/tmp/public_runs/selected/D0_structured_8_s1_c5_spc80"
+ ],
+ "elapsed_including_compile_s": 23.007005200983258
+}

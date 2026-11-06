@@ -1,0 +1,36 @@
+{
+  "independent_FV_jacobian_relative_error": 4.3201698051856093e-10,
+  "lagged_FV_jacobian_relative_error": 4.3105103982899386e-10,
+  "quadratic_displacement_pressure_counterexample": [
+    {
+      "n": 8,
+      "projected_pressure_L2": 0.009693543038141494,
+      "projected_gradient_L2": 0.1898839222308638,
+      "broken_gradient_L2": 1.0
+    },
+    {
+      "n": 16,
+      "projected_pressure_L2": 0.003427276072977258,
+      "projected_gradient_L2": 0.134321238754867,
+      "broken_gradient_L2": 1.0
+    },
+    {
+      "n": 32,
+      "projected_pressure_L2": 0.0012117250769558517,
+      "projected_gradient_L2": 0.09497946070644792,
+      "broken_gradient_L2": 1.0
+    },
+    {
+      "n": 64,
+      "projected_pressure_L2": 0.00042840950942463863,
+      "projected_gradient_L2": 0.06716062073897161,
+      "broken_gradient_L2": 1.0
+    },
+    {
+      "n": 128,
+      "projected_pressure_L2": 0.00015146563461947482,
+      "projected_gradient_L2": 0.04748973035322344,
+      "broken_gradient_L2": 1.0
+    }
+  ]
+}

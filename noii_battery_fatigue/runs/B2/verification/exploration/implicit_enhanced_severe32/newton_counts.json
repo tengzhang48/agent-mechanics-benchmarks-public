@@ -1,0 +1,261 @@
+[
+ {
+  "step": 1,
+  "dt": 0.10000000000000002,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 2,
+  "dt": 0.10000000000000002,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 3,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 4,
+  "dt": 0.10000000000000003,
+  "converged": true,
+  "linear_solves": 3,
+  "assemblies": 11
+ },
+ {
+  "step": 5,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 4,
+  "assemblies": 13
+ },
+ {
+  "step": 6,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 4,
+  "assemblies": 13
+ },
+ {
+  "step": 7,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 8,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 11,
+  "assemblies": 32
+ },
+ {
+  "step": 9,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 9,
+  "assemblies": 28
+ },
+ {
+  "step": 10,
+  "dt": 0.09999999999999998,
+  "converged": true,
+  "linear_solves": 8,
+  "assemblies": 25
+ },
+ {
+  "step": 11,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 23
+ },
+ {
+  "step": 12,
+  "dt": 0.09999999999999988,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 22
+ },
+ {
+  "step": 13,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 21
+ },
+ {
+  "step": 14,
+  "dt": 0.09999999999999988,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 20
+ },
+ {
+  "step": 15,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 8,
+  "assemblies": 29
+ },
+ {
+  "step": 16,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 6,
+  "assemblies": 18
+ },
+ {
+  "step": 17,
+  "dt": 0.09999999999999988,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 16
+ },
+ {
+  "step": 18,
+  "dt": 0.10000000000000009,
+  "converged": true,
+  "linear_solves": 7,
+  "assemblies": 19
+ },
+ {
+  "step": 19,
+  "dt": 0.09999999999999988,
+  "converged": false,
+  "linear_solves": 18,
+  "assemblies": 179
+ },
+ {
+  "step": 19,
+  "dt": 0.050000000000000044,
+  "converged": true,
+  "linear_solves": 9,
+  "assemblies": 30
+ },
+ {
+  "step": 19,
+  "dt": 0.04999999999999983,
+  "converged": false,
+  "linear_solves": 11,
+  "assemblies": 121
+ },
+ {
+  "step": 19,
+  "dt": 0.024999999999999915,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 0.024999999999999915,
+  "converged": false,
+  "linear_solves": 21,
+  "assemblies": 244
+ },
+ {
+  "step": 19,
+  "dt": 0.012499999999999957,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 0.012499999999999957,
+  "converged": false,
+  "linear_solves": 18,
+  "assemblies": 250
+ },
+ {
+  "step": 19,
+  "dt": 0.006250000000000089,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 0.006249999999999867,
+  "converged": false,
+  "linear_solves": 11,
+  "assemblies": 165
+ },
+ {
+  "step": 19,
+  "dt": 0.0031250000000000444,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 0.003124999999999823,
+  "converged": false,
+  "linear_solves": 10,
+  "assemblies": 151
+ },
+ {
+  "step": 19,
+  "dt": 0.0015624999999999114,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 0.0015624999999999114,
+  "converged": false,
+  "linear_solves": 12,
+  "assemblies": 191
+ },
+ {
+  "step": 19,
+  "dt": 0.0007812499999999557,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 0.0007812499999999557,
+  "converged": false,
+  "linear_solves": 12,
+  "assemblies": 209
+ },
+ {
+  "step": 19,
+  "dt": 0.0003906250000000888,
+  "converged": false,
+  "linear_solves": 17,
+  "assemblies": 233
+ },
+ {
+  "step": 19,
+  "dt": 0.0001953125000000444,
+  "converged": false,
+  "linear_solves": 19,
+  "assemblies": 353
+ },
+ {
+  "step": 19,
+  "dt": 9.765624999991118e-05,
+  "converged": true,
+  "linear_solves": 5,
+  "assemblies": 15
+ },
+ {
+  "step": 19,
+  "dt": 9.765624999991118e-05,
+  "converged": false,
+  "linear_solves": 13,
+  "assemblies": 203
+ }
+]

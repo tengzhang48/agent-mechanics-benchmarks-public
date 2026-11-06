@@ -1,0 +1,74 @@
+{
+ "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 9 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 7.75e-08; per-component |R|=['3.259e-10', '1.105e-10', '5.448e-10', '7.747e-08', '2.225e-12', '2.366e-18']; dominant comp 3)",
+ "problem": {
+  "id": "V_notch_sides",
+  "name": "Verification variant: precrack, side charging, restrained expansion",
+  "parameters": {
+   "E": 10.0,
+   "nu": 0.28,
+   "beta": 0.035,
+   "c0": 0.35,
+   "kappa": 1e-05,
+   "D": 0.14,
+   "chi": 0.25,
+   "ell": 0.12,
+   "G_c": 1.5e-06,
+   "alpha_T": 2e-05,
+   "k_fg": 0.5
+  },
+  "loading": {
+   "A": 0.6,
+   "T": 8.0,
+   "N_cyc": 3,
+   "steps_per_cycle": 80
+  },
+  "c_edges": [
+   "left",
+   "right"
+  ],
+  "notch": {
+   "x_end": 0.125
+  },
+  "constraints": [
+   [
+    0.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ],
+   [
+    1.0,
+    0.0,
+    [
+     "ux",
+     "uy"
+    ]
+   ]
+  ]
+ },
+ "mesh": "distorted",
+ "n": 32,
+ "seed": 3,
+ "cycles": 3,
+ "steps_per_cycle": 80,
+ "dt": 0.1,
+ "accepted_output_steps": 8,
+ "wall_s": 231.98129913100274,
+ "history_min_change": {
+  "H": 0.0,
+  "alpha": 0.0,
+  "nodal_damage": 0.0
+ },
+ "uniform_strain": null,
+ "tol": 1e-08,
+ "attempts": 26,
+ "accepted": 8,
+ "cutbacks": 11,
+ "stopped_early": false,
+ "max_sweeps": 2,
+ "observed_linear_solves_total": 293,
+ "observed_linear_solves_max": 25,
+ "min_dt": 9.765625000007773e-05
+}

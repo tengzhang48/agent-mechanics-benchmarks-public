@@ -1,0 +1,18 @@
+{
+ "step": 640,
+ "frac_start": 0.9984375,
+ "frac_end": 1.0,
+ "dt": 0.025000000000000355,
+ "cutback": 0,
+ "sweeps": 1,
+ "raw_residual": 5.9151103402361344e-15,
+ "scaled_residual": 1.043526859646419e-14,
+ "scaled_update": 3.080319001205099e-09,
+ "converged": true,
+ "reason": "",
+ "projection_rounds": 0,
+ "newton_method": "staggered",
+ "newton_iterations": 0,
+ "observed_linear_solves": 1,
+ "observed_uel_batch_calls": 5
+}

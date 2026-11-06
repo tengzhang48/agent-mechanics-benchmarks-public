@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "exact_equality": {
+    "final_nodal": true,
+    "final_svars": true,
+    "all_output_nodal": true,
+    "all_output_svars": true
+  },
+  "before": {
+    "attempts": 43,
+    "accepted": 40,
+    "cutbacks": 1,
+    "stopped_early": false
+  },
+  "after": {
+    "attempts": 43,
+    "accepted": 40,
+    "cutbacks": 1,
+    "stopped_early": false
+  },
+  "after_trial_calls": 2,
+  "scope": "distorted n=8 seed=3, 2 cycles x 20 steps, forced rejection at t=.8, dt=.4"
+}

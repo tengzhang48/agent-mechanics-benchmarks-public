@@ -1,0 +1,142 @@
+Verifying active_undiminished
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 4.00e-09, norm = 6.81e+00 [PASS]
+  d(stress_PK1)/d(c): err = 2.12e-10, norm = 3.31e-01 [PASS]
+  d(stress_PK1)/d(vfrac): err = 1.11e-10, norm = 2.72e-01 [PASS]
+  d(pressure_resid)/d(F): err = 1.84e-09, norm = 3.15e+00 [PASS]
+  d(pressure_resid)/d(c): err = 1.18e-10, norm = 2.21e-01 [PASS]
+  d(pressure_resid)/d(vfrac): err = 1.02e-10, norm = 1.24e-01 [PASS]
+  d(pressure_resid)/d(q): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(phase_flux)/d(grad_d): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(c): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(d): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_flux)/d(grad_vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_storage)/d(d): err = 5.84e-10, norm = 1.00e+00 [PASS]
+  d(pressure_storage)/d(vfrac): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_flux)/d(c): err = 3.95e-12, norm = 7.50e-03 [PASS]
+  d(species_flux)/d(vfrac): err = 4.43e-11, norm = 6.13e-02 [PASS]
+  d(species_flux)/d(grad_c): err = 5.04e-12, norm = 7.46e-02 [PASS]
+  d(species_flux)/d(grad_q): err = 3.53e-13, norm = 1.33e-01 [PASS]
+  d(species_storage)/d(c): err = 3.51e-09, norm = 6.67e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, 'd'): degenerate (s=0.00e+00, Df=-1.44e-02), skip
+  Operator sign (pressure_storage/pressure_flux, 'vfrac'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying active_fatigue
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 4.00e-09, norm = 6.81e+00 [PASS]
+  d(stress_PK1)/d(c): err = 2.12e-10, norm = 3.31e-01 [PASS]
+  d(stress_PK1)/d(vfrac): err = 1.11e-10, norm = 2.72e-01 [PASS]
+  d(pressure_resid)/d(F): err = 1.84e-09, norm = 3.15e+00 [PASS]
+  d(pressure_resid)/d(c): err = 1.18e-10, norm = 2.21e-01 [PASS]
+  d(pressure_resid)/d(vfrac): err = 1.02e-10, norm = 1.24e-01 [PASS]
+  d(pressure_resid)/d(q): err = 5.94e-12, norm = 1.00e+00 [PASS]
+  d(phase_flux)/d(grad_d): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(c): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(d): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_flux)/d(grad_vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_storage)/d(d): err = 5.84e-10, norm = 1.00e+00 [PASS]
+  d(pressure_storage)/d(vfrac): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_flux)/d(c): err = 3.95e-12, norm = 7.50e-03 [PASS]
+  d(species_flux)/d(vfrac): err = 4.43e-11, norm = 6.13e-02 [PASS]
+  d(species_flux)/d(grad_c): err = 5.04e-12, norm = 7.46e-02 [PASS]
+  d(species_flux)/d(grad_q): err = 3.53e-13, norm = 1.33e-01 [PASS]
+  d(species_storage)/d(c): err = 3.51e-09, norm = 6.67e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, 'd'): degenerate (s=0.00e+00, Df=-1.44e-02), skip
+  Operator sign (pressure_storage/pressure_flux, 'vfrac'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying unloading_frozen
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 7.49e-14, norm = 1.28e-04 [PASS]
+  d(stress_PK1)/d(c): err = 3.18e-15, norm = 6.21e-06 [PASS]
+  d(stress_PK1)/d(vfrac): err = 4.44e-16, norm = 3.73e-06 [PASS]
+  d(pressure_resid)/d(F): err = 3.50e-14, norm = 5.92e-05 [PASS]
+  d(pressure_resid)/d(c): err = 2.30e-15, norm = 4.14e-06 [PASS]
+  d(pressure_resid)/d(vfrac): err = 3.83e-16, norm = 1.70e-06 [PASS]
+  d(pressure_resid)/d(q): err = 0.00e+00, norm = 1.00e+00 [PASS]
+  d(phase_flux)/d(grad_d): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(c): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(d): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_flux)/d(grad_vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_storage)/d(d): err = 5.84e-10, norm = 1.00e+00 [PASS]
+  d(pressure_storage)/d(vfrac): err = 2.88e-11, norm = 1.00e+00 [PASS]
+  d(species_flux)/d(c): err = 3.95e-12, norm = 7.50e-03 [PASS]
+  d(species_flux)/d(vfrac): err = 5.38e-13, norm = 8.40e-07 [PASS]
+  d(species_flux)/d(grad_c): err = 1.09e-12, norm = 1.40e-06 [PASS]
+  d(species_flux)/d(grad_q): err = 2.52e-12, norm = 1.33e-01 [PASS]
+  d(species_storage)/d(c): err = 3.51e-09, norm = 6.67e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, 'd'): degenerate (s=0.00e+00, Df=-1.44e-02), skip
+  Operator sign (pressure_storage/pressure_flux, 'vfrac'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying fatigue_floor
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 7.51e-14, norm = 1.28e-04 [PASS]
+  d(stress_PK1)/d(c): err = 2.95e-15, norm = 6.21e-06 [PASS]
+  d(stress_PK1)/d(vfrac): err = 3.73e-19, norm = 3.73e-19 [PASS]
+  d(pressure_resid)/d(F): err = 3.41e-14, norm = 5.92e-05 [PASS]
+  d(pressure_resid)/d(c): err = 2.23e-15, norm = 4.14e-06 [PASS]
+  d(pressure_resid)/d(vfrac): err = 1.70e-19, norm = 1.70e-19 [PASS]
+  d(pressure_resid)/d(q): err = 0.00e+00, norm = 1.00e+00 [PASS]
+  d(phase_flux)/d(grad_d): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(c): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(d): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_flux)/d(grad_vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_storage)/d(d): err = 5.84e-10, norm = 1.00e+00 [PASS]
+  d(pressure_storage)/d(vfrac): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_flux)/d(c): err = 3.95e-12, norm = 7.50e-03 [PASS]
+  d(species_flux)/d(vfrac): err = 8.40e-20, norm = 8.40e-20 [PASS]
+  d(species_flux)/d(grad_c): err = 9.23e-14, norm = 1.40e-06 [PASS]
+  d(species_flux)/d(grad_q): err = 2.52e-12, norm = 1.33e-01 [PASS]
+  d(species_storage)/d(c): err = 3.51e-09, norm = 6.67e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, 'd'): degenerate (s=0.00e+00, Df=-1.44e-02), skip
+  Operator sign (pressure_storage/pressure_flux, 'vfrac'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+Verifying compression
+Verifying ChemoFatigue:
+  Stress-free reference: ||P(F=I)|| = 0.00e+00 [PASS]
+  d(stress_PK1)/d(F): err = 3.60e-09, norm = 6.81e+00 [PASS]
+  d(stress_PK1)/d(c): err = 1.42e-10, norm = 3.31e-01 [PASS]
+  d(stress_PK1)/d(vfrac): err = 3.71e-10, norm = 6.09e-01 [PASS]
+  d(pressure_resid)/d(F): err = 1.84e-09, norm = 3.15e+00 [PASS]
+  d(pressure_resid)/d(c): err = 1.87e-10, norm = 2.21e-01 [PASS]
+  d(pressure_resid)/d(vfrac): err = 1.12e-10, norm = 3.68e-01 [PASS]
+  d(pressure_resid)/d(q): err = 1.10e-10, norm = 1.00e+00 [PASS]
+  d(phase_flux)/d(grad_d): err = 1.01e-12, norm = 1.44e-02 [PASS]
+  d(phase_storage)/d(F): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(c): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(d): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(phase_storage)/d(vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_flux)/d(grad_vfrac): err = 0.00e+00, norm = 0.00e+00 [PASS]
+  d(pressure_storage)/d(d): err = 5.84e-10, norm = 1.00e+00 [PASS]
+  d(pressure_storage)/d(vfrac): err = 5.26e-10, norm = 1.00e+00 [PASS]
+  d(species_flux)/d(c): err = 3.95e-12, norm = 7.50e-03 [PASS]
+  d(species_flux)/d(vfrac): err = 4.43e-11, norm = 6.13e-02 [PASS]
+  d(species_flux)/d(grad_c): err = 5.04e-12, norm = 7.46e-02 [PASS]
+  d(species_flux)/d(grad_q): err = 3.53e-13, norm = 1.33e-01 [PASS]
+  d(species_storage)/d(c): err = 3.51e-09, norm = 6.67e+00 [PASS]
+  Operator sign (phase_storage/phase_flux, 'd'): degenerate (s=0.00e+00, Df=-1.44e-02), skip
+  Operator sign (pressure_storage/pressure_flux, 'vfrac'): degenerate (s=1.00e+00, Df=0.00e+00), skip
+  Major symmetry dP/dF: skipped (non-symmetric for materials with state variables)
+  ALL CHECKS PASSED
+  Generated: <workspace>/tmp/lumped_lagged_candidate/element/generated_model.for
+  Material:  ChemoFatigue
+  Fields:    u, c, d, q, vfrac
+  Element:   Quad4
+  NDOFEL:    24
+  F-bar:     False
+  Tangent blocks: 20

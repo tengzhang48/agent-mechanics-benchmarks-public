@@ -1,0 +1,269 @@
+{
+  "status": "passed",
+  "diffusion_spatial": [
+    {
+      "n": 8,
+      "mesh": "structured",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.013492026801763103,
+      "FE_exact_amplitude": 0.013492026801763132,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 5.551115123125783e-17,
+      "L2_spatial_error": 0.0002832010574483929,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "mesh": "structured",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.013651674469301536,
+      "FE_exact_amplitude": 0.01365167446930152,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 5.551115123125783e-17,
+      "L2_spatial_error": 7.17843428513856e-05,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 32,
+      "mesh": "structured",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.013691721389917108,
+      "FE_exact_amplitude": 0.013691721389917273,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 2.7755575615628914e-16,
+      "L2_spatial_error": 1.800806454457835e-05,
+      "max_mass_change": 1.1102230246251565e-16,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 8,
+      "mesh": "distorted",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.013456277720637266,
+      "FE_exact_amplitude": 0.013492026801763132,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 9.194506996906826e-05,
+      "L2_spatial_error": 0.00031403859327690264,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "mesh": "distorted",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.01363653547514258,
+      "FE_exact_amplitude": 0.01365167446930152,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 2.8214682032290384e-05,
+      "L2_spatial_error": 8.485093718671706e-05,
+      "max_mass_change": 1.1102230246251565e-16,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 32,
+      "mesh": "distorted",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.013687901979587464,
+      "FE_exact_amplitude": 0.013691721389917273,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 6.790304015902304e-06,
+      "L2_spatial_error": 2.136265132309207e-05,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ],
+  "diffusion_time": [
+    {
+      "n": 16,
+      "mesh": "structured",
+      "dt": 0.1,
+      "steps": 5,
+      "observed_amplitude": 0.014709943816159669,
+      "FE_exact_amplitude": 0.014709943816159685,
+      "BE_exact_amplitude": 0.014761242763270503,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 5.551115123125783e-17,
+      "L2_spatial_error": 7.428577898095103e-05,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 5,
+        "accepted": 5,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "mesh": "structured",
+      "dt": 0.05,
+      "steps": 10,
+      "observed_amplitude": 0.013651674469301536,
+      "FE_exact_amplitude": 0.01365167446930152,
+      "BE_exact_amplitude": 0.013705081976939157,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 5.551115123125783e-17,
+      "L2_spatial_error": 7.17843428513856e-05,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 10,
+        "accepted": 10,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "mesh": "structured",
+      "dt": 0.025,
+      "steps": 20,
+      "observed_amplitude": 0.013088856218750935,
+      "FE_exact_amplitude": 0.013088856218750956,
+      "BE_exact_amplitude": 0.013143382808939993,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 5.551115123125783e-17,
+      "L2_spatial_error": 7.045490039833732e-05,
+      "max_mass_change": 1.1102230246251565e-16,
+      "solver": {
+        "attempts": 20,
+        "accepted": 20,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "mesh": "structured",
+      "dt": 0.0125,
+      "steps": 40,
+      "observed_amplitude": 0.012798290747043407,
+      "FE_exact_amplitude": 0.01279829074704341,
+      "BE_exact_amplitude": 0.0128533937131873,
+      "continuous_amplitude": 0.012557001384645512,
+      "nodal_FE_error": 5.551115123125783e-17,
+      "L2_spatial_error": 6.976846323206151e-05,
+      "max_mass_change": 5.551115123125783e-17,
+      "solver": {
+        "attempts": 40,
+        "accepted": 40,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ],
+  "fully_damaged_global_patch": [
+    {
+      "n": 8,
+      "mesh": "distorted",
+      "seed": 5,
+      "H_exact": 1.1091720779220778e+16,
+      "s_exact": 9.0158237842898e-17,
+      "displacement_max_error": 1.431146867680866e-17,
+      "s_max_relative_error": 9.016876448834257e-10,
+      "H_max_relative_error": 1.2748247347237469e-13,
+      "pressure_max_error": 2.811090593700209e-20,
+      "d_min": 0.9999999999999998,
+      "d_max": 1.0000000000000002,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "mesh": "distorted",
+      "seed": 5,
+      "H_exact": 1.1091720779220778e+16,
+      "s_exact": 9.0158237842898e-17,
+      "displacement_max_error": 6.071532165918825e-18,
+      "s_max_relative_error": 1.4168721827661392e-09,
+      "H_max_relative_error": 1.280234174899378e-13,
+      "pressure_max_error": 2.8693241088239424e-20,
+      "d_min": 0.9999999999999998,
+      "d_max": 1.0000000000000002,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 32,
+      "mesh": "distorted",
+      "seed": 5,
+      "H_exact": 1.1091720779220778e+16,
+      "s_exact": 9.0158237842898e-17,
+      "displacement_max_error": 3.903127820947816e-18,
+      "s_max_relative_error": 1.4950404226578937e-09,
+      "H_max_relative_error": 1.312690815953165e-13,
+      "pressure_max_error": 4.0234064994579266e-20,
+      "d_min": 0.9999999999999998,
+      "d_max": 1.0000000000000002,
+      "solver": {
+        "attempts": 1,
+        "accepted": 1,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ],
+  "old_damage_cancellation_control": {
+    "residual_norms": [
+      6696361607142854.0,
+      1.192353829304853,
+      0.389081270140073,
+      0.1737349561442903,
+      0.4595348522325222,
+      0.1737349561442903,
+      0.4595348522325222,
+      0.1737349561442903
+    ],
+    "status": "known-broken cancellation detected"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-10-21T03:31:35Z",
+  "python": "3.13.14 | packaged by conda-forge | (main, Jun 12 2026, 09:50:25) [GCC 14.3.0]",
+  "python_executable": "<env>/bin/python",
+  "abaqus_ufl_import_path": "<workspace>/tools/abaqus_ufl/abaqus_ufl/__init__.py",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "sympy": "1.14.0",
+  "gfortran": "GNU Fortran (conda-forge gcc 14.3.0-19) 14.3.0",
+  "generator": "bundled abaqus_ufl, organizer-pinned public commit a02ed7c",
+  "generator_package_modified": false,
+  "host_modified": false,
+  "generated_lines": 3658,
+  "handwritten_lines": 231,
+  "handwritten_lines_inside_kernel": 8,
+  "generated_fraction": 0.9406016970943687,
+  "line_counts": {
+    "element/generated_kernel.for": 3666,
+    "element/enhanced_modes.f90": 105,
+    "element/accepted_damage.f90": 27,
+    "element/uel.f90": 91
+  },
+  "counting_convention": "Physical source lines including comments and blank lines. Generated source includes unused shipped helper routines. The Python equations and formulation decisions were handwritten.",
+  "transformations": [
+    "Rename UEL entry and end to CHEMO_KERNEL",
+    "Remove det(I+grad u)>0 finite-strain guard: fixed small-strain model has no such algebraic domain restriction",
+    "Insert local-mode declarations, solve, strain correction and exact condensed Schur term"
+  ],
+  "handwritten_contributions": [
+    "Standard signature, validation, DTIME=0 and unsupported-request guards, transactional saved state",
+    "Four zero-average element-local strain modes and pivoted static condensation, including every current-field coupling",
+    "27-line row-sum lumped damage reaction driven by start-of-increment H; exact consistent diagonal tangent"
+  ],
+  "source_sha256": {
+    "element/generated_kernel.for": "c307b340ecfc92de660e387b980e5bf8ee2e473070743ffa03ba579107b80043",
+    "element/enhanced_modes.f90": "7acec84a57dc650e3f8ab54503075506d47d90acf7675ed0d29a8de26d1c3aeb",
+    "element/accepted_damage.f90": "7dd05460943ff47a421166ee14d9e069f97fde7c3b2610d1c93da3f93ca80da0",
+    "element/uel.f90": "8859051ef753db10e4a5ae532e2ea0e98a730fbac58a30cf2106510649c8397a"
+  },
+  "contract_sha256": "9940e390ba330fef4759d87a7cad503a9650d5e879baf418180efe8deb04eb08",
+  "python_source_sha256": {
+    "element/model.py": "7c967a41cab7ffaf5da0c1cacda9ccfe2b84868f026b5aaf590844e070cbd982",
+    "element/build.py": "be74b4dfc97f8f63f44b2d0e5899074be98c00eb516065b5bfd7f7999fac12f5",
+    "verification/audit_outputs.py": "a42962b4c376396ad66643acb3984cee581d4bad4311b540b1d576bd23a3ec19",
+    "verification/check_accumulator.py": "5ba66e69592bf001aaf9371371eba5e0ff4e8600ec57155a1152846145f7c5db",
+    "verification/check_damaged_diffusion.py": "1cdb1394dc87a3ff622535d45000de8f4ed48980acafdcd45f2afd315eb7540a",
+    "verification/check_element.py": "308e15996645471b34f24bf658b115109316dc269da41249b48284c29b140c70",
+    "verification/check_energy_bridge.py": "cb1c1a8bcdc8e1d6f58468a5704f432411c07f8d445f14f24891ce95cfed2c76",
+    "verification/check_history_time.py": "846c07936e37f84d1d156476c916eafb316e6f01763143428b8d851ac8b7969d",
+    "verification/check_limits.py": "11bbebb9d88139b2805f06619f8284ff113c5945ce6e2370d320c2ea5cdac304",
+    "verification/check_mutations.py": "9c1a1b921c91ec63696896fcf9f49bf1f112dff1fc313ef45f9da69f50d6ca4e",
+    "verification/check_rollback.py": "f6799e9875bb98f76147c48311928fce2adba593032b1dff41f8ea485cc76199",
+    "verification/common.py": "621db8df6086e8036e3a253b954dff1908ae6f3eb5ad88d9aaa74f2fdbe6078b",
+    "verification/compare_enhancement.py": "1a3cb54ed79c7bcddbbc6b6be557001ac61fd68f6a0be60fd34d01d40a9fd8d8",
+    "verification/compare_fields.py": "d8e4d3e2b873a87e09afb6c2cfe882304ff77c021abe99b092c727667b455856",
+    "verification/diagnose_failure.py": "f209918b703064b7b470a1570b25e9cd19369133fd4f847ddfa02b9afbf1db1f",
+    "verification/diagnose_newton.py": "e06189cf33210fac4e967b6ef4ba46b0f9854b2c2bd5f1839c29dae1a9d61e0a",
+    "verification/final_manifest.py": "c6dc537e248fc16cc53f02b291e0b6611f8c528d075b4b94165003bde4d4a0b3",
+    "verification/high_order_reference.py": "4116f24b950b422eb2ec486abfb60ebacfdd7209020187845770db60c4808db4",
+    "verification/manufactured.py": "2553fd0de94053f2641656af38e04b909c83019172c582971659fbf820187ede",
+    "verification/progress.py": "dc6c8eabb1eb1571fda8ae5561bc5d6d027b0a66a81638e02040883315773eb1",
+    "verification/promote_results.py": "427d8be201a8501bbf416328dd68a5d73be44a80f8923147e8fb89a4ce589034",
+    "verification/provenance.py": "0a28351c37852489d45e43c81934f49c12cf91762214d974237460bcc0a11d26",
+    "verification/reference.py": "ec13f7b6af69ad0e6526a762876f87b74c9e82334194128e37502a68b951c657",
+    "verification/run_case.py": "f87ee232afdae85d5224743190e035c9ce1141b0e848b8515cfd4505684f1c40",
+    "verification/summarize.py": "cfdea52a85effbf6d68889c2f262ddcc7326fd46671e006d26e1ecc93ccab186",
+    "verification/update_evidence.py": "518e2abc794ec8bb188fa8a20c4ef7ee245e0836a1a7699c7f10c0104e12ebf7"
+  },
+  "abi": "Standard Abaqus UEL signature; GNU Fortran/f2py through the unmodified host; no Abaqus execution",
+  "single_agent": true,
+  "network_used": false,
+  "package_installs": false
+}

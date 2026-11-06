@@ -1,0 +1,52 @@
+{
+  "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 17 inner Newton exhausted after 10 cutbacks field 0 after 25 iterations (residual 3.03e-07; per-component |R|=['1.622e-10', '8.711e-11', '1.704e-09', '3.034e-07', '1.417e-12', '2.812e-18']; dominant comp 3)",
+  "problem": "V_severe",
+  "mesh": "structured",
+  "n": 32,
+  "seed": 0,
+  "cycles": 5,
+  "steps_per_cycle": 80,
+  "dt": 0.1,
+  "wall_s": 206.1462735350069,
+  "accepted_output_steps": 16,
+  "committed_subincrements": 25,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "d_max_over_run": 1.007553888535537,
+  "d_min_over_run": 5.519374108075567e-06,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 1e-07,
+    "alpha_T": 1e-06,
+    "k_fg": 0.5
+  },
+  "host": "unmodified fehost.solve, default tol=1e-8",
+  "source_sha256": {
+    "tmp/history_blend/core.for": "bb46ea618b2c5dfb3f734b25e2717eeaefda285d180aaf4bd23d741c3854728a",
+    "element/uel.f90": "b794fee86f69a3bd2fc25dc3182e58b579817775f00fde96d76b89657c0365a3"
+  },
+  "compiled_module": "challenge_f4cb1ba3d9a0",
+  "newton_linear_solves": {
+    "min": 3,
+    "max": 9,
+    "mean": 5.44,
+    "total": 136
+  },
+  "attempts": 38,
+  "accepted": 16,
+  "cutbacks": 13,
+  "stopped_early": false,
+  "rejected_attempts": 13,
+  "min_dt": 9.76562499999112e-05,
+  "max_sweeps": 2,
+  "max_accepted_sweeps": 2
+}

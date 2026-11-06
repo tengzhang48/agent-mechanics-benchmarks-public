@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "n=16, 20 cycles x 40 steps, identical history split/reaction/properties/tolerances",
+  "core_identical_after_removing_enhancement_hooks": true,
+  "reaction_and_guard_byte_identical": true,
+  "basic": {
+    "path": "verification/exploration/basic16_matched40",
+    "final": {
+      "d_max": 0.9532430576032981,
+      "D_int": 0.1354506537511116,
+      "C_int": 0.5295140278352652,
+      "E_el": 5.971219596704761e-07
+    },
+    "final_relative_difference_from_reference": {
+      "d_max": 2.564220280922607,
+      "D_int": 0.984444489255372,
+      "C_int": 0.03726543191378506,
+      "E_el": 0.2759469387219708
+    }
+  },
+  "enhanced": {
+    "path": "verification/runs/D0_enhanced_accepted_H_structured_16_s0_spc40_cy20",
+    "final": {
+      "d_max": 0.267728011898038,
+      "D_int": 0.07000637163390964,
+      "C_int": 0.5105722015470475,
+      "E_el": 7.022329777001033e-07
+    },
+    "final_relative_difference_from_reference": {
+      "d_max": 0.0010475315469788775,
+      "D_int": 0.02564110659034373,
+      "C_int": 0.00016027398925024482,
+      "E_el": 0.5005511079520978
+    }
+  },
+  "independent_Q4_acceptedH_reference": {
+    "path": "verification/reference_runs/D0_Q4_structured_8_spc40_cy20_acceptedH",
+    "final": {
+      "d_max": 0.267447851836068,
+      "D_int": 0.06825620695590083,
+      "C_int": 0.5104903832168555,
+      "E_el": 4.679833788923641e-07
+    },
+    "note": "Same accepted-history time split; independent spatial/constitutive implementation and consistent high-order reaction"
+  }
+}

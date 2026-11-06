@@ -1,0 +1,8 @@
+2026-10-20 20:59:26 UTC: Created final isolated sqrt(DTIME)-scaled current-phase-stiffness relaxation candidate. Property13 phase_relaxation_factor now denotes coefficient C=.1. Eta_effective=C/sqrt(DTIME); gamma=eta_effective*(1+min((1-kappa)*Hphase,Hcap)), cap1000. Exact H chain coefficient -a*v_i+eta_effective*a*I(aHphase<cap)*(d_i-dold_i); explicit damage diagonal1+gamma. Numerical physical relaxation gamma*dt bounded by C*(1+cap)*sqrt(dt), vanishing with dt. All physical histories unchanged. No main/host/package edits.
+
+2026-10-20T21:03:04.069269+00:00: Frozen source hashes and modification UTC saved. Independent assembled24FD and reference passed; additional dt=.05/.8 checks verify coefficient time scaling. Whole spatial C=.3 and1 failed, exact run/attempt/snapshot evidence retained. C=.1 remains running; no success claim.
+
+2026-10-20T21:07:23.423383+00:00: Final whole spatial-floor outcomes archived. Every completed coefficient in this candidate failed the same stress-case family under unchanged tolerance1e-8, maximum25Newtoniterations and10cutbacks. These are global solver failures; independent residual/state/tangent and transactional tests passed. No candidate was promoted.
+spatial_floor_C0p1: failed at t=1.3785156249999508, last accepted t=1.378417968749951, 13 nominal outputsteps, 24 cutbacks, 347.2269371410075 seconds.
+spatial_floor_C0p3: failed at t=0.2357421874999998, last accepted t=0.23564453124999982, 2 nominal outputsteps, 16 cutbacks, 73.18821460899198 seconds.
+spatial_floor_C1p0: failed at t=0.15771484375, last accepted t=0.1576171875, 1 nominal outputsteps, 11 cutbacks, 43.49415404300089 seconds.

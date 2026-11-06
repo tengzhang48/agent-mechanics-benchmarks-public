@@ -1,0 +1,62 @@
+[
+  {
+    "H": 1.0,
+    "status": "ok",
+    "d_min": 0.49999749998749954,
+    "d_max": 0.49999749998750065,
+    "aux_min": 0.5000025000124996,
+    "aux_max": 0.5000025000125008,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 100000000.0,
+    "status": "ok",
+    "d_min": 0.9999999899998995,
+    "d_max": 0.9999999899999007,
+    "aux_min": 1.0000099900998e-08,
+    "aux_max": 1.0000099900998016e-08,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 1000000000000.0,
+    "status": "ok",
+    "d_min": 0.9999999999989994,
+    "d_max": 0.9999999999990006,
+    "aux_min": 1.0000100000990009e-12,
+    "aux_max": 1.0000100000990013e-12,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 1000000000000000.0,
+    "status": "ok",
+    "d_min": 0.9999999999999987,
+    "d_max": 0.9999999999999991,
+    "aux_min": 1.0000100000999994e-15,
+    "aux_max": 1.0000100001000006e-15,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  },
+  {
+    "H": 1e+20,
+    "status": "ok",
+    "d_min": 0.9999999999999991,
+    "d_max": 1.0000000000000009,
+    "aux_min": 1.0000100001000002e-20,
+    "aux_max": 1.000010000100002e-20,
+    "attempts": 1,
+    "accepted": 1,
+    "cutbacks": 0,
+    "stopped_early": false
+  }
+]

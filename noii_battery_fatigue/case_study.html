@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Battery fatigue case study | MechanicsHarness</title>
+<meta name="description" content="Case study: an AI agent implemented the battery fatigue model of Noii et al. (2024) as an Abaqus/Standard user element.">
+<style>
+/* Same visual system as the trial's other pages. Chart series use the validated three-slot palette
+   (blue, orange, aqua), stepped separately for the dark surface. */
+:root {
+  --paper: #f5f7f9; --sheet: #ffffff; --ink: #17212b; --graphite: #56616d; --rule: #d9dee4;
+  --prussian: #1f4e79; --prussian-soft: #e6eef6;
+  --pass: #1e7a46; --pass-soft: #e5f3ea; --flag: #9b5b00; --flag-soft: #fbf0dd;
+  --stop: #a1262d; --stop-soft: #f8e6e7;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+  --f-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sp1: .25rem; --sp2: .5rem; --sp3: .75rem; --sp4: 1rem; --sp5: 1.5rem; --sp6: 2.25rem; --sp7: 3.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12171c; --sheet: #1a2128; --ink: #e4e9ee; --graphite: #9aa6b2; --rule: #2e3740;
+    --prussian: #8cb8e0; --prussian-soft: #1c2d3d;
+    --pass: #6ccb92; --pass-soft: #17301f; --flag: #e7b45b; --flag-soft: #33281a;
+    --stop: #f08a8f; --stop-soft: #3a1d20;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12171c; --sheet: #1a2128; --ink: #e4e9ee; --graphite: #9aa6b2; --rule: #2e3740;
+  --prussian: #8cb8e0; --prussian-soft: #1c2d3d;
+  --pass: #6ccb92; --pass-soft: #17301f; --flag: #e7b45b; --flag-soft: #33281a;
+  --stop: #f08a8f; --stop-soft: #3a1d20;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.62 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.layout { max-width: 1180px; margin: 0 auto; padding-block: var(--sp6) var(--sp7);
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp6); }
+@media (min-width: 1000px) { .layout { grid-template-columns: 200px minmax(0, 1fr); } }
+nav.rail { display: none; }
+@media (min-width: 1000px) {
+  nav.rail { display: block; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px);
+    align-self: start; font-size: .9rem; }
+}
+nav.rail p { font: 600 .72rem/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--graphite); margin: 0 0 var(--sp3); }
+nav.rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp2); border-left: 1px solid var(--rule); }
+nav.rail a { display: block; padding-left: var(--sp3); color: var(--graphite); text-decoration: none; }
+nav.rail a:hover, nav.rail a:focus-visible { color: var(--prussian); }
+a { color: var(--prussian); }
+a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--prussian); outline-offset: 2px; }
+main { min-width: 0; }
+.col { max-width: 46rem; }
+.eyebrow { font: 600 .74rem/1.3 var(--f-display); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--prussian); margin: 0 0 var(--sp3); }
+h1 { font: 760 clamp(2rem, 4.2vw, 2.8rem)/1.08 var(--f-display); font-stretch: 82%; margin: 0 0 var(--sp4); text-wrap: balance; }
+h2 { font: 720 1.5rem/1.2 var(--f-display); font-stretch: 85%; margin: 0 0 var(--sp3); text-wrap: balance; }
+h3 { font: 680 1.1rem/1.3 var(--f-display); font-stretch: 90%; margin: var(--sp5) 0 var(--sp2); text-wrap: balance; }
+p { margin: 0 0 var(--sp3); }
+ul, ol { margin: 0 0 var(--sp3); padding-left: 1.2rem; }
+li { margin-bottom: var(--sp1); }
+.lede { font-size: 1.15rem; line-height: 1.55; }
+.muted { color: var(--graphite); }
+.small { font-size: .92rem; }
+code { font-family: var(--f-mono); font-size: .86em; background: var(--prussian-soft); padding: .08em .35em; border-radius: 3px; }
+section { padding-top: var(--sp6); margin-top: var(--sp6); border-top: 1px solid var(--rule); }
+section:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+blockquote { margin: var(--sp3) 0; padding: var(--sp2) var(--sp4); border-left: 3px solid var(--prussian);
+  background: var(--sheet); }
+.q { font-style: italic; }
+.who { font-style: normal; font-weight: 600; color: var(--graphite); }
+
+/* key figures */
+.figs { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: var(--sp5) 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 720px) { .figs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.figs > div { background: var(--sheet); padding: var(--sp3) var(--sp4); min-width: 0; }
+.figs .n { font: 720 1.7rem/1.1 var(--f-display); font-stretch: 85%; font-variant-numeric: tabular-nums; }
+.figs .l { font-size: .88rem; color: var(--graphite); line-height: 1.35; }
+
+/* lessons box */
+.box { background: var(--sheet); border: 1px solid var(--rule); padding: var(--sp4) var(--sp5); margin: var(--sp4) 0; }
+.box h3 { margin-top: 0; }
+.box ol { margin-bottom: 0; }
+.box li { margin-bottom: var(--sp2); }
+
+/* plain-words explainer */
+.explain { display: grid; gap: var(--sp3); grid-template-columns: minmax(0, 1fr); margin: var(--sp4) 0; }
+@media (min-width: 820px) { .explain { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.explain > div { background: var(--sheet); border: 1px solid var(--rule); padding: var(--sp3) var(--sp4); min-width: 0; font-size: .95rem; }
+.explain h3 { margin: 0 0 var(--sp2); font-size: 1rem; }
+
+/* flow of the test */
+.flow { list-style: none; padding: 0; margin: var(--sp4) 0; display: grid; gap: var(--sp2); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 820px) { .flow { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.flow li { background: var(--sheet); border: 1px solid var(--rule); border-top: 3px solid var(--prussian); padding: var(--sp3); margin: 0; font-size: .92rem; line-height: 1.4; min-width: 0; }
+.flow li b { display: block; font: 650 .98rem/1.25 var(--f-display); font-stretch: 92%; margin-bottom: var(--sp1); }
+.flow-note { font-size: .9rem; color: var(--graphite); }
+
+/* numbered steps */
+.steps { list-style: none; margin: var(--sp4) 0 0; padding: 0; counter-reset: step; }
+.steps > li { position: relative; padding: 0 0 var(--sp5) 3rem; margin: 0; }
+.steps > li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: .05rem;
+  width: 2rem; height: 2rem; border-radius: 50%; background: var(--sheet); border: 1.5px solid var(--prussian);
+  color: var(--prussian); font: 650 .85rem/1.95rem var(--f-mono); text-align: center; }
+.steps > li::after { content: ""; position: absolute; left: 1rem; top: 2.2rem; bottom: .2rem; width: 1px; background: var(--rule); }
+.steps > li:last-child::after { display: none; }
+.steps h3 { margin: 0 0 var(--sp2); font-size: 1.12rem; }
+.steps p { color: var(--ink); }
+.rule { font-size: .95rem; background: var(--prussian-soft); padding: var(--sp2) var(--sp3); border-radius: 3px; margin: var(--sp2) 0 0; }
+.rule b { font-family: var(--f-display); font-stretch: 92%; }
+
+/* tables */
+.wrap { overflow-x: auto; margin: var(--sp4) 0; border: 1px solid var(--rule); background: var(--sheet); }
+table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+th, td { padding: .55rem .7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+tr:last-child td { border-bottom: 0; }
+th { font: 600 .74rem/1.25 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--graphite); background: var(--paper); }
+td.lab { font-weight: 600; }
+td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+table.tmpl { min-width: 760px; }
+table.tmpl td:first-child { width: 22%; font-weight: 600; }
+table.tmpl td:nth-child(2) { width: 34%; color: var(--graphite); }
+table.tmpl tr.grp td { background: var(--paper); font: 600 .74rem/1.25 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--prussian); }
+
+/* charts */
+.chartwrap { overflow-x: auto; margin: var(--sp4) 0 var(--sp2); border: 1px solid var(--rule); background: var(--sheet); padding: var(--sp2); }
+svg.chart { display: block; width: 100%; height: auto; }
+#tl svg.chart { min-width: 760px; }
+#cc svg.chart { max-width: 620px; min-width: 460px; }
+svg .grid { stroke: var(--rule); stroke-width: 1; }
+svg .tick { fill: var(--graphite); font: 400 12px var(--f-body); }
+svg .tick.strong { fill: var(--ink); font-weight: 600; }
+svg .rowlab { fill: var(--ink); font: 600 12.5px var(--f-body); }
+svg .barlab { fill: var(--ink); font: 400 12px var(--f-body); }
+svg .barlab.in { fill: #0e1419; font-weight: 600; }
+svg .bar.s1 { fill: var(--s1); } svg .bar.s2 { fill: var(--s2); } svg .bar.s3 { fill: var(--s3); }
+svg .line { fill: none; stroke-width: 2; }
+svg .line.s1 { stroke: var(--s1); } svg .line.s2 { stroke: var(--s2); }
+svg .dot { stroke: var(--sheet); stroke-width: 2; }
+svg .dot.s1 { fill: var(--s1); } svg .dot.s2 { fill: var(--s2); }
+svg .thresh { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 5 4; }
+svg .qmark { fill: var(--ink); }
+svg .hit { cursor: default; outline: none; }
+svg .hit:hover .bar, svg .hit:focus .bar { opacity: .82; }
+svg .hit:hover .qmark, svg .hit:focus .qmark { fill: var(--prussian); }
+svg .hit:hover .dot, svg .hit:focus .dot { stroke: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: var(--sp2) var(--sp4); font-size: .9rem; color: var(--graphite); margin: 0 0 var(--sp2); }
+.legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.legend i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; }
+.legend i.l { height: 2px; width: 18px; border-radius: 0; }
+.legend i.d { width: 10px; height: 10px; transform: rotate(45deg); border-radius: 0; background: var(--ink); }
+.caption { font-size: .9rem; color: var(--graphite); margin: 0 0 var(--sp4); }
+#tip { position: fixed; z-index: 10; pointer-events: none; max-width: 320px; background: var(--sheet); color: var(--ink);
+  border: 1px solid var(--rule); box-shadow: 0 4px 14px rgba(0,0,0,.14); padding: .45rem .6rem; font-size: .88rem; line-height: 1.4;
+  border-radius: 4px; display: none; }
+
+dl.gloss { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp1) var(--sp4); margin: var(--sp4) 0; }
+@media (min-width: 720px) { dl.gloss { grid-template-columns: 12rem minmax(0, 1fr); } }
+dl.gloss dt { font-weight: 600; }
+dl.gloss dd { margin: 0 0 var(--sp2); }
+footer { margin-top: var(--sp6); padding-top: var(--sp4); border-top: 1px solid var(--rule); font-size: .9rem; color: var(--graphite); }
+@media print { nav.rail { display: none; } .chartwrap, .wrap { overflow: visible; } }
+
+/* ---- layout for human reading: short blocks, figures first, details on click ---- */
+.lede { max-width: 42rem; }
+.story { list-style: none; padding: 0; margin: var(--sp5) 0; display: grid; gap: var(--sp3);
+  grid-template-columns: minmax(0, 1fr); counter-reset: none; }
+@media (min-width: 860px) { .story { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.story li { position: relative; margin: 0; background: var(--sheet); border: 1px solid var(--rule); padding: var(--sp3) var(--sp4) var(--sp4); min-width: 0; }
+.story .k { font: 600 .72rem/1 var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: var(--graphite); }
+.story .big { font: 720 1.45rem/1.15 var(--f-display); font-stretch: 85%; margin: var(--sp2) 0 var(--sp1); }
+.story .t { font-size: .95rem; line-height: 1.4; color: var(--graphite); margin: 0; }
+.story li.bad { border-top: 3px solid var(--stop); }
+.story li.why { border-top: 3px solid var(--flag); }
+.story li.fix { border-top: 3px solid var(--prussian); }
+.story li.good { border-top: 3px solid var(--pass); }
+@media (min-width: 860px) {
+  .story li:not(:last-child)::after { content: "→"; position: absolute; right: -0.95rem; top: 42%; color: var(--graphite); font-size: 1.1rem; z-index: 1; }
+}
+.lessons5 { list-style: none; counter-reset: l; padding: 0; margin: var(--sp3) 0 0; display: grid; gap: var(--sp2); }
+.lessons5 li { counter-increment: l; position: relative; padding-left: 2rem; margin: 0; }
+.lessons5 li::before { content: counter(l); position: absolute; left: 0; top: .1rem; width: 1.4rem; height: 1.4rem; border-radius: 50%;
+  background: var(--prussian); color: var(--sheet); font: 650 .78rem/1.4rem var(--f-mono); text-align: center; }
+.sec-lede { color: var(--graphite); max-width: 42rem; margin-bottom: var(--sp4); }
+
+/* tabs and segmented buttons */
+.tabs { display: flex; flex-wrap: wrap; gap: var(--sp2); margin: var(--sp4) 0 0; }
+.tabs button, .seg button, .chips button {
+  font: 600 .92rem/1.2 var(--f-body); color: var(--ink); background: var(--sheet); border: 1px solid var(--rule);
+  padding: .55rem .8rem; border-radius: 6px; cursor: pointer; text-align: left; }
+.tabs button small { display: block; font-weight: 400; color: var(--graphite); font-size: .8rem; }
+.tabs button[aria-selected="true"], .seg button[aria-pressed="true"], .chips button[aria-pressed="true"] {
+  background: var(--prussian); color: var(--sheet); border-color: var(--prussian); }
+.tabs button[aria-selected="true"] small { color: var(--prussian-soft); }
+.tabs button:focus-visible, .seg button:focus-visible, .chips button:focus-visible { outline: 2px solid var(--prussian); outline-offset: 2px; }
+.seg { display: inline-flex; flex-wrap: wrap; gap: 4px; margin: 0 var(--sp3) var(--sp2) 0; }
+.seg button { padding: .35rem .65rem; font-size: .86rem; }
+.seglab { font-size: .82rem; color: var(--graphite); margin-right: .3rem; }
+.panel { border: 1px solid var(--rule); background: var(--sheet); padding: var(--sp4) var(--sp5); margin-top: var(--sp2); }
+.panel[hidden] { display: none; }
+.panel h3:first-child { margin-top: 0; }
+
+.two { display: grid; gap: var(--sp5); grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 900px) { .two { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); } }
+.brief { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: var(--sp2) var(--sp3); margin: 0; font-size: .97rem; }
+.brief dt { font: 650 .78rem/1.5 var(--f-display); letter-spacing: .06em; text-transform: uppercase; color: var(--graphite); padding-top: .12rem; }
+.brief dd { margin: 0; }
+.brief dd.hl { background: var(--flag-soft); padding: 0 .35rem; border-radius: 3px; }
+.brief dd.ok { color: var(--pass); font-weight: 600; }
+.fig { display: block; width: 100%; height: auto; max-width: 440px; }
+.fig .body { fill: var(--prussian-soft); stroke: var(--ink); stroke-width: 1.5; }
+.fig .charged { stroke: var(--s2); stroke-width: 7; stroke-linecap: round; }
+.fig .notch { stroke: var(--stop); stroke-width: 5; }
+.fig .sup { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.fig .sup.thin { stroke-width: 1; }
+.fig .lab { fill: var(--ink); font: 400 12.5px var(--f-body); }
+.fig .lab.acc { fill: var(--s2); font-weight: 600; }
+.fig .lab.mut { fill: var(--graphite); }
+.fig .node { fill: var(--sheet); stroke: var(--ink); stroke-width: 1.5; }
+.fig .gp { stroke: var(--s1); stroke-width: 2; }
+.fig .edge { stroke: var(--ink); stroke-width: 1.5; }
+.fig .edge.dash { stroke-dasharray: 4 4; stroke: var(--graphite); }
+.fig .cell { fill: none; stroke: var(--graphite); stroke-width: .8; }
+.fig .grid { stroke: var(--rule); }
+.fig .tick { fill: var(--graphite); font: 400 11.5px var(--f-body); }
+.fig .line { fill: none; stroke-width: 2; }
+.fig .line.s1 { stroke: var(--s1); } .fig .line.s2 { stroke: var(--s2); }
+.fig .barlab { fill: var(--ink); font: 400 12px var(--f-body); }
+.figcap { font-size: .88rem; color: var(--graphite); margin: var(--sp1) 0 var(--sp4); }
+.block { margin-top: var(--sp5); padding-top: var(--sp4); border-top: 1px dashed var(--rule); }
+.block > h4 { font: 680 1.02rem/1.3 var(--f-display); font-stretch: 92%; margin: 0 0 var(--sp1); }
+.block > p.k { color: var(--graphite); font-size: .93rem; margin-bottom: var(--sp3); }
+.minis { display: grid; gap: var(--sp4); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .minis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--sp2); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .checks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.checks li { margin: 0; border: 1px solid var(--rule); padding: var(--sp2) var(--sp3); font-size: .9rem; line-height: 1.35; background: var(--paper); }
+.checks li b { display: block; font-family: var(--f-display); font-stretch: 92%; }
+
+/* field player */
+.player { display: grid; gap: var(--sp4); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .player { grid-template-columns: 300px minmax(0, 1fr); } }
+.player canvas { width: 300px; max-width: 100%; height: auto; aspect-ratio: 1; display: block; border: 1px solid var(--ink); image-rendering: auto; }
+.cbar { height: 10px; width: 300px; max-width: 100%; margin-top: 6px; border: 1px solid var(--rule); }
+.cbar-l { display: flex; justify-content: space-between; width: 300px; max-width: 100%; font-size: .8rem; color: var(--graphite); }
+.ctrl { display: flex; align-items: center; gap: var(--sp2); margin: var(--sp2) 0; flex-wrap: wrap; }
+.ctrl input[type=range] { flex: 1; min-width: 160px; accent-color: var(--prussian); }
+.ctrl button { font: 600 .86rem var(--f-body); padding: .35rem .7rem; border-radius: 6px; border: 1px solid var(--prussian); background: var(--sheet); color: var(--prussian); cursor: pointer; }
+.readout { font: 500 .9rem/1.45 var(--f-mono); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); padding: var(--sp2) var(--sp3); }
+
+/* documents */
+.docs { display: grid; gap: var(--sp2); margin-top: var(--sp2); }
+details.doc { border: 1px solid var(--rule); background: var(--paper); }
+details.doc > summary { cursor: pointer; padding: .55rem .8rem; list-style: none; display: flex; gap: .7rem; align-items: baseline; flex-wrap: wrap; }
+details.doc > summary::-webkit-details-marker { display: none; }
+details.doc > summary::before { content: "▸"; color: var(--prussian); }
+details.doc[open] > summary::before { content: "▾"; }
+details.doc .dt { font-weight: 650; font-family: var(--f-display); font-size: .95rem; }
+details.doc .ds { color: var(--graphite); font-size: .88rem; }
+.docbody { max-height: 34rem; overflow: auto; background: var(--sheet); border-top: 1px solid var(--rule); padding: var(--sp3) var(--sp4); font-size: .9rem; }
+.docbody h1 { font-size: 1.25rem; } .docbody h2 { font-size: 1.1rem; margin-top: var(--sp4); } .docbody h3 { font-size: 1rem; }
+.docbody pre { white-space: pre-wrap; background: var(--paper); padding: var(--sp2); font-size: .8rem; }
+.docbody pre code { background: none; padding: 0; }
+.docbody table { font-size: .85rem; }
+
+/* step and lesson cards */
+.cards { display: grid; gap: var(--sp3); grid-template-columns: minmax(0, 1fr); margin-top: var(--sp3); }
+@media (min-width: 760px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+details.card { background: var(--sheet); border: 1px solid var(--rule); border-left: 4px solid var(--prussian); min-width: 0; }
+details.card > summary { cursor: pointer; list-style: none; padding: var(--sp3) var(--sp4); }
+details.card > summary::-webkit-details-marker { display: none; }
+details.card .n { font: 650 .78rem/1 var(--f-mono); color: var(--prussian); }
+details.card .h { display: block; font: 680 1.06rem/1.3 var(--f-display); font-stretch: 92%; margin: .25rem 0 .2rem; }
+details.card .s { display: block; color: var(--graphite); font-size: .93rem; line-height: 1.4; }
+details.card .more { display: inline-block; margin-top: .35rem; font-size: .8rem; color: var(--prussian); }
+details.card[open] .more { display: none; }
+details.card .cb { padding: 0 var(--sp4) var(--sp3); font-size: .95rem; }
+details.card .cb p { margin-bottom: var(--sp2); }
+details.card .cb .q { display: block; border-left: 3px solid var(--prussian); padding-left: var(--sp3); margin: var(--sp2) 0; }
+details.card.wide { grid-column: 1 / -1; }
+
+/* misunderstandings */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--sp2) 0; align-items: center; }
+.chips .cl { font-size: .82rem; color: var(--graphite); margin-right: .3rem; min-width: 6.5rem; }
+.chips button { padding: .3rem .6rem; font-size: .84rem; border-radius: 999px; }
+details.mu { border-left-color: var(--flag); }
+details.mu[hidden] { display: none; }
+.who { display: inline-block; font: 600 .72rem/1 var(--f-display); letter-spacing: .04em; padding: .3em .5em; border-radius: 3px; margin-right: .3rem; }
+.who.chatgpt { background: var(--paper); color: var(--graphite); border: 1px solid var(--rule); }
+.who.org { background: var(--prussian-soft); color: var(--prussian); }
+.who.key { background: var(--pass-soft); color: var(--pass); }
+.who.test { background: var(--flag-soft); color: var(--flag); }
+.by { display: inline-block; font: 600 .72rem/1 var(--f-display); padding: .3em .5em; border-radius: 999px; border: 1px solid var(--rule); color: var(--graphite); }
+.by.teng { border-color: var(--stop); color: var(--stop); }
+.fixrow { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: .2rem .6rem; font-size: .93rem; }
+.fixrow dt { font: 650 .74rem/1.6 var(--f-display); text-transform: uppercase; letter-spacing: .05em; color: var(--graphite); }
+.fixrow dd { margin: 0; }
+.count { font-size: .95rem; margin: var(--sp2) 0 0; }
+.tmplgrp { font: 600 .74rem/1.25 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--prussian); margin: var(--sp4) 0 0; }
+details.glossary > summary { cursor: pointer; font: 680 1.1rem var(--f-display); }
+@media print { .panel[hidden], details.mu[hidden] { display: block !important; } details > *:not(summary) { display: block; } }
+
+/* short lists, quotes, rubric bar, design sheet */
+ul.tight { padding-left: 1.1rem; margin: 0; }
+ul.tight li { margin-bottom: var(--sp2); line-height: 1.45; }
+.qline { display: block; font-style: italic; color: var(--graphite); margin-top: .2rem; }
+mark { background: var(--flag-soft); color: inherit; padding: 0 .15em; }
+.pts { display: flex; gap: 2px; margin: var(--sp2) 0; font: 600 .82rem/1.2 var(--f-body); }
+.pts span { background: var(--prussian-soft); color: var(--prussian); padding: .5rem .45rem; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.pts span:nth-child(even) { background: var(--paper); border: 1px solid var(--rule); }
+.copybtn { font: 600 .84rem var(--f-body); padding: .35rem .7rem; border-radius: 6px; border: 1px solid var(--prussian); background: var(--sheet); color: var(--prussian); cursor: pointer; margin-bottom: var(--sp2); }
+table.mini { font-size: .86rem; margin: var(--sp2) 0; border: 1px solid var(--rule); }
+table.mini th { font-size: .68rem; }
+.box h3 { margin-top: 0; }
+.minis .box { margin: 0; }
+.sheet { border: 1px solid var(--rule); background: var(--sheet); }
+.sh-head { display: none; }
+.sh-grp { font: 600 .74rem/1.25 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--prussian); background: var(--paper); padding: .55rem .8rem; border-top: 1px solid var(--rule); }
+.sh-grp:first-of-type { border-top: 0; }
+.sh-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: .3rem; padding: .7rem .8rem; border-top: 1px solid var(--rule); }
+.sh-q { font-weight: 650; display: flex; gap: .55rem; align-items: baseline; }
+.sh-n { flex: none; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--prussian); color: var(--sheet); font: 650 .76rem/1.4rem var(--f-mono); text-align: center; }
+.sh-b { color: var(--graphite); font-size: .93rem; }
+.sh-m { font-size: .95rem; }
+.sh-l { display: inline-block; font: 650 .68rem/1 var(--f-display); letter-spacing: .06em; text-transform: uppercase; margin-right: .4rem; color: var(--graphite); }
+.sh-m .sh-l { color: var(--prussian); }
+.sh-foot { padding: .6rem .8rem; border-top: 1px solid var(--rule); font-size: .9rem; color: var(--graphite); background: var(--paper); }
+@media (min-width: 900px) {
+  .sh-head { display: grid; grid-template-columns: 30% 30% minmax(0, 1fr); gap: 1rem; padding: .55rem .8rem; background: var(--paper);
+    font: 600 .72rem/1.2 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--graphite); border-bottom: 1px solid var(--rule); }
+  .sh-row { grid-template-columns: 30% 30% minmax(0, 1fr); gap: 1rem; }
+  .sh-l { display: none; }
+}
+
+.fig.mesh { max-width: 250px; }
+.msg { font-size: 1.12rem; line-height: 1.5; max-width: 44rem; margin: 0 0 var(--sp4); }
+h2 .num { color: var(--prussian); margin-right: .4rem; }
+.sub { font: 680 1.15rem/1.3 var(--f-display); font-stretch: 90%; margin: var(--sp6) 0 var(--sp1); }
+.sub + .k { color: var(--graphite); margin-bottom: var(--sp3); max-width: 44rem; }
+
+.who-q { font-style: normal; font-weight: 600; color: var(--graphite); }
+#m2 .chartwrap svg.chart { max-width: 760px; }
+
+.taskline { max-width: 44rem; font-size: 1rem; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-left: 3px solid var(--prussian); padding: var(--sp2) var(--sp3); margin: var(--sp3) 0; }
+.jump { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--sp3) 0; }
+.jump a { font-size: .85rem; text-decoration: none; border: 1px solid var(--rule); background: var(--sheet); border-radius: 999px; padding: .25rem .6rem; color: var(--prussian); }
+@media (min-width: 1000px) { .jump { display: none; } }
+
+.oq { display: grid; gap: var(--sp3); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 860px) { .oq { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.oq .box { margin: 0; }
+.oq h3 { margin-top: 0; }
+.src { display: block; font-size: .82rem; color: var(--graphite); margin-top: .1rem; }
+
+/* results page additions */
+:root { --sub: #f0a07e; --sub2: #f6c9b5; --after: #9fdcc3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --sub: #a4492a; --sub2: #6e3523; --after: #1d6b4f; } }
+:root[data-theme="dark"] { --sub: #a4492a; --sub2: #6e3523; --after: #1d6b4f; }
+table.matrix td.mc { font-weight: 600; white-space: nowrap; }
+table.matrix td.ok { color: var(--pass); background: var(--pass-soft); }
+table.matrix td.no { color: var(--stop); background: var(--stop-soft); }
+table.matrix tr.grp td { background: var(--paper); font: 600 .72rem/1.25 var(--f-display); letter-spacing: .08em; text-transform: uppercase; color: var(--prussian); }
+.maps { display: grid; gap: var(--sp3); grid-template-columns: repeat(2, minmax(0, 1fr)); margin: var(--sp3) 0 var(--sp2); max-width: 760px; }
+@media (min-width: 760px) { .maps { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.maps figure { margin: 0; min-width: 0; }
+.maps canvas { width: 100%; height: auto; aspect-ratio: 1; display: block; border: 1px solid var(--ink); }
+.maps figcaption { font-size: .85rem; font-weight: 600; margin-top: .3rem; }
+.maps figcaption small { display: block; font-weight: 400; color: var(--graphite); }
+.steps .when { font: 500 .8rem/1 var(--f-mono); color: var(--graphite); margin: 0 0 var(--sp1); }
+details.ev > summary { cursor: pointer; font-size: .85rem; color: var(--prussian); }
+details.ev p { font-size: .92rem; color: var(--graphite); background: var(--sheet); border-left: 3px solid var(--rule); padding: var(--sp2) var(--sp3); margin-top: var(--sp2); }
+svg .line.s3 { stroke: var(--s3); } svg .dot.s3 { fill: var(--s3); }
+svg .line.keyline { stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 6 4; }
+svg .bar.sub { fill: var(--sub); } svg .bar.sub2 { fill: var(--sub2); } svg .bar.after { fill: var(--after); }
+.box .q { font-style: italic; display: block; margin-bottom: .3rem; }
+
+.qa { display: grid; gap: var(--sp3); grid-template-columns: minmax(0, 1fr); margin-top: var(--sp4); }
+@media (min-width: 860px) { .qa { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.qa .box { margin: 0; }
+.qa .box p { margin: 0; }
+.qa ol.tight { padding-left: 1.2rem; }
+pre.prompt { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px;
+  padding: var(--sp3) var(--sp4); font-size: .82rem; line-height: 1.5; max-width: 52rem; }
+pre.prompt code { background: none; padding: 0; }
+table.cmp { min-width: 720px; } table.cmp td:first-child { font-weight: 600; white-space: nowrap; }
+.docs { grid-template-columns: minmax(0, 1fr); } .docbody { overflow-x: auto; } .docbody pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<p style="margin:0;padding:.6rem 16px;border-bottom:1px solid var(--rule);background:var(--sheet);font-size:.95rem"><a href="https://mechanicsharness.org/">MechanicsHarness</a> &middot; case study</p>
+<div id="tip" role="status" aria-live="polite"></div>
+<div class="layout">
+<nav class="rail" aria-label="Contents">
+  <p>Contents</p>
+  <ol>
+    <li><a href="#summary">The message</a></li>
+    <li><a href="#m0">1 · The model and the test</a></li>
+    <li><a href="#m1">2 · Robust, not accurate</a></li>
+    <li><a href="#m2">3 · Where the error is</a></li>
+    <li><a href="#m3">4 · The cause</a></li>
+    <li><a href="#m4">5 · B2's path</a></li>
+    <li><a href="#ask">Questions for the authors</a></li>
+    <li><a href="#ref">For reference</a></li>
+    <li><a href="#appendix">Appendix: exact task and prompt</a></li>
+  </ol>
+</nav>
+<main>
+
+<section id="summary">
+<p class="eyebrow">Case study shared with the authors of Noii et al. (2024) on 24 October 2026; corrections welcome · Teng Zhang · an AI-agent test built on their battery fatigue model · runs of 20 to 21 October 2026</p>
+<h1>AI agents implemented a published battery fatigue model: all three elements were robust, two predicted too much damage</h1>
+<p class="lede">We restated the chemo-mechanical fatigue model of Noii et al. (2024) as a self-contained task and asked an AI
+coding agent to write an Abaqus/Standard user element (UEL) for it: a 4-node quadrilateral with displacement, lithium concentration
+and damage. Each element ran inside a full simulation on a hidden problem and was compared with an independent answer key. The same
+agent built the element three times: without our code-generation framework, abaqus_ufl (A); with it and a team of sub-agents (B);
+and with it as a single agent (B2). All three elements were robust; two predicted too much damage.</p>
+<p class="small col"><b>Reference work.</b> We built the benchmark on Noii et al. (2024), <i>Comput. Methods Appl. Mech. Eng.</i> 428, 117068, and its FEniCS implementation, <i>Eng. Fract. Mech.</i> 306, 110251, with the authors' public code (full references at the end). We took the equations and the 2D conventions of the authors' script; the parameters, test problems, answer key and scoring are ours, and parts of the paper's model are left out (Section 1). The test asks how AI agents implement a published model; it does not test or reproduce the authors' results, and the agents' errors are not errors in the papers.</p>
+<p class="small col"><b>Public version.</b> This page is the case study shared with the authors on 24 October 2026, without the descriptions, loading, meshes, result fields and reference values of the hidden problems, which stay reserved for scoring. Errors on the hidden problems are given as numbers only.</p>
+<nav class="jump" aria-label="Sections"><a href="#m0">1 Model and test</a><a href="#m1">2 Robust, not accurate</a><a href="#m2">3 Where</a><a href="#m3">4 Cause</a><a href="#m4">5 B2's path</a><a href="#ask">Questions</a><a href="#ref">Reference</a><a href="#appendix">Appendix</a></nav>
+
+<ol class="story">
+  <li class="good"><span class="k">Robustness</span><div class="big">3 of 3 passed</div>
+    <p class="t">Every run passed all six robustness and history checks.</p></li>
+  <li class="bad"><span class="k">Accuracy</span><div class="big">2 of 3 failed</div>
+    <p class="t">A and B: 8.5 % and 9.3 % too much damage. The limit is 4 %.</p></li>
+  <li class="why"><span class="k">Cause</span><div class="big">Element too simple</div>
+    <p class="t">At these mesh sizes, the simplest element turns swelling into false stress.</p></li>
+  <li class="fix"><span class="k">B2</span><div class="big">Right path</div>
+    <p class="t">Our mixed-order example, then an independent check: three times too much damage, fixed to 0.55 %.</p></li>
+</ol>
+
+<div class="qa">
+<div class="box"><h3>Why did B fail?</h3>
+<ol class="tight">
+  <li><b>A simpler example.</b> Our mixed-order example was on the next line of the index it read.</li>
+  <li><b>No whole-problem reference.</b> It checked parts independently, and left a 9.35 % gap between its own meshes unresolved.</li>
+  <li><b>Sub-agents elsewhere,</b> on time stepping and extreme cases.</li>
+</ol></div>
+<div class="box"><h3>Why did A fail?</h3>
+<p><b>Not for lack of knowledge.</b> A wrote its own higher-order reference; on the 32 × 32 mesh its damage differed by about 14 %.
+The gap fell with each finer mesh, so A called it converged and stopped after 61 of 360 minutes. The short check it skipped: judge
+the size of the remaining error, not only its trend.</p></div>
+<div class="box"><h3>What worked</h3>
+<p><b>An independent check of the whole problem.</b> B2 studied our mixed-order example, wrote its own higher-order reference,
+saw three times too much damage on a coarse mesh, named the cause and fixed it. Its element agrees with the key within 0.55 %.</p></div>
+</div>
+</section>
+
+<section id="m0">
+<h2><span class="num">1</span>The model and the test</h2>
+<p class="msg">The model is the authors' script, restated as equations; the parameters and problems are ours. The agent decided
+how to discretize the hard term: lithium pushed by the gradient of the pressure, which itself depends on the displacement gradient.</p>
+<div class="minis">
+<div>
+  <p class="small"><b>The problems.</b> A unit square; lithium enters through one charged edge.</p>
+  <div id="g-D0"><svg class="fig" viewBox="0 0 470 370" role="img" aria-label="Public practice problem D0"><rect class="body" x="120" y="70" width="220" height="220"/><line class="charged" x1="120" y1="70" x2="340" y2="70"/><polygon class="sup" points="120,290 111,305 129,305"/><line class="sup" x1="108" y1="306" x2="132" y2="306"/><line class="sup thin" x1="110" y1="306" x2="106" y2="311"/><line class="sup thin" x1="116" y1="306" x2="112" y2="311"/><line class="sup thin" x1="122" y1="306" x2="118" y2="311"/><line class="sup thin" x1="128" y1="306" x2="124" y2="311"/><text class="lab" x="106" y="324" text-anchor="end">fixed in x and y</text><polygon class="sup" points="340,290 331,305 349,305"/><circle class="sup" cx="335" cy="309" r="3"/><circle class="sup" cx="345" cy="309" r="3"/><line class="sup" x1="328" y1="313" x2="352" y2="313"/><text class="lab" x="354" y="328" text-anchor="start">fixed in y only</text><text class="lab acc" x="230.0" y="56" text-anchor="middle">charged edge: c = c_b(t)</text><text class="lab mut" x="230.0" y="174.0" text-anchor="middle">unit square, 1 × 1</text><text class="lab mut" x="230.0" y="192.0" text-anchor="middle">other edges sealed and free</text><text class="lab mut" x="230.0" y="358" text-anchor="middle">G_c = 3.5e-6 · period T = 8 · 20 cycles</text></svg><p class="figcap"><b>Practice problem, given to the agents.</b> Lithium enters through the top edge.</p></div>
+</div>
+</div>
+<div class="wrap" style="margin-top:var(--sp4)"><table class="cmp">
+  <thead><tr><th>Part of the model</th><th>In our test</th><th>The authors' script (revision 8bcec27)</th><th>The CMAME paper</th></tr></thead>
+  <tbody>
+    <tr><td>Swelling strain</td><td>β(c − c<sub>0</sub>) I, small strain</td><td>Same (β = Ω/3)</td><td>Same (eq. 9)</td></tr>
+    <tr><td>Stress degradation</td><td>Whole stress: σ = g(d) σ<sub>eff</sub></td><td>Same (<code>split = 1</code>, the hybrid form)</td><td>Only the tensile part is degraded (eqs. 89 to 90)</td></tr>
+    <tr><td>Degradation function</td><td>g(d) = (1 − κ)(1 − d)<sup>2</sup> + κ</td><td>Same</td><td>Same</td></tr>
+    <tr><td>Crack driving energy</td><td>ψ<sup>+</sup> = (K/2)⟨tr ε<sub>e</sub>⟩<sub>+</sub><sup>2</sup> + μ dev ε<sub>e</sub> : dev ε<sub>e</sub></td><td>Same</td><td>Same</td></tr>
+    <tr><td>Phase field</td><td>−ℓ<sup>2</sup>Δd + d − (1 − κ)(1 − d) H = 0, H the largest past 2ℓψ<sup>+</sup>/G<sub>f</sub></td><td>Same</td><td>Adds a viscous term and a scaling ζ (eqs. 91 to 93)</td></tr>
+    <tr><td>Fatigue</td><td>α accumulates increases of g ψ<sup>+</sup>; logarithmic f(α), k = 0.5</td><td>Same</td><td>Same (eq. 51)</td></tr>
+    <tr><td>Lithium flux</td><td>J = g D ∇c − χ c ∇(g p<sub>eff</sub>), p<sub>eff</sub> = tr σ<sub>eff</sub>/3</td><td>Same (χ is the script's <code>c2</code>)</td><td>Eq. 87 also multiplies the stress-driven term by g(d) and uses the hydrostatic part of the split stress</td></tr>
+    <tr><td>2D conventions</td><td>2D trace divided by 3; K = λ + 2μ/3</td><td>Same</td><td>Written for 2D and 3D</td></tr>
+    <tr><td>Geometry and loading</td><td>Unit square; one edge charged, c cycling between 0.35 and 0.80</td><td>Circular particle with notches; cyclic surface concentration</td><td>Particles with notches and cavities, 2D and 3D</td></tr>
+    <tr><td>Parameters</td><td>Dimensionless: E = 10, ν = 0.28, β = 0.035, c<sub>0</sub> = 0.35, κ = 1e-5, D = 0.14, χ = 0.25, ℓ = 0.12</td><td>Physical units</td><td>Table 1</td></tr>
+    <tr><td>Discretization</td><td>Left to the agent, on 4-node quadrilaterals</td><td>Linear triangles for u, c and d; staggered</td><td>(u, c) monolithic, d staggered</td></tr>
+  </tbody>
+</table></div>
+<p class="figcap col">Also left out of the paper's model: the chemical potential with its logarithmic lithium energy (eq. 30; the
+paper reduces it to the dilute limit, eq. 87), flux charging conditions, three-dimensional particles and micro-cavities, and the
+parallel solver study. Our comparison with the script and the paper, 22 October 2026.</p>
+<div class="qa">
+<div class="box"><h3>The task</h3>
+<ul class="tight">
+  <li><b>Write</b> a UEL with the standard Abaqus/Standard argument list that solves the model robustly in a global analysis.</li>
+  <li><b>Left open:</b> how to compute ∇(g p<sub>eff</sub>); the interpolation and quadrature of each field and any extra
+  variables; how and when the history is stored and updated; behaviour on invalid states.</li>
+  <li><b>Given:</b> the equations, the practice problem D0 and a Python simulator that calls the element as Abaqus/Standard does.</li>
+  <li><b>Conditions:</b> offline, its own folder only, no human help, about 6 hours. The exact texts are in the Appendix.</li>
+</ul></div>
+<div class="box"><h3>The problems</h3>
+<ul class="tight">
+  <li><b>Practice (D0):</b> lithium enters through the top edge of the unit square; given to the agents.</li>
+  <li><b>Hidden problems, used for scoring:</b> similar to the practice problem, with other boundary conditions, loading, parameters and meshes, as the task told the agents (Appendix).</li>
+</ul></div>
+<div class="box"><h3>The answer key</h3>
+<p>An independent FEniCSx (dolfinx) solution with quadratic displacement, computed before any agent ran.</p></div>
+<div class="box"><h3>The runs</h3>
+<p>OpenAI Codex (gpt-6.1-sol, maximum reasoning), the same task and budget for each. A worked without our framework. B could use
+abaqus_ufl (public commit a02ed7c) with its documentation and AI skill, which advises a team of sub-agents. B2 was B rerun as a
+single agent, to separate the framework from that advice.</p></div>
+</div>
+</section>
+
+<section id="m1">
+<h2><span class="num">2</span>Every run was robust; two of three were wrong on damage</h2>
+<p class="msg">All ten checks, run on the same simulator. The accuracy checks are the only ones that separate the runs.</p>
+<div class="wrap"><table class="matrix"><thead><tr><th>Check</th><th>A · no framework</th><th>B · framework + sub-agents</th><th>B2 · framework, single agent</th></tr></thead><tbody><tr class="grp"><td colspan="4">Accuracy against the key</td></tr><tr><td>Accuracy: damage and lithium totals</td><td class="mc no" tabindex="0" data-tip="A: total damage 8.5 %, peak 6.0 %, lithium 0.02 % (limits 4 %, 4 %, 0.5 %)"><span aria-hidden="true">✗</span> fail</td><td class="mc no" tabindex="0" data-tip="B: total damage 9.3 %, peak 8.3 %, lithium 0.029 % (limits 4 %, 4 %, 0.5 %)"><span aria-hidden="true">✗</span> fail</td><td class="mc ok" tabindex="0" data-tip="B2: total damage 0.55 %, peak 0.66 %, lithium 0.0041 % (limits 4 %, 4 %, 0.5 %)"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>Accuracy: fields</td><td class="mc no" tabindex="0" data-tip="A: damage RMS 3.3 %, lithium 0.043 % (limit 1 %)"><span aria-hidden="true">✗</span> fail</td><td class="mc no" tabindex="0" data-tip="B: damage RMS 3.7 %, lithium 0.048 % (limit 1 %)"><span aria-hidden="true">✗</span> fail</td><td class="mc ok" tabindex="0" data-tip="B2: damage RMS 0.2 %, lithium 0.006 % (limit 1 %)"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>Error falls with a finer mesh</td><td class="mc ok" tabindex="0" data-tip="A: every quantity improves from 16 to 32"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: every quantity improves from 16 to 32"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: every quantity improves from 16 to 32"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>Distorted meshes</td><td class="mc ok" tabindex="0" data-tip="A: distorted and regular meshes agree"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: distorted and regular meshes agree"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: distorted and regular meshes agree"><span aria-hidden="true">✓</span> pass</td></tr><tr class="grp"><td colspan="4">Robustness and history</td></tr><tr><td>All simulations finish</td><td class="mc ok" tabindex="0" data-tip="A: all scoring runs completed"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: all scoring runs completed"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: all scoring runs completed"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>History only grows</td><td class="mc ok" tabindex="0" data-tip="A: stored history never decreases"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: stored history never decreases"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: stored history never decreases"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>No hidden memory</td><td class="mc ok" tabindex="0" data-tip="A: rejected steps leave no trace (difference 0)"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: rejected steps leave no trace (difference 0)"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: rejected steps leave no trace (difference 0)"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>Zero-length step</td><td class="mc ok" tabindex="0" data-tip="A: a call with no time step returns safely"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: a call with no time step returns safely"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: a call with no time step returns safely"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>Large steps</td><td class="mc ok" tabindex="0" data-tip="A: four times fewer steps finish, 0 cutbacks"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: four times fewer steps finish, 0 cutbacks"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: four times fewer steps finish, 0 cutbacks"><span aria-hidden="true">✓</span> pass</td></tr><tr><td>Near-total damage</td><td class="mc ok" tabindex="0" data-tip="A: runs with damage up to 0.985"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B: runs with damage up to 0.998"><span aria-hidden="true">✓</span> pass</td><td class="mc ok" tabindex="0" data-tip="B2: runs with damage up to 0.999"><span aria-hidden="true">✓</span> pass</td></tr></tbody></table></div>
+<p class="figcap">Hover a cell for its value. "Accuracy" compares with the key on the 32 × 32 mesh, in the limit of small time steps.</p>
+<details class="doc"><summary><span class="dt">How a pass is defined</span><span class="ds">the exact measure and scope</span></summary><div class="docbody"><ul class="tight"><li><b>Measure:</b> for each quantity, the largest difference from the key over the ends of cycles 1 to 10, divided by the key's largest value. Fields use the RMS over the nodes. Limits: 4 % for total and peak damage, 0.5 % for total lithium, 1 % for fields.</li><li><b>Small-time-step limit:</b> each element and the key are run at two time steps and extrapolated, v = 2 v(T/80) − v(T/40), so a valid but different time scheme is not penalized.</li><li><b>Mesh:</b> 32 × 32 for the pass; 16 × 16 as well for "error falls with a finer mesh".</li><li><b>Not scored:</b> elastic energy. The simulator rebuilds it from the simple displacement, so even a correct simple element is about 8 % off on this mesh.</li><li><b>Where it ran:</b> each element ran as compiled code on our Python simulator, which behaves like Abaqus. No run used Abaqus itself.</li><li><b>What the agents were told:</b> results must converge to an independent reference under refinement. The task did not state the 4 % limit or the 32 × 32 mesh. A and B met the stated part (their error fell about 3.6 times per mesh halving); B2 met both.</li></ul></div></details>
+</section>
+
+<section id="m2">
+<h2><span class="num">3</span>The error is in damage, near the charged edge, and still above the limit at 32 × 32</h2>
+<p class="msg">Total lithium is right in all three runs, within 0.03 % (the lithium field within 0.05 %). Damage is not: A and B
+add damage everywhere, most near the charged edge. A finer mesh cuts their error about 3.6 times per halving, as it should, but at
+32 × 32 it is still more than twice the limit.</p>
+
+
+<div class="minis" style="margin-top:var(--sp4)">
+<div>
+<p class="sub" style="margin-top:0">Error against the key, two meshes</p>
+<div class="seg" data-group="err" role="group" aria-label="Quantity">
+  <button aria-pressed="true" data-show="e-Dint">Total damage</button><button aria-pressed="false" data-show="e-dmax">Peak damage</button>
+  <button aria-pressed="false" data-show="e-dfield">Damage field</button><button aria-pressed="false" data-show="e-cint">Lithium</button>
+</div>
+<div class="legend" aria-hidden="true"><span><i class="l" style="background:var(--s1)"></i>A</span><span><i class="l" style="background:var(--s2)"></i>B</span><span><i class="l" style="background:var(--s3)"></i>B2</span></div>
+<div data-group="err" id="e-Dint" class="chartwrap"><svg class="chart" viewBox="0 0 560 330" role="img" aria-label="Total damage error against the key on the 16 and 32 meshes, log scale"><line class="grid" x1="78" x2="400" y1="270.0" y2="270.0"/><text class="tick" x="70" y="274.0" text-anchor="end">0.001 %</text><line class="grid" x1="78" x2="400" y1="220.8" y2="220.8"/><text class="tick" x="70" y="224.8" text-anchor="end">0.01 %</text><line class="grid" x1="78" x2="400" y1="171.6" y2="171.6"/><text class="tick" x="70" y="175.6" text-anchor="end">0.1 %</text><line class="grid" x1="78" x2="400" y1="122.4" y2="122.4"/><text class="tick" x="70" y="126.4" text-anchor="end">1 %</text><line class="grid" x1="78" x2="400" y1="73.2" y2="73.2"/><text class="tick" x="70" y="77.2" text-anchor="end">10 %</text><line class="grid" x1="78" x2="400" y1="24.0" y2="24.0"/><text class="tick" x="70" y="28.0" text-anchor="end">100 %</text><text class="tick" x="150" y="290" text-anchor="middle">16 × 16 mesh</text><text class="tick" x="340" y="290" text-anchor="middle">32 × 32 mesh</text><line class="thresh" x1="78" x2="400" y1="92.8" y2="92.8"/><text class="tick strong" x="84" y="86.8">pass line 4 %</text><path class="line s1" d="M150 49.0 L340 76.7"/><g class="hit" tabindex="0" data-tip="A · no framework: total damage error 31.1 % on the 16 × 16 mesh (pass line 4 %)"><circle cx="150" cy="49.0" r="13" fill="transparent"/><circle class="dot s1" cx="150" cy="49.0" r="5"/></g><g class="hit" tabindex="0" data-tip="A · no framework: total damage error 8.5 % on the 32 × 32 mesh (pass line 4 %)"><circle cx="340" cy="76.7" r="13" fill="transparent"/><circle class="dot s1" cx="340" cy="76.7" r="5"/></g><path class="line s2" d="M150 47.3 L340 74.8"/><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: total damage error 33.6 % on the 16 × 16 mesh (pass line 4 %)"><circle cx="150" cy="47.3" r="13" fill="transparent"/><circle class="dot s2" cx="150" cy="47.3" r="5"/></g><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: total damage error 9.3 % on the 32 × 32 mesh (pass line 4 %)"><circle cx="340" cy="74.8" r="13" fill="transparent"/><circle class="dot s2" cx="340" cy="74.8" r="5"/></g><path class="line s3" d="M150 104.6 L340 135.2"/><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: total damage error 2.3 % on the 16 × 16 mesh (pass line 4 %)"><circle cx="150" cy="104.6" r="13" fill="transparent"/><circle class="dot s3" cx="150" cy="104.6" r="5"/></g><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: total damage error 0.55 % on the 32 × 32 mesh (pass line 4 %)"><circle cx="340" cy="135.2" r="13" fill="transparent"/><circle class="dot s3" cx="340" cy="135.2" r="5"/></g><text class="barlab" x="406" y="78.8">B 9.3 %</text><text class="barlab" x="406" y="92.8">A 8.5 %</text><text class="barlab" x="406" y="139.2">B2 0.55 %</text></svg></div>
+<div data-group="err" id="e-dmax" class="chartwrap" hidden><svg class="chart" viewBox="0 0 560 330" role="img" aria-label="Peak damage error against the key on the 16 and 32 meshes, log scale"><line class="grid" x1="78" x2="400" y1="270.0" y2="270.0"/><text class="tick" x="70" y="274.0" text-anchor="end">0.001 %</text><line class="grid" x1="78" x2="400" y1="220.8" y2="220.8"/><text class="tick" x="70" y="224.8" text-anchor="end">0.01 %</text><line class="grid" x1="78" x2="400" y1="171.6" y2="171.6"/><text class="tick" x="70" y="175.6" text-anchor="end">0.1 %</text><line class="grid" x1="78" x2="400" y1="122.4" y2="122.4"/><text class="tick" x="70" y="126.4" text-anchor="end">1 %</text><line class="grid" x1="78" x2="400" y1="73.2" y2="73.2"/><text class="tick" x="70" y="77.2" text-anchor="end">10 %</text><line class="grid" x1="78" x2="400" y1="24.0" y2="24.0"/><text class="tick" x="70" y="28.0" text-anchor="end">100 %</text><text class="tick" x="150" y="290" text-anchor="middle">16 × 16 mesh</text><text class="tick" x="340" y="290" text-anchor="middle">32 × 32 mesh</text><line class="thresh" x1="78" x2="400" y1="92.8" y2="92.8"/><text class="tick strong" x="84" y="86.8">pass line 4 %</text><path class="line s1" d="M150 60.4 L340 84.1"/><g class="hit" tabindex="0" data-tip="A · no framework: peak damage error 18.2 % on the 16 × 16 mesh (pass line 4 %)"><circle cx="150" cy="60.4" r="13" fill="transparent"/><circle class="dot s1" cx="150" cy="60.4" r="5"/></g><g class="hit" tabindex="0" data-tip="A · no framework: peak damage error 6 % on the 32 × 32 mesh (pass line 4 %)"><circle cx="340" cy="84.1" r="13" fill="transparent"/><circle class="dot s1" cx="340" cy="84.1" r="5"/></g><path class="line s2" d="M150 54.3 L340 77.2"/><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: peak damage error 24.2 % on the 16 × 16 mesh (pass line 4 %)"><circle cx="150" cy="54.3" r="13" fill="transparent"/><circle class="dot s2" cx="150" cy="54.3" r="5"/></g><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: peak damage error 8.3 % on the 32 × 32 mesh (pass line 4 %)"><circle cx="340" cy="77.2" r="13" fill="transparent"/><circle class="dot s2" cx="340" cy="77.2" r="5"/></g><path class="line s3" d="M150 106.5 L340 131.3"/><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: peak damage error 2.1 % on the 16 × 16 mesh (pass line 4 %)"><circle cx="150" cy="106.5" r="13" fill="transparent"/><circle class="dot s3" cx="150" cy="106.5" r="5"/></g><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: peak damage error 0.66 % on the 32 × 32 mesh (pass line 4 %)"><circle cx="340" cy="131.3" r="13" fill="transparent"/><circle class="dot s3" cx="340" cy="131.3" r="5"/></g><text class="barlab" x="406" y="81.2">B 8.3 %</text><text class="barlab" x="406" y="95.2">A 6 %</text><text class="barlab" x="406" y="135.3">B2 0.66 %</text></svg></div>
+<div data-group="err" id="e-dfield" class="chartwrap" hidden><svg class="chart" viewBox="0 0 560 330" role="img" aria-label="Damage field error (RMS) against the key on the 16 and 32 meshes, log scale"><line class="grid" x1="78" x2="400" y1="270.0" y2="270.0"/><text class="tick" x="70" y="274.0" text-anchor="end">0.001 %</text><line class="grid" x1="78" x2="400" y1="220.8" y2="220.8"/><text class="tick" x="70" y="224.8" text-anchor="end">0.01 %</text><line class="grid" x1="78" x2="400" y1="171.6" y2="171.6"/><text class="tick" x="70" y="175.6" text-anchor="end">0.1 %</text><line class="grid" x1="78" x2="400" y1="122.4" y2="122.4"/><text class="tick" x="70" y="126.4" text-anchor="end">1 %</text><line class="grid" x1="78" x2="400" y1="73.2" y2="73.2"/><text class="tick" x="70" y="77.2" text-anchor="end">10 %</text><line class="grid" x1="78" x2="400" y1="24.0" y2="24.0"/><text class="tick" x="70" y="28.0" text-anchor="end">100 %</text><text class="tick" x="150" y="290" text-anchor="middle">16 × 16 mesh</text><text class="tick" x="340" y="290" text-anchor="middle">32 × 32 mesh</text><line class="thresh" x1="78" x2="400" y1="122.4" y2="122.4"/><text class="tick strong" x="84" y="116.4">pass line 1 %</text><path class="line s1" d="M150 69.0 L340 96.9"/><g class="hit" tabindex="0" data-tip="A · no framework: damage field error (rms) 12.2 % on the 16 × 16 mesh (pass line 1 %)"><circle cx="150" cy="69.0" r="13" fill="transparent"/><circle class="dot s1" cx="150" cy="69.0" r="5"/></g><g class="hit" tabindex="0" data-tip="A · no framework: damage field error (rms) 3.3 % on the 32 × 32 mesh (pass line 1 %)"><circle cx="340" cy="96.9" r="13" fill="transparent"/><circle class="dot s1" cx="340" cy="96.9" r="5"/></g><path class="line s2" d="M150 67.1 L340 94.4"/><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: damage field error (rms) 13.3 % on the 16 × 16 mesh (pass line 1 %)"><circle cx="150" cy="67.1" r="13" fill="transparent"/><circle class="dot s2" cx="150" cy="67.1" r="5"/></g><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: damage field error (rms) 3.7 % on the 32 × 32 mesh (pass line 1 %)"><circle cx="340" cy="94.4" r="13" fill="transparent"/><circle class="dot s2" cx="340" cy="94.4" r="5"/></g><path class="line s3" d="M150 126.9 L340 156.8"/><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: damage field error (rms) 0.81 % on the 16 × 16 mesh (pass line 1 %)"><circle cx="150" cy="126.9" r="13" fill="transparent"/><circle class="dot s3" cx="150" cy="126.9" r="5"/></g><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: damage field error (rms) 0.2 % on the 32 × 32 mesh (pass line 1 %)"><circle cx="340" cy="156.8" r="13" fill="transparent"/><circle class="dot s3" cx="340" cy="156.8" r="5"/></g><text class="barlab" x="406" y="98.4">B 3.7 %</text><text class="barlab" x="406" y="112.4">A 3.3 %</text><text class="barlab" x="406" y="160.8">B2 0.2 %</text></svg></div>
+<div data-group="err" id="e-cint" class="chartwrap" hidden><svg class="chart" viewBox="0 0 560 330" role="img" aria-label="Lithium error against the key on the 16 and 32 meshes, log scale"><line class="grid" x1="78" x2="400" y1="270.0" y2="270.0"/><text class="tick" x="70" y="274.0" text-anchor="end">0.001 %</text><line class="grid" x1="78" x2="400" y1="220.8" y2="220.8"/><text class="tick" x="70" y="224.8" text-anchor="end">0.01 %</text><line class="grid" x1="78" x2="400" y1="171.6" y2="171.6"/><text class="tick" x="70" y="175.6" text-anchor="end">0.1 %</text><line class="grid" x1="78" x2="400" y1="122.4" y2="122.4"/><text class="tick" x="70" y="126.4" text-anchor="end">1 %</text><line class="grid" x1="78" x2="400" y1="73.2" y2="73.2"/><text class="tick" x="70" y="77.2" text-anchor="end">10 %</text><line class="grid" x1="78" x2="400" y1="24.0" y2="24.0"/><text class="tick" x="70" y="28.0" text-anchor="end">100 %</text><text class="tick" x="150" y="290" text-anchor="middle">16 × 16 mesh</text><text class="tick" x="340" y="290" text-anchor="middle">32 × 32 mesh</text><line class="thresh" x1="78" x2="400" y1="137.2" y2="137.2"/><text class="tick strong" x="84" y="131.2">pass line 0.5 %</text><path class="line s1" d="M150 167.2 L340 206.0"/><g class="hit" tabindex="0" data-tip="A · no framework: lithium error 0.123 % on the 16 × 16 mesh (pass line 0.5 %)"><circle cx="150" cy="167.2" r="13" fill="transparent"/><circle class="dot s1" cx="150" cy="167.2" r="5"/></g><g class="hit" tabindex="0" data-tip="A · no framework: lithium error 0.02 % on the 32 × 32 mesh (pass line 0.5 %)"><circle cx="340" cy="206.0" r="13" fill="transparent"/><circle class="dot s1" cx="340" cy="206.0" r="5"/></g><path class="line s2" d="M150 162.8 L340 197.3"/><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: lithium error 0.151 % on the 16 × 16 mesh (pass line 0.5 %)"><circle cx="150" cy="162.8" r="13" fill="transparent"/><circle class="dot s2" cx="150" cy="162.8" r="5"/></g><g class="hit" tabindex="0" data-tip="B · framework + sub-agents: lithium error 0.03 % on the 32 × 32 mesh (pass line 0.5 %)"><circle cx="340" cy="197.3" r="13" fill="transparent"/><circle class="dot s2" cx="340" cy="197.3" r="5"/></g><path class="line s3" d="M150 209.5 L340 240.4"/><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: lithium error 0.017 % on the 16 × 16 mesh (pass line 0.5 %)"><circle cx="150" cy="209.5" r="13" fill="transparent"/><circle class="dot s3" cx="150" cy="209.5" r="5"/></g><g class="hit" tabindex="0" data-tip="B2 · framework, single agent: lithium error 0.004 % on the 32 × 32 mesh (pass line 0.5 %)"><circle cx="340" cy="240.4" r="13" fill="transparent"/><circle class="dot s3" cx="340" cy="240.4" r="5"/></g><text class="barlab" x="406" y="201.3">B 0.03 %</text><text class="barlab" x="406" y="215.3">A 0.02 %</text><text class="barlab" x="406" y="244.4">B2 0.004 %</text></svg></div>
+<p class="figcap">Log scale. A and B fall about fourfold from 16 to 32, but stay above the pass line on damage.</p>
+</div>
+<div>
+<p class="sub" style="margin-top:0">Total damage over the cycles</p>
+<p class="figcap">A and B start about 7 % high in cycle 1, rise to 8.5 to 9.3 % by cycle 4 or 5, and then hold or ease slightly. B2 stays on the key.</p>
+</div>
+</div>
+</section>
+
+<section id="m3">
+<h2><span class="num">4</span>The cause: an element too simple for swelling</h2>
+<p class="msg">Lithium changes across each element, and so does the swelling it causes. In the simplest (bilinear) element,
+the stretch in one direction cannot change along that direction, so the element cannot match this swelling. At these mesh sizes the
+part it misses becomes stress that is not physical, and that false stress feeds the damage. In B2's own control, removing only its
+four extra modes raised peak damage from 0.27 to 0.95, against an independent reference of 0.27. The modes cut this error; they do
+not remove every error.</p>
+<div class="minis">
+<div class="box">
+<h3>Is the answer key right?</h3>
+<p>Teng asked: <span class="q">"Are you sure the key is correct?"</span></p>
+<p>Agent A had written its own higher-order solution, without access to the key. It agrees with the key to 0.1 % in peak and total
+damage. So the gap is in A's and B's elements, not in the key.</p>
+</div>
+<div class="box">
+<h3>What avoids it, and where this holds</h3>
+<p>A richer description of the displacement than of the other fields ("mixed order") avoids the false stress. B2 got there with
+four extra displacement modes inside each element, condensed out.</p>
+<p>This holds at our parameters and on our meshes: bilinear quadrilaterals up to 32 × 32 on the unit square. We did not assess the
+authors' simulations, which use other parameters, geometry and elements.</p>
+</div>
+</div>
+<div class="wrap" style="margin-top:var(--sp4)"><table>
+  <thead><tr><th>Run</th><th>How it computed the hard term</th><th>How it described the displacement</th><th>Damage error</th></tr></thead>
+  <tbody>
+    <tr><td class="lab">A</td><td>An extra pressure field, projected</td><td>Simplest (bilinear), same as all fields; 9 evaluation points</td><td>8.5 %, fails</td></tr>
+    <tr><td class="lab">B</td><td>The same idea, generated by our framework</td><td>Simplest (bilinear); 4 evaluation points</td><td>9.3 %, fails</td></tr>
+    <tr><td class="lab">B2</td><td>The same idea, generated by our framework</td><td><b>Bilinear plus four extra modes inside each element, condensed out</b></td><td>0.55 %, passes</td></tr>
+  </tbody>
+</table></div>
+<p class="figcap col">All three chose a sound method for the hard term, the decision the test was built around. The decisive choice was one level deeper.</p>
+</section>
+
+<section id="m4">
+<h2><span class="num">5</span>B2 took the right path through our framework</h2>
+<p class="msg">Same framework copy as B, different folders. In its first minute B2 opened our mixed-order example. It then did not
+trust a converging solver: it wrote an independent reference, compared over many cycles on a coarse mesh, saw three times too much
+damage, named the cause, and fixed it. Each step is timestamped in its log and, independently, in the session record of its tool calls.</p>
+<div class="wrap"><table>
+  <thead><tr><th>Run</th><th>Example it studied</th><th>What that example teaches</th><th>What the run then did</th></tr></thead>
+  <tbody>
+    <tr><td class="lab">B</td><td><code>scalar_diffusion_uel</code></td><td>The same simple element for every field; checked by closed-form forces</td><td>Simplest element; closed-form checks of parts; damage 9.3 % off</td></tr>
+    <tr><td class="lab">B2</td><td><code>thermo_mechanics_quad8</code></td><td>"Mixed-order ... (quadratic u, bilinear T)", with an "Independent physics oracle"</td><td>Richer displacement than the other fields; independent full reference; 0.55 %</td></tr>
+  </tbody>
+</table></div>
+<p class="figcap col">Both examples sit on adjacent lines (42 and 43) of the examples index B read; thermal expansion works like swelling. Nothing in the
+framework says which example fits a problem where swelling drives stress, so each agent chose its own. B2 does not cite the example; one run each.</p>
+<ol class="steps col">
+<li><p class="when">Oct 20, 23:10–23:12</p><h3>B2 reads the framework</h3><p>It opens the skill file, the README, the API guide, the generator source, and our mixed-order example.</p><details class="ev"><summary>Evidence</summary><p>Lines it saw: "Supported as a prototype <code>formulation="local_pressure"</code> path for Quad4 and Hex8 <code>u,mu</code> gel-style elements with one condensed element-local pressure" (skill file) and "Prototype Quad4/Hex8 <code>u,mu</code> path with one condensed element-local pressure" (API guide). From the example: "Mixed-order thermo-mechanical Quad8 UEL (quadratic u, bilinear T)". It did not open the two longer design notes.</p></details></li><li><p class="when">23:27</p><h3>It builds its own check</h3><p>Before trusting its element, B2 writes an independent higher-order solver from the task text.</p><details class="ev"><summary>Evidence</summary><p>Its log: "Built an independent NumPy high-order Qp reference, with physical shape Hessians and the strong stress gradient, no abaqus_ufl import."</p></details></li><li><p class="when">23:47–23:59</p><h3>The check exposes an error</h3><p>On a coarse mesh over 20 cycles, its first element predicts about three times too much damage.</p><details class="ev"><summary>Evidence</summary><p>Its log: "n=16 reached d_max=.953 after twenty cycles, versus approximately .294 for the independent strong-gradient Q3 reference. Solver success alone is insufficient evidence of accuracy."</p></details></li><li><p class="when">Oct 21, 00:05–00:14</p><h3>It names the cause and fixes it</h3><p>Cause: false swelling stress in the bilinear element. Fix: four extra displacement modes inside each element, condensed out.</p><details class="ev"><summary>Evidence</summary><p>Its log: "Investigated incompatible/enhanced strain modes to reduce parasitic Q1 swelling stress ... Enhanced strain dramatically improved D0 and severe-load agreement with the independent reference." Its file <code>enhanced_modes.f90</code> first appears at 00:05:38. Its design note: the generator "does not natively supply this four-mode condensation".</p></details></li><li><p class="when">00:23</p><h3>Element final</h3><p>B2 freezes its element 74 minutes after launch. Three more hours of its own checks change nothing.</p><details class="ev"><summary>Evidence</summary><p>21 further simulations and 18 reference studies. Its final element is byte-identical to the snapshot we scored at 00:45.</p></details></li><li><p class="when">Scored</p><h3>Passes every check</h3><p>Total damage within 0.55 % of the key, against 8.5 % and 9.3 % for A and B.</p><details class="ev"><summary>Evidence</summary><p>Peak damage 0.66 %, damage field 0.20 %, lithium 0.004 %, on the 32 × 32 mesh. No cutbacks, exact rollback, history never decreases.</p></details></li>
+</ol>
+
+<div class="minis" style="margin-top:var(--sp4)">
+<div class="box">
+<h3>Why A and B left it unresolved</h3>
+<ul class="tight">
+  <li><b>A saw the gap and read the trend.</b> Its own higher-order reference showed about 14 % damage difference on the 32 × 32
+  practice mesh (cycle 5). The difference fell with each finer mesh; A wrote "This supports convergence" and finished after 61 of 360 minutes.</li>
+  <li><b>B checked parts, then its own finer mesh.</b> Its independent checks were closed-form limits of parts of the model. For the whole
+  problem it had "no ... independent full coupled reference". It saw a 9.35 % gap between meshes, and at 20 cycles peak damage of 0.99
+  on 16 × 16 against 0.37 on 32 × 32, and called it "residual spatial sensitivity". B2 saw the same symptom (0.95 against 0.29) and
+  compared with an independent solution.</li>
+  <li><b>B's effort went elsewhere.</b> Its review sub-agents spent an hour on time integration and extreme cases.</li>
+</ul>
+</div>
+<div class="box">
+<h3>What in our framework reached B2</h3>
+<ul class="tight">
+  <li><b>The mixed-order example</b> (23:10): a displacement one order richer than the other field, and an independent oracle.</li>
+  <li><b>The skill's rule</b> asking for an independent check "NOT derived from the code under test" (23:10). B2 met it with an independent solution of the whole problem.</li>
+  <li><b>The generator</b>, which wrote 94 % of B2's code; and a line on condensing an extra unknown inside an element (23:10).</li>
+  <li><b>Limits.</b> B2 does not cite these files, and its four displacement modes are its own design. Each arm ran once.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="ask">
+<h2>Points where the authors' view would help</h2>
+<ul class="tight col">
+  <li><b>Our restatement.</b> Is the model in Section 1 and in the task (Appendix) a fair reading of the script? For a test like this,
+  would you recommend the script's form of the stress-driven flux or that of eq. 87 of the CMAME paper?</li>
+  <li><b>The stress-driven term on linear triangles.</b> In the script, displacement and lithium are linear (CG1, lines 144 to 156 of
+  <code>Battery_fatigue_Exm3.py</code>), and the flux takes ∇(g(d) p<sub>eff</sub>) inside each element (line 383). On linear
+  triangles the strain is constant in each element, so the displacement part of this gradient vanishes there, and its jumps between
+  elements do not enter. Is this intended, for example because the coupling (<code>c2 = 1e-23</code>) is small in that example, or is
+  the term treated in a way we missed? We have not run the script.</li>
+</ul>
+</section>
+
+<section id="ref">
+<h2>For reference</h2>
+<details class="doc"><summary><span class="dt">Did anything leak to the agents?</span><span class="ds">audit of every command and file</span></summary>
+<div class="docbody">
+<p>The framework notes B2 read were in the framework's first public release, before this test; none was written for it.</p>
+<p>We checked every path in B2's tool calls, its process listings, its 1,173 study files, its starting context and Codex's memory.
+Nothing outside its workspace was read, and nothing about other runs or the key reached it. A and B were audited the same way: 197 and
+1,632 commands, none forbidden. B reported a slip of its own: a process listing that showed unrelated jobs and nothing relevant.</p>
+</div></details>
+<details class="doc"><summary><span class="dt">Caveats</span><span class="ds">what this test cannot show</span></summary>
+<div class="docbody"><ul class="tight">
+  <li>One run per arm, one agent family (Codex); no other agent was run on this test.</li>
+  <li>B and B2 differ in the sub-agents and in the run itself. The comparison shows that a single agent with the framework can do best, not that it always will.</li>
+  <li>All runs shared a busy computer, so wall times are noisy.</li>
+  <li>The elements ran as compiled code on our Python simulator, not inside Abaqus.</li>
+</ul></div></details>
+<details class="doc"><summary><span class="dt">Further reading on this family of models</span><span class="ds">background, not sources we used</span></summary><div class="docbody"><p class="small">We built the benchmark from the papers and code of Noii et al. (see "Reference work" at the top). These works help to understand the family of models it belongs to. Noii et al. cite some of them; the rest we added. DOIs checked on Crossref, 22 October 2026.</p><ul class="tight"><li><b>Fatigue in battery particles, the model Noii et al. extend.</b> Ai, Wu and Martínez-Pañeda (2022), <i>J. Power Sources</i> 544, 231805, <a href="https://doi.org/10.1016/j.jpowsour.2022.231805">doi:10.1016/j.jpowsour.2022.231805</a>.</li><li><b>Fatigue in phase-field fracture, including the logarithmic fatigue function.</b> Carrara, Ambati, Alessi and De Lorenzis (2020), <i>Comput. Methods Appl. Mech. Eng.</i> 361, 112731, <a href="https://doi.org/10.1016/j.cma.2019.112731">doi:10.1016/j.cma.2019.112731</a>.</li><li><b>Phase-field fracture.</b> Francfort and Marigo (1998), <i>J. Mech. Phys. Solids</i> 46, 1319, <a href="https://doi.org/10.1016/S0022-5096(98)00034-9">doi:10.1016/S0022-5096(98)00034-9</a>; Bourdin, Francfort and Marigo (2000), <i>J. Mech. Phys. Solids</i> 48, 797, <a href="https://doi.org/10.1016/S0022-5096(99)00028-9">doi:10.1016/S0022-5096(99)00028-9</a>; Amor, Marigo and Maurini (2009), <i>J. Mech. Phys. Solids</i> 57, 1209 (volumetric–deviatoric split), <a href="https://doi.org/10.1016/j.jmps.2009.04.011">doi:10.1016/j.jmps.2009.04.011</a>; Miehe, Hofacker and Welschinger (2010), <i>Comput. Methods Appl. Mech. Eng.</i> 199, 2765 (history field), <a href="https://doi.org/10.1016/j.cma.2010.04.011">doi:10.1016/j.cma.2010.04.011</a>; Miehe, Welschinger and Hofacker (2010), <i>Int. J. Numer. Methods Eng.</i> 83, 1273, <a href="https://doi.org/10.1002/nme.2861">doi:10.1002/nme.2861</a>; Ambati, Gerasimov and De Lorenzis (2015), <i>Comput. Mech.</i> 55, 383 (hybrid formulation), <a href="https://doi.org/10.1007/s00466-014-1109-y">doi:10.1007/s00466-014-1109-y</a>; Miehe, Schänzel and Ulmer (2015), <i>Comput. Methods Appl. Mech. Eng.</i> 294, 449, <a href="https://doi.org/10.1016/j.cma.2014.11.016">doi:10.1016/j.cma.2014.11.016</a>.</li><li><b>Phase-field fracture in battery electrode particles.</b> Zuo and Zhao (2015), <i>Phys. Chem. Chem. Phys.</i> 17, 287, <a href="https://doi.org/10.1039/C4CP00563E">doi:10.1039/C4CP00563E</a>; Miehe, Dal, Schänzel and Raina (2016), <i>Int. J. Numer. Methods Eng.</i> 106, 683, <a href="https://doi.org/10.1002/nme.5133">doi:10.1002/nme.5133</a>; Klinsmann, Rosato, Kamlah and McMeeking (2016), <i>J. Electrochem. Soc.</i> 163, A102, <a href="https://doi.org/10.1149/2.0281602jes">doi:10.1149/2.0281602jes</a>.</li><li><b>Diffusion-induced stress and stress-assisted diffusion.</b> Prussin (1961), <i>J. Appl. Phys.</i> 32, 1876, <a href="https://doi.org/10.1063/1.1728256">doi:10.1063/1.1728256</a>; Larché and Cahn (1973), <i>Acta Metall.</i> 21, 1051, <a href="https://doi.org/10.1016/0001-6160(73)90021-7">doi:10.1016/0001-6160(73)90021-7</a>; Li (1978), <i>Metall. Trans. A</i> 9, 1353, <a href="https://doi.org/10.1007/BF02661808">doi:10.1007/BF02661808</a>; Sofronis and McMeeking (1989), <i>J. Mech. Phys. Solids</i> 37, 317 (hydrogen in metals), <a href="https://doi.org/10.1016/0022-5096(89)90002-1">doi:10.1016/0022-5096(89)90002-1</a>; Christensen and Newman (2006), <i>J. Electrochem. Soc.</i> 153, A1019, <a href="https://doi.org/10.1149/1.2185287">doi:10.1149/1.2185287</a>; Zhang, Shyy and Sastry (2007), <i>J. Electrochem. Soc.</i> 154, A910, <a href="https://doi.org/10.1149/1.2759840">doi:10.1149/1.2759840</a>.</li></ul></div></details>
+
+<p class="small col" style="margin-top:var(--sp4)"><b>Sources.</b> Our scorer's outputs on copies of each frozen element; the agents' research logs, design notes and status
+files; the Codex session records, including sub-agents; the trial and build logs. Prepared by Claude
+(organizer, answer key and analysis) with Teng Zhang. Reference work: Noii, Milijasevic, Waisman and Khodadadian (2024), "Fatigue failure theory for lithium diffusion induced fracture in lithium-ion battery electrode particles", <i>Computer Methods in Applied Mechanics and Engineering</i> 428, 117068, <a href="https://doi.org/10.1016/j.cma.2024.117068">doi:10.1016/j.cma.2024.117068</a>; and its FEniCS implementation, Noii, Milijasevic, Khodadadian and Wick (2024), "An efficient FEniCS implementation for coupling lithium-ion battery charge/discharge processes with fatigue phase-field fracture", <i>Engineering Fracture Mechanics</i> 306, 110251, <a href="https://doi.org/10.1016/j.engfracmech.2024.110251">doi:10.1016/j.engfracmech.2024.110251</a>, with the authors' public code (<a href="https://github.com/noiiG/Battery-Li-Ion-Simulation-Fatigue">github.com/noiiG/Battery-Li-Ion-Simulation-Fatigue</a>). The answer key is an independent implementation; no code from the authors' repository is included.</p>
+</section>
+
+<section id="appendix">
+<h2>Appendix: the exact task and prompt</h2>
+<p class="msg">Each run received a one-line prompt and a folder with the organizer's note, the task, the simulator and the practice
+problem. Below are the texts exactly as the agents saw them, with local paths and one internal repository name in brackets.</p>
+<p class="sub">A.1 The prompt, the same for A, B and B2</p>
+<pre class="prompt"><code>Read ORGANIZER_NOTE.md in this folder first, then PUBLIC_TASK.md and host/README.md, and carry out the challenge under the organizer&#x27;s conditions. Work only inside this folder. End with a short summary of what you reached and what remains unverified.</code></pre>
+<p class="sub">A.2 How each run was started</p>
+<pre class="prompt"><code>A, B: codex exec --skip-git-repo-check -s workspace-write -C [workspace] -o [final summary] "[the prompt]"
+B2:   codex exec --disable multi_agent --skip-git-repo-check -s workspace-write -C [workspace] -o [final summary] "[the prompt]"
+Each with TMPDIR inside the workspace and a 7-hour hard limit; the budget stated to the agents was about 6 hours.</code></pre>
+<p class="sub">A.3 The files</p>
+<div class="docs"><details class="doc"><summary><span class="dt">Organizer note</span><span class="ds">read first; run A shown</span></summary><div class="docbody"><h1>Organizer note (read this first, then <code>PUBLIC_TASK.md</code> and <code>host/README.md</code>)</h1>
+<p>You are a test agent in a controlled trial. The challenge is in <code>PUBLIC_TASK.md</code>. These conditions
+are pinned by the organizer and are identical for every run of this challenge, except the arm line at
+the end.</p>
+<h2>Conditions</h2>
+<ul>
+<li><strong>Visibility:</strong> this workspace only. No internet, no package installs. Do not read files outside
+  this workspace, except the Python environment and the system compilers named below. Do not search
+  the disk for other copies of this challenge, answer keys or other agents' work. Any such access
+  invalidates the run. Your commands are logged and audited.</li>
+<li><strong>Temporary files:</strong> only under <code>tmp/</code> in this workspace (TMPDIR points there). Do not write to
+  /tmp or your home directory.</li>
+<li><strong>Environment:</strong> use <code>[local Python environment]</code>. Put its <code>bin/</code> first on PATH:
+  <code>export PATH=[local Python environment]/bin:$PATH</code>.
+  It has Python 3.13, numpy, scipy, sympy, gfortran, meson and ninja (for <code>numpy.f2py</code>).</li>
+<li><strong>The host</strong> in <code>host/</code> is part of the challenge. Use it as it is; do not modify it. Your element is
+  scored on an unmodified copy.</li>
+<li><strong>Abaqus is not available.</strong> Do not claim Abaqus execution.</li>
+<li><strong>No human help.</strong> Nobody will answer questions. Make reasonable decisions and record them.</li>
+<li><strong>Time budget:</strong> about 6 hours of wall-clock time. Stop when done or when the budget is used, and
+  report what you actually reached.</li>
+</ul>
+<h2>Deliverables</h2>
+<p>As listed in <code>PUBLIC_TASK.md</code> §5: <code>element/</code> (source and <code>uel_contract.json</code>), <code>design.md</code>,
+<code>verification/</code>, <code>research_log.md</code> and <code>STATUS.md</code>. Do not hard-code answers: the organizer runs your
+compiled element on hidden problems on the same host and compares with an independent reference.</p>
+<h2>Your arm: A (direct)</h2>
+<p>Do not use <code>abaqus_ufl</code> in any form: not the public package, not a bundled copy, not its generators,
+templates, skills or examples, and no code derived from it. The host in <code>host/</code> is the only part of
+it you get, and only as the host. Write the UEL directly from the equations. General libraries in the
+environment (numpy, scipy, sympy) are allowed.</p></div></details><details class="doc"><summary><span class="dt">Arm lines for B and B2</span><span class="ds">replace the arm line at the end of the note</span></summary><div class="docbody"><h2>Your arm: B (with abaqus_ufl as a tool)</h2>
+<p>You may use <code>tools/abaqus_ufl/</code>, the <code>abaqus_ufl</code> code generator at the pinned public commit a02ed7c
+(18 October 2026), with its documentation and its AI skill (<code>ai_skills/abaqus-ufl/</code>). Import it by
+putting <code>tools/abaqus_ufl</code> on <code>PYTHONPATH</code>. Use it to create the UEL where it fits. Where the task
+needs something it does not support, extend it or write that part yourself, and document it. Record
+what you used, every modification, and how much of the Fortran was generated versus hand-written. Do
+not imply capabilities it does not have.</p><hr><p><b>B2 only, added:</b></p><h2>Single agent</h2>
+<p>Work as a single agent. Sub-agents are not available in this run. Where the abaqus_ufl skill suggests an
+independent or multi-agent review, do that review yourself and record it.</p></div></details><details class="doc" open><summary><span class="dt">PUBLIC_TASK.md</span><span class="ds">the full problem statement</span></summary><div class="docbody"><h1>Robust UEL challenge v2: chemo-mechanics with fatigue damage</h1>
+<p><strong>Goal.</strong> Build an Abaqus/Standard user element (UEL) that solves the model below <strong>robustly in a global
+analysis</strong>. The model is fixed. <strong>The formulation is yours to choose.</strong> Explore the problem, decide how
+to discretize it, and show that your element works on meshes, through damage growth and over many load
+cycles.</p>
+<p>This is a reproduction and engineering task based on a published model (Noii et al. 2024, lithium
+diffusion with swelling and fatigue phase-field fracture). It is not a test of new physics.</p>
+<h2>1. The model (fixed)</h2>
+<p>The fields are the displacement <strong>u</strong> (2D, unit thickness), the concentration c and the damage d.
+Everything is dimensionless and small-strain.</p>
+<p><strong>Constitutive laws</strong></p>
+<ul>
+<li>ε = sym ∇u,  ε_e = ε − β (c − c0) I</li>
+<li>σ_eff = 2μ ε_e + λ tr(ε_e) I,  μ = E / [2(1+ν)],  λ = Eν / [(1+ν)(1−2ν)]</li>
+<li>g(d) = (1 − κ)(1 − d)² + κ,  σ = g(d) σ_eff</li>
+<li>p_eff = tr(σ_eff) / 3</li>
+<li>J_c = g(d) D ∇c − χ c ∇(g(d) p_eff)</li>
+</ul>
+<p>Here I is the 2×2 identity and tr the 2D trace; p_eff divides by 3. These conventions come from the
+authors' public script. They are part of the model: you may discuss them, but implement them as stated,
+so that results can be compared.</p>
+<p><strong>Balance laws</strong> (in Ω, for t &gt; 0)</p>
+<ul>
+<li>∇·σ = 0</li>
+<li>∂c/∂t = ∇·J_c</li>
+<li>−ℓ² Δd + d − (1 − κ)(1 − d) H = 0</li>
+</ul>
+<p>Natural boundary conditions are traction-free, zero flux and ∇d·n = 0, except where the host prescribes
+values.</p>
+<p><strong>History</strong> (pointwise, irreversible)</p>
+<ul>
+<li>ψ⁺ = (K/2) ⟨tr ε_e⟩₊² + μ dev₂(ε_e) : dev₂(ε_e), with K = λ + (2/3)μ</li>
+<li>W = g(d) ψ⁺</li>
+<li>α(t) = accumulated increase of W, so α grows only when W grows</li>
+<li>f(α) = 1 for α ≤ α_T; otherwise f(α) = max(1e-15, [max(0, 1 − k_fg log10(α/α_T))]²), with
+  k_fg = 0.5</li>
+<li>G_f = G_c f(α)</li>
+<li>H(t) = max over s ≤ t of 2ℓ ψ⁺(s) / G_f(α(s))</li>
+</ul>
+<p>H, α and W may change only on accepted increments. A Newton iteration or a rejected increment must leave
+no trace in them.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>E</th>
+<th>ν</th>
+<th>β</th>
+<th>c0</th>
+<th>κ</th>
+<th>D</th>
+<th>χ</th>
+<th>ℓ</th>
+<th>G_c</th>
+<th>α_T</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>0.28</td>
+<td>0.035</td>
+<td>0.35</td>
+<td>1e-5</td>
+<td>0.14</td>
+<td>0.25</td>
+<td>0.12</td>
+<td><em>set in the problem file</em></td>
+<td><em>set in the problem file</em></td>
+</tr>
+</tbody>
+</table>
+<h2>2. What is yours to decide</h2>
+<ul>
+<li><strong>How to compute ∇(g p_eff).</strong> Note that p_eff already depends on ∇u. How you discretize this term
+  is your decision. Justify it with evidence, including how it behaves under mesh refinement.</li>
+<li><strong>The discretization.</strong> You choose the interpolation and quadrature for each field, and whatever
+  nodal or element-local variables your formulation needs (declare them in the contract).</li>
+<li><strong>The history update.</strong> You choose how and when H, α and W are updated and stored.</li>
+<li><strong>Failure behaviour.</strong> You choose how the element behaves on invalid states, and how it asks the host
+  for a smaller increment (PNEWDT).</li>
+<li><strong>Anything else</strong> robustness needs.</li>
+</ul>
+<p>The mesh topology is fixed to <strong>4-node quadrilaterals</strong>, which may be non-affine and moderately
+distorted. Explain every choice and the alternatives you rejected, with evidence.</p>
+<h2>3. The host</h2>
+<p><code>host/</code> is the solver part of <code>abaqus_ufl.fe</code>, which plays the role of Abaqus/Standard. It calls your
+compiled UEL through the standard argument list, with:
+- one monolithic Newton per increment, with a line search;
+- start-of-increment SVARS at every call, kept only after convergence and restored on rejection;
+- cutbacks when PNEWDT &lt; 1 or Newton fails.</p>
+<p><strong>Read <code>host/README.md</code> first.</strong> It states every argument the host passes, the time convention, and the
+format of <code>element/uel_contract.json</code>. In the contract you name your PROPS, so the host can set the
+model parameters, and you point to your stored H and α, so the scorer can check them.</p>
+<p><code>host/run_problem.py</code> runs the development problem D0 (<code>host/dev_problem/d0.json</code>, a square without a
+crack under cyclic charging) on structured or distorted meshes, and writes observables computed by the
+host from your nodal values. Use it to test your element globally.</p>
+<h2>4. What "robust" means (how you will be judged)</h2>
+<p>The organizer runs hidden problems on the same host. They are similar to the development problem but
+use other boundary conditions, loading, parameters and meshes. No element-level answer key is used,
+because formulations differ.
+1. <strong>Convergence.</strong> Under mesh and time-step refinement, the fields and observables converge to an
+   independent reference solution of the PDE. The observables are the maximum damage, the integrals of
+   d and c, and the elastic energy, over the cycles. This is tested on structured and distorted meshes.
+2. <strong>History.</strong> H and α never decrease. A forced rejected increment leaves no trace. Results are stable
+   under time-step refinement.
+3. <strong>Solver behaviour.</strong> Newton converges through damage growth up to d near 1. The element survives
+   cutbacks, a large-step run and a direct DTIME = 0 call, and returns no NaN.
+   - <strong>Hidden state:</strong> two runs reject the same increment, one after your UEL has seen the trial states
+     and one before. They must agree exactly, so all memory must be in SVARS.
+4. <strong>Your design.</strong> Whether your formulation choice is justified by evidence.
+5. <strong>Honesty.</strong> Whether your claims match what you checked.</p>
+<h2>5. Deliverables</h2>
+<ul>
+<li><strong><code>element/</code>:</strong></li>
+<li>the UEL source (standard signature);</li>
+<li><code>uel_contract.json</code> in the format of <code>host/README.md</code> §2: DOF names, named PROPS, the SVARS layout
+    with <code>history_slots</code>, LFLAGS, and residual scales.</li>
+<li><strong><code>design.md</code>:</strong> the formulation, the alternatives considered, and why you chose as you did.</li>
+<li><strong><code>verification/</code>:</strong> your tests and your global studies on the host (mesh and time-step studies), with
+  results.</li>
+<li><strong><code>research_log.md</code>:</strong> times taken from the clock (<code>date</code>), failed attempts and pivots.</li>
+<li><strong><code>STATUS.md</code>:</strong> what works, what does not, and what is unverified.</li>
+</ul>
+<h2>6. Conditions</h2>
+<ul>
+<li><strong>Isolation:</strong> offline, no installs, this workspace only.</li>
+<li><strong>Environment:</strong> <code>[local Python environment]</code>.</li>
+<li><strong>No Abaqus.</strong></li>
+<li><strong>Budget:</strong> about 6 hours.</li>
+<li><strong>No human help.</strong></li>
+<li><strong>Arm:</strong> the arm line, with or without <code>abaqus_ufl</code>, is given in <code>ORGANIZER_NOTE.md</code>.</li>
+</ul></div></details><details class="doc"><summary><span class="dt">host/README.md</span><span class="ds">how the simulator calls the element</span></summary><div class="docbody"><h1>The v2 host: how your UEL is called</h1>
+<p>The host is the solver part of <code>abaqus_ufl.fe</code> ([internal lab repository], commit 9ac03e8), vendored in
+<code>hostfe/</code>. It plays the role of Abaqus/Standard. It calls your compiled UEL through the standard
+argument list and solves the global problem. The organizer scores your element on this same host.</p>
+<h2>1. How the host calls your UEL</h2>
+<p>Every value below is fixed; none is left for you to guess.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>What the host passes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NNODE, MCRD</td>
+<td>4, 2. Nodes are counter-clockwise; COORDS(1:2, a) is node a</td>
+</tr>
+<tr>
+<td>NDOFEL, NRHS, MLVARX</td>
+<td>4 × <code>dof_per_node</code>, 1, NDOFEL</td>
+</tr>
+<tr>
+<td>U, DU</td>
+<td>Current nodal values in your <code>dof_names</code> order, node by node. DU = U − (accepted values at the start of the increment). So previous values are U − DU</td>
+</tr>
+<tr>
+<td>PROPS, NPROPS</td>
+<td>Your <code>props</code>, with every entry named in <code>prop_names</code> that is a model parameter overwritten by the problem's value</td>
+</tr>
+<tr>
+<td>JPROPS, NJPROP</td>
+<td>Your <code>jprops</code> (NJPROP = its length; 0 if empty)</td>
+</tr>
+<tr>
+<td>SVARS, NSVARS</td>
+<td>Start-of-increment values at every call of the increment. After a converged increment, the host calls your UEL once more at the converged state, and keeps the SVARS that call returns. A rejected increment restores the previous SVARS. Initial values: your <code>svars_initial</code> (default 0)</td>
+</tr>
+<tr>
+<td>LFLAGS</td>
+<td>Your <code>lflags</code> (default 1, 0, 1, 0, 0, 0). LFLAGS(3) = 1 asks for both RHS and AMATRX</td>
+</tr>
+<tr>
+<td>TIME(1), TIME(2)</td>
+<td>Both equal the time at the <strong>end</strong> of the increment. This is the abaqus_ufl.fe convention; Abaqus itself passes the beginning</td>
+</tr>
+<tr>
+<td>DTIME</td>
+<td>The increment length. It is always &gt; 0 in solves. The scorer also makes one separate call with DTIME = 0 (§4)</td>
+</tr>
+<tr>
+<td>KSTEP, KINC, JELEM</td>
+<td>1, 1, element index + 1</td>
+</tr>
+<tr>
+<td>PNEWDT</td>
+<td>1 on entry. Return a value &lt; 1 to reject the increment: the host restores SVARS and retries with a step halved, up to 10 times</td>
+</tr>
+<tr>
+<td>RHS, AMATRX</td>
+<td>The host uses R = −RHS and K = AMATRX = dR/dU. K may be unsymmetric</td>
+</tr>
+<tr>
+<td>ENERGY, V, A, PREDEF, PARAMS, loads</td>
+<td>Unused: zero arrays and no distributed loads</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The global solve.</strong>
+- <strong>Newton:</strong> one monolithic Newton iteration over all DOFs per increment, with a line search.
+- <strong>Convergence:</strong> judged on the residual, weighted per field by your <code>residual_scale</code> (default 1),
+  and on the update.
+- <strong>Dirichlet conditions</strong> are applied by the host, as described in §3.</p>
+<h2>2. <code>element/uel_contract.json</code></h2>
+<pre><code class="language-json">{
+  &quot;source&quot;: &quot;element/uel.f90&quot;,              // or a list of files; compiled in this order
+  &quot;compile_flags&quot;: [],                       // extra gfortran flags, e.g. [&quot;-ffixed-line-length-none&quot;]
+  &quot;dof_per_node&quot;: 4,                         // more if your formulation adds nodal variables
+  &quot;dof_names&quot;: [&quot;ux&quot;, &quot;uy&quot;, &quot;c&quot;, &quot;d&quot;],       // must include these four; name any others yourself
+  &quot;abaqus_dofs&quot;: [1, 2, 11, 12],             // the Abaqus DOF numbers you would use
+  &quot;prop_names&quot;: [&quot;E&quot;, &quot;nu&quot;, &quot;beta&quot;, &quot;c0&quot;, &quot;kappa&quot;, &quot;D&quot;, &quot;chi&quot;, &quot;ell&quot;, &quot;G_c&quot;, &quot;alpha_T&quot;, &quot;k_fg&quot;, &quot;my_flag&quot;],
+  &quot;props&quot;: [10.0, 0.28, 0.035, 0.35, 1e-5, 0.14, 0.25, 0.12, 1.0, 1.0, 0.5, 0.0],
+  &quot;jprops&quot;: [],
+  &quot;nsvars&quot;: 0,                               // your SVARS length per element
+  &quot;svars_initial&quot;: null,                     // or a list of length nsvars, per element
+  &quot;history_slots&quot;: {&quot;H&quot;: [], &quot;alpha&quot;: []},   // 1-based SVARS indices of H and of alpha, one per point where you store them
+  &quot;lflags&quot;: [1, 0, 1, 0, 0, 0],
+  &quot;residual_scale&quot;: {&quot;c&quot;: 1.0}               // optional characteristic size per named field
+}
+</code></pre>
+<p>The <code>//</code> comments above are explanation only; the real file must be plain JSON.</p>
+<p>The model parameter names the host fills in are E, nu, beta, c0, kappa, D, chi, ell, G_c, alpha_T and
+k_fg. <code>history_slots</code> must point at every stored value of H and of α, because the scorer checks that they
+never decrease. The host prescribes values only for ux, uy, c and d; any further nodal variables get
+natural boundary conditions.</p>
+<h2>3. Problem D0, the development problem</h2>
+<p>The problem is in <code>dev_problem/d0.json</code> (parameters, loading and boundary conditions). There is no crack.
+- <strong>Domain:</strong> Ω = [0,1]².
+- <strong>Constraints:</strong> u_x = u_y = 0 at (0, 0); u_y = 0 at (1, 0). Otherwise traction-free.
+- <strong>Concentration:</strong> c = c0 + A[1 − cos(2πt/T)]/2 on the top edge y = 1; zero flux elsewhere.
+- <strong>Damage:</strong> ∇d·n = 0 on the whole boundary.
+- <strong>Initial state:</strong> u = 0, c = c0, d = 0, and zero history.</p>
+<p>To run it:</p>
+<pre><code class="language-bash">export PATH=[local Python environment]/bin:$PATH
+python host/run_problem.py . --mesh structured --n 16            # also: --mesh distorted --seed 1
+python host/run_problem.py . --mesh structured --n 32 --steps-per-cycle 80 --cycles 5
+</code></pre>
+<p>Each run writes <code>verification/runs/D0_&lt;mesh&gt;_&lt;n&gt;_s&lt;seed&gt;_spc&lt;steps&gt;/</code>:
+- <code>observables.csv</code>: d_max, A_damage, D_int, C_int and E_el per accepted step, computed by the host
+  from your nodal values (<code>observables.py</code>);
+- <code>fields_cycle_XXX.npz</code>: nodal values and SVARS at the end of each cycle;
+- <code>run.json</code>: the solver summary, including <code>history_min_change</code>, the smallest change of each
+  <code>history_slots</code> entry between accepted steps.</p>
+<p>Meshes: <code>meshes.py</code>, with structured or distorted 4-node quadrilaterals and n a multiple of 8.</p>
+<h2>4. What the scorer adds on top of D0</h2>
+<p>The scorer uses hidden problems with other boundary conditions, loading and parameters, on structured
+and distorted meshes, with the same host and the same contract. One of them drives the damage to 1.
+On top of those it runs:
+- <strong>History checks:</strong> H and α (your <code>history_slots</code>) never decrease.
+- <strong>A hidden-state test:</strong> two runs reject the same increment, one after your UEL has seen the trial
+  states and one before. They must give identical results, so all memory must be in SVARS.
+- <strong>A DTIME = 0 call:</strong> one call at a typical state must return finite arrays or PNEWDT &lt; 1. It must not
+  crash.
+- <strong>A large-step run:</strong> a quarter of the steps per cycle, completed through cutbacks or directly.
+- <strong>Newton statistics</strong> per increment.</p></div></details><details class="doc"><summary><span class="dt">Practice problem file (D0)</span><span class="ds">host/dev_problem/d0.json</span></summary><div class="docbody"><pre><code>{
+ &quot;id&quot;: &quot;D0&quot;,
+ &quot;name&quot;: &quot;D0 smooth square, cyclic charging on the top edge, no crack&quot;,
+ &quot;parameters&quot;: {
+  &quot;E&quot;: 10.0,
+  &quot;nu&quot;: 0.28,
+  &quot;beta&quot;: 0.035,
+  &quot;c0&quot;: 0.35,
+  &quot;kappa&quot;: 1e-05,
+  &quot;D&quot;: 0.14,
+  &quot;chi&quot;: 0.25,
+  &quot;ell&quot;: 0.12,
+  &quot;G_c&quot;: 3.5e-06,
+  &quot;alpha_T&quot;: 0.0001,
+  &quot;k_fg&quot;: 0.5
+ },
+ &quot;loading&quot;: {
+  &quot;A&quot;: 0.45,
+  &quot;T&quot;: 8.0,
+  &quot;N_cyc&quot;: 20,
+  &quot;steps_per_cycle&quot;: 40
+ },
+ &quot;c_edges&quot;: [
+  &quot;top&quot;
+ ],
+ &quot;notch&quot;: null,
+ &quot;constraints&quot;: [
+  [
+   0.0,
+   0.0,
+   [
+    &quot;ux&quot;,
+    &quot;uy&quot;
+   ]
+  ],
+  [
+   1.0,
+   0.0,
+   [
+    &quot;uy&quot;
+   ]
+  ]
+ ]
+}</code></pre></div></details></div>
+<p class="small col" style="margin-top:var(--sp3)">The hidden problem files are not shown, so that the hidden problems stay usable
+for later tests. Section 1 describes them.</p>
+<footer>October 2026.</footer>
+</section>
+</main>
+</div>
+<script>(function () {
+  "use strict";
+
+  // ---- tooltip ----
+  var tip = document.getElementById('tip');
+  function showTip(text, x, y) {
+    tip.textContent = text; tip.style.display = 'block';
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(Math.max(8, x + 12), window.innerWidth - w - 8) + 'px';
+    var top = y - h - 12; if (top < 8) top = y + 18; tip.style.top = top + 'px';
+  }
+  function hideTip() { tip.style.display = 'none'; }
+  document.querySelectorAll('[data-tip]').forEach(function (el) {
+    el.addEventListener('pointermove', function (ev) { showTip(el.getAttribute('data-tip'), ev.clientX, ev.clientY); });
+    el.addEventListener('pointerleave', hideTip);
+    el.addEventListener('focus', function () { var r = el.getBoundingClientRect(); showTip(el.getAttribute('data-tip'), r.left + r.width / 2, r.top); });
+    el.addEventListener('blur', hideTip);
+  });
+
+  // ---- toggles that show one element of a group ----
+  document.querySelectorAll('.seg[data-group]').forEach(function (seg) {
+    var grp = seg.getAttribute('data-group');
+    seg.querySelectorAll('button[data-show]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        seg.querySelectorAll('button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+        document.querySelectorAll('div[data-group="' + grp + '"]').forEach(function (el) { el.hidden = el.id !== b.getAttribute('data-show'); });
+      });
+    });
+  });
+  function choice(id, cb) {
+    var seg = document.getElementById(id);
+    seg.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        seg.querySelectorAll('button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+        cb(b.getAttribute('data-v'));
+      });
+    });
+  }
+
+
+  if (/open=all/.test(location.search)) document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+})();
+</script>
+</body>
+</html>

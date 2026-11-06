@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "problem": "D0",
+  "mesh": "structured",
+  "n": 32,
+  "seed": 0,
+  "cycles": 5,
+  "steps_per_cycle": 160,
+  "dt": 0.05,
+  "wall_s": 895.8765103589976,
+  "accepted_output_steps": 800,
+  "committed_subincrements": 800,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "d_max_over_run": 0.2270786037384577,
+  "d_min_over_run": 7.244819182667585e-09,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "host": "unmodified fehost.solve, default tol=1e-8",
+  "source_sha256": {
+    "element/generated_kernel.for": "42632aa7fca595c967d88205f1c1669323284072bddefc8d61b1c9fa204cb998",
+    "element/uel.f90": "b794fee86f69a3bd2fc25dc3182e58b579817775f00fde96d76b89657c0365a3"
+  },
+  "compiled_module": "challenge_4d25c04c0ebe",
+  "attempts": 800,
+  "accepted": 800,
+  "cutbacks": 0,
+  "stopped_early": false,
+  "rejected_attempts": 0,
+  "min_dt": 0.04999999999999894,
+  "max_sweeps": 2,
+  "max_accepted_sweeps": 2
+}

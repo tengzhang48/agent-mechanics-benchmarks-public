@@ -1,0 +1,24 @@
+{
+  "n": 32,
+  "spc": 40,
+  "cycles": 5,
+  "status": "ok",
+  "wall_s": 935.9103288650513,
+  "accepted_output_steps": 200,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "source_sha256": "7dd6cabd89bfa96d259e54584dcf684372a83ab208fa732da42abcf9a1050ce5",
+  "final": [
+    40.0,
+    0.17774422620148406,
+    0.06426363019137395,
+    0.5089945130976651,
+    4.5023903663099585e-07
+  ],
+  "attempts": 200,
+  "accepted": 200,
+  "cutbacks": 0,
+  "stopped_early": false
+}

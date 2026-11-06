@@ -1,0 +1,155 @@
+{
+  "python_executable": "<env>/bin/python",
+  "python_version": "3.13.14 | packaged by conda-forge | (main, Jun 12 2026, 09:50:25) [GCC 14.3.0]",
+  "gfortran_executable": "<env>/bin/gfortran",
+  "gfortran_version": "GNU Fortran (conda-forge gcc 14.3.0-19) 14.3.0",
+  "generator_pinned_revision_as_declared_by_organizer": "a02ed7c",
+  "revision_independently_verified": false,
+  "revision_note": "vendored files have no Git metadata",
+  "package_modifications": [],
+  "host_modifications": [],
+  "generator_output_transformations": [
+    "Rename UEL entry to CHEM_UEL_CORE for checked wrapper",
+    "Lump phase reaction to nodal d/vfrac with GP H; multiply generated H chain-rule tangent by -a*vfrac_node(row) and add nodal diagonals"
+  ],
+  "postprocessed_fortran_core": {
+    "total_lines": 4077,
+    "nonblank_noncomment_lines": 3101
+  },
+  "handwritten_fortran_wrapper": {
+    "total_lines": 90,
+    "nonblank_noncomment_lines": 79
+  },
+  "fortran_line_allocation": {
+    "unmodified_generated_lines": 4055,
+    "rewritten_or_added_core_lines": 22,
+    "handwritten_wrapper_lines": 90,
+    "delivered_total_lines": 4167,
+    "fraction_unmodified_generated": 0.9731221502279818,
+    "counting_policy": "Every modified core line, including entry renaming and comments, is classified as authored."
+  },
+  "generated_fraction_of_delivered_fortran_lines": 0.9731221502279818,
+  "line_count_caveat": "Generic unused shipped templates are included; percentage does not measure authorship of physics.",
+  "generated_responsibilities": [
+    "constitutive law translation and physical trial history",
+    "isoparametric interpolation including old nodal fields",
+    "Gauss integration",
+    "most residual assembly",
+    "complex-step material/H-carrier tangent blocks and most tangent assembly"
+  ],
+  "handwritten_responsibilities": [
+    "authored Python physics and mixed formulation",
+    "nodal damage-reaction quadrature and exact chain-rule/diagonal assembly extension",
+    "dimension/material/geometry/finite checks",
+    "transactional state output",
+    "DTIME=0 and invalid-state PNEWDT"
+  ],
+  "material_verify_scope": "Material/H-carrier derivatives; final nodal reaction is checked separately by independent assembled residual and FD tests.",
+  "unchanged_host_and_tool_audit": {
+    "comparator": "verification/implicit_active_source/verification/provenance.json",
+    "host_identical": true,
+    "generator_identical": true
+  },
+  "element_sha256": {
+    "element/generate.py": "9b7c500468512755f11aae268a645261675f22164df099f40dd263aad46d1ca5",
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+    "element/model.py": "075425d860aa2015a22d5873389b40b860202cc7ff56797c074ca3e93641b6b8",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "host_sha256": {
+    "host/README.md": "d6ab9b1144bfbb02a21771cceba260b66b79e948dacd5890f299409d8bf2f219",
+    "host/dev_problem/d0.json": "1fff292f092a9c3758589b52bf855b269bbd86c5b88e44274b3932343ce04cc2",
+    "host/fehost.py": "d22e61080c58018c99c2f509148c8cd1329c24abe1a0625c548605165ce0eb8f",
+    "host/hostfe/__init__.py": "661b57156898c2ebcdb64ecf7c4a8cb3b31f14e15450803449861bdd820a85a2",
+    "host/hostfe/bounds.py": "26ddf47f4de097095f8704194e03e8f0555c3da31087d40a6b5d2a9861acae60",
+    "host/hostfe/compiled_element.py": "18b7b0e8821c536463c85e78d80d69e0b07063f980ec4f6514f83938a72b479b",
+    "host/hostfe/drive_uel.f90": "402ad76d47ba457d39effcde62843b4565008c75f4c8f053bd89983d99108052",
+    "host/hostfe/driver.py": "23edeef5bf2510e629c80ab4d0aadf26b214d10624b402bb0eae802671f9c545",
+    "host/hostfe/mesh.py": "f93b2b1619890a545d2c4597a008807b14c739d0cffa0c48b02a6cb869d9c8ff",
+    "host/meshes.py": "2011ac1f2abb3343cb81048b5ed38adb8dedd77382029ac5fbb346bdb1406bd0",
+    "host/observables.py": "b056c304cd48e01a1ac77d229859b5362d7fdca0a6dac7bb79b2ee5c4cdfdf3c",
+    "host/run_problem.py": "04dab90154610e4aa80b1a9a5e3b6528edf0afe2e98400e019b907818dc0771f"
+  },
+  "generator_sha256": {
+    "tools/abaqus_ufl/abaqus_ufl/__init__.py": "a1781c5f2ed23d60355c5f6ceb42070baab8a5088d1c199276c173f4c6541c18",
+    "tools/abaqus_ufl/abaqus_ufl/core/__init__.py": "c9f720a265fa9b71b118e4b7b921bddf376dbca557339ef95402f3abed97a42a",
+    "tools/abaqus_ufl/abaqus_ufl/core/_cs_state.py": "5e39dbcaf4d9d36a82c2fcb200361fdf9f66ccd380611a07b675bf6328f0f095",
+    "tools/abaqus_ufl/abaqus_ufl/core/defs.py": "ba0d62e81f8d59fc55d5a52bc52d1e79f997b5472fb90ae839ed818a352f7ee4",
+    "tools/abaqus_ufl/abaqus_ufl/core/fields.py": "f7557943b1ab13ab7ffd9c20db129e3e356b36f95842138c883270f52b2511a9",
+    "tools/abaqus_ufl/abaqus_ufl/core/fortran_helper.py": "b865d65f3e8e43c44772e4a3ded3e9657bdc99287305fe8e662d1a2bf52efd2c",
+    "tools/abaqus_ufl/abaqus_ufl/core/material.py": "9b5d903b8baa3acf70da7221886220e7eaba9cf4d49c9badac4fd96422096798",
+    "tools/abaqus_ufl/abaqus_ufl/core/reference_assembly.py": "292c9f1a3d75b8df94c0cb1d5e6ad735d80a8ab43f2f5448509c1015f0e22468",
+    "tools/abaqus_ufl/abaqus_ufl/core/small_strain_plasticity.py": "3b7f329308f9e78b91831d55a63dc924e79d38efe5d2e1a034ac84e27d38717a",
+    "tools/abaqus_ufl/abaqus_ufl/core/soil.py": "1ba8ea9737b5c8d88edaf49c819486f14b565383c570835e3f43ed667a515fc9",
+    "tools/abaqus_ufl/abaqus_ufl/core/symbolic_tangent.py": "0d773e2fe367fda1f3693183ec96a17336ac3cec2ea210c4707c45f1337896ce",
+    "tools/abaqus_ufl/abaqus_ufl/core/tagent.py": "43c502095c062afcefa15a4d1725b3c140505b0daf5fa48a1dc8e23053322e9a",
+    "tools/abaqus_ufl/abaqus_ufl/core/tensor.py": "b7094c517d741702abb4939406ba92a84f0828b7039217f2c88d01e852bbe365",
+    "tools/abaqus_ufl/abaqus_ufl/core/verify.py": "03d7db80c6babec1e98c6357d3f090e520bcb044a6afdca07819e22dceb6e8d1",
+    "tools/abaqus_ufl/abaqus_ufl/core/weakform.py": "f4a03a95903d434320c11b262a5ab7549d5cbef0f83b840d9ce07a75510a2b4b",
+    "tools/abaqus_ufl/abaqus_ufl/fe/__init__.py": "29d92725a281f94dd0234d4e78a56e470d76553958d92b9580fd95153a6f050e",
+    "tools/abaqus_ufl/abaqus_ufl/fe/compiled_element.py": "c7bfa50c30a8c4fe80c1cb6b85d629071240da2d4c2c01b7d09b84376a4baa20",
+    "tools/abaqus_ufl/abaqus_ufl/fe/driver.py": "082bb030e4f3cfd61ef522afa7b90c4a789e637c83020d87918f290067242a86",
+    "tools/abaqus_ufl/abaqus_ufl/fe/mesh.py": "db91484028016a24cf6f8702618b4e5f68aac785cbb8c1da5c0682aa57399212",
+    "tools/abaqus_ufl/abaqus_ufl/generators/__init__.py": "e0d0fd39943a90dbd622b89cdb57fffbde835394b2b9a071837b0982585626b5",
+    "tools/abaqus_ufl/abaqus_ufl/generators/_fortran_format.py": "6cb4abbb75a9b196bdf33a7a50028cbb7579e51bef9071c5caf36a852341a1b1",
+    "tools/abaqus_ufl/abaqus_ufl/generators/element_config.py": "8d5bd274cfed49b07a50008211eb6eff75e0471f74c12c7082d3940011d5a96f",
+    "tools/abaqus_ufl/abaqus_ufl/generators/inp_scaffold.py": "78b60de45067456263b17038e7edb6dbdb32156e5a56e2f61a03d0c41372f89f",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/cs_linalg.for": "60366fe9ddbca4528350222171f1b48c9af179aa198e83aea0162d9d0dbf7cbc",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/cs_tangent_engine.for": "b301a98c4c17cf02b987fea1dca5a2c55c58de39d65fa4803120ecc4c44c1a3e",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/edge_quad8.for": "a0507ee7d3fbabbf6fc5b727ca4eaf6fb5fd371623051ba1f5aced2c1a3d192a",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/face_hex.for": "86acd1494d656f0478a84a329b822f0d6026cd81635d0cc09ca6a995fb8f3db1",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/gauss_hex.for": "11975dfc8e0296aa0da771330e964427f8a40a1982be251351d4c0edf3410338",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/gauss_rules.for": "aa174303035515bd173da1055e83ba1e40898125d512d9e9eaceaa1779e15661",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/isoparametric.for": "c656c7b3bd79aece529b1cb81c3f51fb8b3d166d37ab7f62f2820f6a2f688a96",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/shape_hex20.for": "89453d2fb741b21fe78e92798230851f1a1ce7f79726a26ce42b46fd35e4b685",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/shape_hex8.for": "9049065ce916d21ffb7ad88183ef9ebef4fc47a64dccb8ec00c53a5de0881385",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/shape_quad4.for": "5b7d6ff5f5101f67749550b8edc4d0a5887e3fa28d716ea108340bfe8818a384",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/shape_quad8.for": "1d7b1f0b0ab660ac8cbe8080cdfdaf887ee2009f9d3181c36d5b785cbcffab87",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/shape_tet4.for": "2d3c3ae77ba2339db752bb69303a6094e351230187db4ee47d741279a9113ca4",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/tangent_identities.for": "046f27140d5d7fb501463d6b61b4c6778d542e7631f48a4fab4c69fdecfde9fa",
+    "tools/abaqus_ufl/abaqus_ufl/generators/templates/tensor_ops.for": "7b7854f7d2a43214c7afd65777cabbb9e38cc1a3b4cbb7ccc8418a9aac79f9b7",
+    "tools/abaqus_ufl/abaqus_ufl/generators/uel_fbar_coupled.py": "96baa77216fea7382b556ae48e22f4fc859e4bf1e4d2bd2017c0b1c09ffe0a21",
+    "tools/abaqus_ufl/abaqus_ufl/generators/uel_gen.py": "471a231c4e8eb2e1ea05278f7217c021f6fa1b76461a09dd0792cf15468721c2",
+    "tools/abaqus_ufl/abaqus_ufl/generators/uel_local_pressure.py": "6ffe0319ac59cd3f48302fd540cf9000098b13eed007f106b179c6a9296238ec",
+    "tools/abaqus_ufl/abaqus_ufl/generators/umat_gen.py": "27a4e51e190b64d8b7779f29c7631ead597f202e2a006d85babe204f89a59741"
+  },
+  "dof_names": [
+    "ux",
+    "uy",
+    "c",
+    "d",
+    "q",
+    "vfrac"
+  ],
+  "history_slots": {
+    "H": [
+      1,
+      5,
+      9,
+      13
+    ],
+    "alpha": [
+      2,
+      6,
+      10,
+      14
+    ]
+  },
+  "props_order": [
+    "E",
+    "nu",
+    "beta",
+    "c0",
+    "kappa",
+    "D",
+    "chi",
+    "ell",
+    "G_c",
+    "alpha_T",
+    "k_fg",
+    "psi_predictor_floor_fraction"
+  ],
+  "abaqus_execution": false
+}

@@ -1,0 +1,96 @@
+{
+  "recorded_utc": "2026-10-20T21:10:32.622426+00:00",
+  "origin": "tmp/lumped_psilag_candidate/notch_distorted16_s3_c2_spc20",
+  "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c2_spc20",
+  "source_sha256": {
+    "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+    "element/model.py": "d57b914cc03d62ce742dd4fcaa5e01a65340bedf801ea007982ef6ad73614e91",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "summary": {
+    "status": "ok",
+    "problem": {
+      "id": "V_notch_sides",
+      "name": "Verification variant: precrack, side charging, restrained expansion",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 1.5e-06,
+        "alpha_T": 2e-05,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.6,
+        "T": 8.0,
+        "N_cyc": 3,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "left",
+        "right"
+      ],
+      "notch": {
+        "x_end": 0.125
+      },
+      "constraints": [
+        [
+          0.0,
+          0.0,
+          [
+            "ux",
+            "uy"
+          ]
+        ],
+        [
+          1.0,
+          0.0,
+          [
+            "ux",
+            "uy"
+          ]
+        ]
+      ]
+    },
+    "mesh": "distorted",
+    "n": 16,
+    "seed": 3,
+    "cycles": 2,
+    "steps_per_cycle": 20,
+    "dt": 0.4,
+    "accepted_output_steps": 40,
+    "wall_s": 9.875818533997517,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -3.3306690738754696e-16
+    },
+    "uniform_strain": null,
+    "tol": 1e-08,
+    "attempts": 40,
+    "accepted": 40,
+    "cutbacks": 0,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 112,
+    "observed_linear_solves_max": 7,
+    "min_dt": 0.39999999999999863
+  },
+  "artifact_sha256": {
+    "attempts.json": "fd1cec1325f2b37f98d75391a88039cacb690c95885824c7ccfa57bd307e9756",
+    "fields_cycle_001.npz": "2c293a7fb349e145e73fce90bfce3d00f594ab4201b9bec694f5edab60ebac4a",
+    "fields_cycle_002.npz": "bcfddfa07bc5b2b2406d51028245fd9568128f4a3466d5d198f8177a271150ce",
+    "increments.csv": "dde2e1fda3861b8848eac7da0d13249b089c3ad1a16e02ae27f41925268669ba",
+    "last_state.npz": "3f64457fb7fb39e92c0c0a1ae690937232dfc67c4a8f410788a6904127d39a05",
+    "observables.csv": "f00672af1f0ea09c3da51254001c2f204330926f234b8f006e4f6bdd62312a64",
+    "run.json": "628aeb3d96a741d00c21c8d53de17f4e46d9bb145f1446ca3056678e2789ee56"
+  }
+}

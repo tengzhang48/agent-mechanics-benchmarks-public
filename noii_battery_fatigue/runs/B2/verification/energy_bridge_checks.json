@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "field": "c=c0+a*x; ux=beta*a*(x*x-y*y)/2; uy=beta*a*x*y; d=0",
+  "explanation": "The exact field is stress free. Sampling its exact nodal values and applying the host Q1 gradient creates O(h^2) energy.",
+  "runs": [
+    {
+      "n": 8,
+      "host_Q1_energy": 1.3310981519294457e-07,
+      "analytical_Q1_energy": 1.331098151929451e-07,
+      "continuum_energy": 0.0,
+      "relative_formula_error": 3.977134152478307e-15
+    },
+    {
+      "n": 16,
+      "host_Q1_energy": 3.327745379823603e-08,
+      "analytical_Q1_energy": 3.3277453798236275e-08,
+      "continuum_energy": 0.0,
+      "relative_formula_error": 7.357698182084867e-15
+    },
+    {
+      "n": 32,
+      "host_Q1_energy": 8.319363449559046e-09,
+      "analytical_Q1_energy": 8.319363449559069e-09,
+      "continuum_energy": 0.0,
+      "relative_formula_error": 2.7839939067348146e-15
+    },
+    {
+      "n": 64,
+      "host_Q1_energy": 2.079840862389775e-09,
+      "analytical_Q1_energy": 2.0798408623897672e-09,
+      "continuum_energy": 0.0,
+      "relative_formula_error": 3.778277444854391e-15
+    }
+  ]
+}

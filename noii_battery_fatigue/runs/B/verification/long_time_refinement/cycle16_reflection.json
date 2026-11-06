@@ -1,0 +1,133 @@
+{
+  "scope": "Read-only cycle16 reflection diagnostic; not a convergence or uniqueness proof.",
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "input_sha256": {
+    "verification/runs/long_time/D0_structured_16_s1_c20_spc80/fields_cycle_016.npz": "6c879988bd3edd8084f0f7565804b0f7bd9d682a650236a1a40814efd1637dc4",
+    "verification/runs/long_time/D0_structured_16_s1_c20_spc160/fields_cycle_016.npz": "43c390f48e2dbcc644c5db4bf3de2b7fec22e53b11f1224b3077830d94d4e708",
+    "verification/runs/long_time/D0_structured_16_s1_c20_spc320/fields_cycle_016.npz": "2b3607e323b66b351fac4620a78c71151d7833014fc4340a9444625df60eba86",
+    "verification/runs/long_time/D0_structured_16_s1_c20_spc640/fields_cycle_016.npz": "818f6eabbd94657eb5d90987a38f70d6f1ac5b954156e6c2bfb007006de27a42",
+    "verification/runs/long_time/D0_structured_16_s1_c20_spc1280/fields_cycle_016.npz": "da4a1329232e33d6adf0b8148c06d0ce65698f74342fd0e38ed3755933abe74b"
+  },
+  "reflection_definition": "For scalar nodal grid V=U.reshape(17,17,6), max(abs(V[:,:,field]-V[:,::-1,field])).",
+  "records": [
+    {
+      "spc": 80,
+      "cycle": 16,
+      "observables": {
+        "D_int": 0.10853476793436466,
+        "C_int": 0.5202141765442446,
+        "E_el": 7.750396389113115e-07,
+        "A_damage": 0.0,
+        "d_max": 0.4621819024748156
+      },
+      "scalar_max_reflection_difference": {
+        "c": 2.55351295663786e-15,
+        "d": 2.581268532253489e-14,
+        "q": 2.5148069390801275e-15,
+        "vfrac": 2.5757174171303632e-14
+      },
+      "damage_corners": [
+        0.033692724297107846,
+        0.03369272429710662,
+        0.133434505874447,
+        0.13343450587443936
+      ]
+    },
+    {
+      "spc": 160,
+      "cycle": 16,
+      "observables": {
+        "D_int": 0.1131540850170921,
+        "C_int": 0.5224163482104294,
+        "E_el": 7.856323780445191e-07,
+        "A_damage": 0.0009765625,
+        "d_max": 0.5345344221290239
+      },
+      "scalar_max_reflection_difference": {
+        "c": 3.774758283725532e-15,
+        "d": 4.413136522884997e-14,
+        "q": 3.486577346278885e-15,
+        "vfrac": 4.4075854077618715e-14
+      },
+      "damage_corners": [
+        0.0341824969221642,
+        0.034182496922162985,
+        0.13639369861893552,
+        0.13639369861893305
+      ]
+    },
+    {
+      "spc": 320,
+      "cycle": 16,
+      "observables": {
+        "D_int": 0.11812600373732444,
+        "C_int": 0.5244970645822382,
+        "E_el": 7.877705789205984e-07,
+        "A_damage": 0.0078125,
+        "d_max": 0.6308917938909158
+      },
+      "scalar_max_reflection_difference": {
+        "c": 8.954670338567894e-12,
+        "d": 4.1785053195297905e-10,
+        "q": 3.888465070767122e-13,
+        "vfrac": 4.1785053195297905e-10
+      },
+      "damage_corners": [
+        0.034437749612570075,
+        0.03443774961259144,
+        0.1388499607153055,
+        0.13884996071090025
+      ]
+    },
+    {
+      "spc": 640,
+      "cycle": 16,
+      "observables": {
+        "D_int": 0.12624425699133662,
+        "C_int": 0.5272817046625239,
+        "E_el": 7.449926876158489e-07,
+        "A_damage": 0.01953125,
+        "d_max": 0.7983292721846575
+      },
+      "scalar_max_reflection_difference": {
+        "c": 2.067268023431268e-10,
+        "d": 2.7818046755001546e-09,
+        "q": 1.2305794837991213e-11,
+        "vfrac": 2.781804564477852e-09
+      },
+      "damage_corners": [
+        0.034583912838180624,
+        0.03458391284698617,
+        0.14196999063245486,
+        0.1419699905128637
+      ]
+    },
+    {
+      "spc": 1280,
+      "cycle": 16,
+      "observables": {
+        "D_int": 0.13608585776480397,
+        "C_int": 0.5301851403957923,
+        "E_el": 6.263383340897721e-07,
+        "A_damage": 0.02978515625,
+        "d_max": 0.9366158291990154
+      },
+      "scalar_max_reflection_difference": {
+        "c": 1.3941044985088524e-09,
+        "d": 1.4894349198435464e-08,
+        "q": 7.811932079947875e-11,
+        "vfrac": 1.4894349115168737e-08
+      },
+      "damage_corners": [
+        0.034677417534197744,
+        0.03467741757481676,
+        0.14534020168718484,
+        0.14534020113451693
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "status": "diagnosed discretization limitation; compiled reduction verified",
+  "diffusivity": 1.4000000000000001e-06,
+  "time": 8.0,
+  "diffusion_length": 0.0033466401061363026,
+  "boundary_layer_solution": "BE resolvent = gamma-time mixture of erfc; 64 generalized Laguerre points",
+  "bottom_boundary_note": "Distance one is over 298 diffusion lengths; reflecting-boundary correction is below roundoff",
+  "c0": 0.35,
+  "top_concentration": 0.8,
+  "reference_checks": {
+    "BE_resolvent_recurrence_max_error": 4.440892098500626e-16,
+    "quadrature_64_vs_96_max_error": 6.661338147750939e-16
+  },
+  "compiled_checks": [
+    {
+      "n": 8,
+      "compiled_vs_1D_max_error": 5.745404152435185e-15,
+      "solver": {
+        "attempts": 80,
+        "accepted": 80,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    },
+    {
+      "n": 16,
+      "compiled_vs_1D_max_error": 3.774758283725532e-15,
+      "solver": {
+        "attempts": 80,
+        "accepted": 80,
+        "cutbacks": 0,
+        "stopped_early": false
+      }
+    }
+  ],
+  "spatial_study": [
+    {
+      "n": 8,
+      "c_min_over_steps": 0.22943408933046147,
+      "c_min_final": 0.23031937536026723,
+      "C_int": 0.36630773667413097,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.0791990912891453
+    },
+    {
+      "n": 16,
+      "c_min_over_steps": 0.22946776522953616,
+      "c_min_final": 0.23298876288628378,
+      "C_int": 0.3582580560800721,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.0516229016652645
+    },
+    {
+      "n": 32,
+      "c_min_over_steps": 0.22960237046107462,
+      "c_min_final": 0.24337204861695363,
+      "C_int": 0.35433408542968203,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.030491919560323877
+    },
+    {
+      "n": 64,
+      "c_min_over_steps": 0.23013929374617065,
+      "c_min_final": 0.28065801688374253,
+      "C_int": 0.35255287040314276,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.013942795435097119
+    },
+    {
+      "n": 128,
+      "c_min_over_steps": 0.2322633924478788,
+      "c_min_final": 0.333442065040874,
+      "C_int": 0.351906596825585,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.0037311525933501366
+    },
+    {
+      "n": 256,
+      "c_min_over_steps": 0.240404226434459,
+      "c_min_final": 0.34865562437290853,
+      "C_int": 0.35174591259027677,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.0009594401023341466
+    },
+    {
+      "n": 512,
+      "c_min_over_steps": 0.26837322899168303,
+      "c_min_final": 0.34999589720317587,
+      "C_int": 0.3517088321996683,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 0.00024713591628985833
+    },
+    {
+      "n": 1024,
+      "c_min_over_steps": 0.3406864105500801,
+      "c_min_final": 0.3499999999999999,
+      "C_int": 0.3516997039242226,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 6.226412089006493e-05
+    },
+    {
+      "n": 2048,
+      "c_min_over_steps": 0.35,
+      "c_min_final": 0.350000000000001,
+      "C_int": 0.35169742978919977,
+      "continuous_space_BE_C_int": 0.3516966724333848,
+      "L2_spatial_error": 1.55962133932843e-05
+    }
+  ],
+  "finding": "Consistent-mass Q1 diffusion can undershoot c0 when the low-mobility boundary layer is unresolved. Refinement resolves it. No positivity guarantee for concentration is claimed."
+}

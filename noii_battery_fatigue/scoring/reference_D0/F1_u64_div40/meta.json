@@ -1,0 +1,32 @@
+{
+ "problem": "d0",
+ "mesh": "64",
+ "form": "F1",
+ "div": 40,
+ "ncyc": 20,
+ "params": {
+  "E": 10.0,
+  "nu": 0.28,
+  "beta": 0.035,
+  "c0": 0.35,
+  "kappa": 1e-05,
+  "D": 0.14,
+  "chi": 0.25,
+  "ell": 0.12,
+  "kfg": 0.5,
+  "fmin": 1e-15,
+  "Gc": 3.5e-06,
+  "alphaT": 0.0001,
+  "A": 0.45,
+  "T": 8.0
+ },
+ "deg_u": 2,
+ "deg_s": 1,
+ "qdeg": 4,
+ "qdeg_obs": 6,
+ "ndofs": 91013,
+ "ncells": 16384,
+ "steps_done": 800,
+ "failed_attempts": 0,
+ "subset": "cycle-end rows and the scorer's columns only, values unchanged (make_reference_subset.py)"
+}

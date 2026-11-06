@@ -1,0 +1,7 @@
+{
+  "initial_invalid_FD_relative_error": 1.0,
+  "observed_input_SVARS_mutation_max": 18.488301034836795,
+  "cause": "Private ContractUEL._call passes SVARS in place. Finite differences reused the resulting updated state.",
+  "correction": "Pass old.copy() to every private point call; Fortran and primary source unchanged.",
+  "corrected_check": "implicit_enhanced_checks.json"
+}

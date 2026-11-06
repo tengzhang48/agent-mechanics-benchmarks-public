@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "byte_identical": {
+    "element/generated_kernel.for": true,
+    "element/uel_contract.json": true
+  }
+}

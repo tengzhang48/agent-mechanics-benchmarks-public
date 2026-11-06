@@ -1,0 +1,10 @@
+{
+  "base_generated_sha256": "744b5303512e26f261cd5d3158f85e2d8492fb20712bc2a901cb66062812e1ca",
+  "candidate_generated_sha256": "3a2932ebc621ffaca412212be1985fc3cb433a88d5a2c1e42502536d7e70f3ae",
+  "changes": [
+    "At exact equality select current H candidate derivative (>=)",
+    "Add the nonnegative W increment to alpha with explicit parentheses"
+  ],
+  "physics": "unchanged fully implicit trial-H phase equation",
+  "tool_modifications": []
+}

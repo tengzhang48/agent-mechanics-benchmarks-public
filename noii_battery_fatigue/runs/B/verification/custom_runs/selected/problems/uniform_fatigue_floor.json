@@ -1,0 +1,10 @@
+{
+  "id": "V_uniform_fatigue_floor",
+  "parameters": {"E": 10.0, "nu": 0.28, "beta": 0.035, "c0": 0.35,
+    "kappa": 1e-5, "D": 0.14, "chi": 0.25, "ell": 0.12,
+    "G_c": 3.5e-6, "alpha_T": 1e-10, "k_fg": 0.5},
+  "loading": {"A": 0.0, "T": 8.0, "N_cyc": 2, "steps_per_cycle": 80},
+  "c_edges": ["all_nodes"],
+  "notch": null,
+  "constraints": []
+}

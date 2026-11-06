@@ -1,0 +1,11 @@
+{
+  "archived_utc": "2026-10-20T20:24:27.246381+00:00",
+  "meaning": "Six-field consistent reaction, active H ties, parenthesized alpha increments; historical comparator",
+  "source_sha256": {
+    "uel_contract.json": "98fa61ba881d6942d1365ad312180cd1ec911769277d46f4f34625bb44e8e383",
+    "generated_model.for": "3a2932ebc621ffaca412212be1985fc3cb433a88d5a2c1e42502536d7e70f3ae",
+    "model.py": "d8665a959e71e892910e4244ef2cb048e8a9abdd92c4a28e15d9cc3ac8e3990c",
+    "generate.py": "f6408c6a659eb605ad91cad4b6f33fcaf9f86b0abbfc4dfe44a2c8a910d27c1f",
+    "uel.f90": "5608c8db5306f92725c8192fd4f23dfc9d0ab8f459577d4de37d48b48a05dcd9"
+  }
+}

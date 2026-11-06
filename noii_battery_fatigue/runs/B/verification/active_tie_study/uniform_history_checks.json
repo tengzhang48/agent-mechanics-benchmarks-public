@@ -1,0 +1,40 @@
+{
+  "loading": {
+    "max_state_scaled_error": 1.2717084824401996e-14,
+    "expected": [
+      1.4492080900029878,
+      0.0020754914424242423,
+      0.0020754914424242423
+    ]
+  },
+  "unloading": {
+    "max_state_scaled_error": 1.1275702593849246e-17,
+    "expected": [
+      1.4492080900029878,
+      0.0020754914424242423,
+      0.0005188728606060606
+    ]
+  },
+  "reloading": {
+    "max_state_scaled_error": 1.1030556950437788e-14,
+    "expected": [
+      2.1337751328249275,
+      0.003632110024242424,
+      0.0020754914424242423
+    ]
+  },
+  "floor": {
+    "max_state_scaled_error": 7.769382391590014e-15,
+    "expected": [
+      691818181818181.8,
+      0.10107549144242424,
+      0.0020754914424242423
+    ]
+  },
+  "exact_H_equality_active_derivative": {
+    "rhs_bitwise_unchanged": true,
+    "active_damage_u_block_inf": 5.361082752272738,
+    "equality_vs_active_block_error": 0.0,
+    "deliberately_frozen_zero_block_error": 5.361082752272738
+  }
+}

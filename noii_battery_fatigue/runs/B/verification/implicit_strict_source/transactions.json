@@ -1,0 +1,29 @@
+{
+  "bitwise_identical_final_U": true,
+  "bitwise_identical_final_svars": true,
+  "bitwise_identical_all_output_fields": true,
+  "bitwise_identical_accepted_times": true,
+  "before_summary": {
+    "attempts": 61,
+    "accepted": 40,
+    "cutbacks": 7,
+    "stopped_early": false
+  },
+  "after_summary": {
+    "attempts": 61,
+    "accepted": 40,
+    "cutbacks": 7,
+    "stopped_early": false
+  },
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "forced_reject_at_time": 2.0,
+  "forced_reject_dt": 0.4,
+  "mesh": "distorted",
+  "n": 8,
+  "seed": 5,
+  "cycles": 2,
+  "steps_per_cycle": 20
+}

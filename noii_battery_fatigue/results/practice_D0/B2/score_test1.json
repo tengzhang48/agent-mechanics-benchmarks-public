@@ -1,0 +1,211 @@
+{
+ "workspace": "B2",
+ "problem": "D0",
+ "cycles": 10,
+ "tolerances": {
+  "obs": {
+   "d_max": 0.04,
+   "D_int": 0.04,
+   "C_int": 0.005
+  },
+  "field_rms": 0.01,
+  "drop": 1.5,
+  "converged": 0.005,
+  "history": -1e-12,
+  "d_range": [
+   -0.01,
+   1.01
+  ],
+  "d_reached": 0.9
+ },
+ "checks": {
+  "R0_runs_complete": {
+   "runs": {
+    "s16_40": "ok",
+    "s16_80": "ok",
+    "s32_40": "ok",
+    "s32_80": "ok",
+    "dist0": "ok",
+    "dist1": "ok",
+    "big": "ok"
+   },
+   "pass": true
+  },
+  "C1_key_observables": {
+   "n32": {
+    "d_max": 0.00902197011264403,
+    "D_int": 0.006981117536318742,
+    "C_int": 8.835378280420205e-05,
+    "E_el": 0.13343230839571865
+   },
+   "pass": true
+  },
+  "C1_key_fields": {
+   "n32": {
+    "ux": 0.0002064723871468141,
+    "uy": 0.00014887468748945825,
+    "c": 0.0001336624366168647,
+    "d": 0.0027991505136470865
+   },
+   "pass": true
+  },
+  "C2_converges_to_key": {
+   "per_quantity": {
+    "d_max": {
+     "n16": 0.022206753771535116,
+     "n32": 0.00902197011264403,
+     "pass": true
+    },
+    "D_int": {
+     "n16": 0.026456986235920115,
+     "n32": 0.006981117536318742,
+     "pass": true
+    },
+    "C_int": {
+     "n16": 0.00019410903148368811,
+     "n32": 8.835378280420205e-05,
+     "pass": true
+    },
+    "field_ux": {
+     "n16": 0.0007651259117629054,
+     "n32": 0.0002064723871468141,
+     "pass": true
+    },
+    "field_uy": {
+     "n16": 0.00034964679857532236,
+     "n32": 0.00014887468748945825,
+     "pass": true
+    },
+    "field_c": {
+     "n16": 0.00044851021154071046,
+     "n32": 0.0001336624366168647,
+     "pass": true
+    },
+    "field_d": {
+     "n16": 0.010098231703576011,
+     "n32": 0.0027991505136470865,
+     "pass": true
+    }
+   },
+   "pass": true
+  },
+  "C3_distortion": {
+   "per_mesh": {
+    "dist0": {
+     "d_max": 0.011850675185686674,
+     "D_int": 0.013353622147090549,
+     "C_int": 0.00030542773813152524,
+     "E_el": 0.02822812879559238,
+     "pass": true
+    },
+    "dist1": {
+     "d_max": 0.015030866321917944,
+     "D_int": 0.013025362073443588,
+     "C_int": 0.0003021276044217477,
+     "E_el": 0.026734715432140524,
+     "pass": true
+    }
+   },
+   "pass": true
+  },
+  "R1_history": {
+   "declared": true,
+   "slots": {
+    "H": [
+     1,
+     4,
+     7,
+     10
+    ],
+    "alpha": [
+     2,
+     5,
+     8,
+     11
+    ]
+   },
+   "min_change_per_run": {
+    "s16_40": {
+     "H": 0.0,
+     "alpha": 0.0
+    },
+    "s16_80": {
+     "H": 0.0,
+     "alpha": 0.0
+    },
+    "s32_40": {
+     "H": 0.0,
+     "alpha": 0.0
+    },
+    "s32_80": {
+     "H": 0.0,
+     "alpha": 0.0
+    },
+    "dist0": {
+     "H": 0.0,
+     "alpha": 0.0
+    },
+    "dist1": {
+     "H": 0.0,
+     "alpha": 0.0
+    },
+    "big": {
+     "H": 0.0,
+     "alpha": 0.0
+    }
+   },
+   "worst": 0.0,
+   "pass": true
+  },
+  "R2_hidden_state": {
+   "test": "hidden_state",
+   "fired": [
+    true,
+    true
+   ],
+   "max_abs_dU": 0.0,
+   "max_abs_dSVARS": 0.0,
+   "pass": true
+  },
+  "R3_dtime_zero": {
+   "test": "dtime_zero",
+   "element": 60,
+   "finite": true,
+   "pnewdt": 0.5,
+   "pass": true
+  },
+  "R4_large_step": {
+   "complete": true,
+   "pass": true,
+   "cutbacks": 0
+  },
+  "R5_damage_near_1": {
+   "pass": null,
+   "reason": "not run: no stress variant given"
+  }
+ },
+ "info": {
+  "E_el_vs_key_n32": 0.13343230839571865,
+  "same_dt_T40_vs_key_n32": {
+   "d_max": 0.006579228833001982,
+   "D_int": 0.006308610706395438,
+   "C_int": 5.7422852610749824e-05,
+   "E_el": 0.12882215694600044
+  }
+ },
+ "not_run": [
+  "R5_damage_near_1"
+ ],
+ "passed": [
+  "C1_key_fields",
+  "C1_key_observables",
+  "C2_converges_to_key",
+  "C3_distortion",
+  "R0_runs_complete",
+  "R1_history",
+  "R2_hidden_state",
+  "R3_dtime_zero",
+  "R4_large_step"
+ ],
+ "failed": []
+}

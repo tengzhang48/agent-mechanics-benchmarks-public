@@ -1,0 +1,65 @@
+{
+  "recorded_utc": "2026-10-20T21:12:28.456237+00:00",
+  "origin": "tmp/lumped_psilag_candidate",
+  "source_snapshot": "verification/custom_runs/selected/source_snapshot",
+  "source_sha256": {
+    "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+    "element/model.py": "d57b914cc03d62ce742dd4fcaa5e01a65340bedf801ea007982ef6ad73614e91",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "cases": [
+    {
+      "case": "notch_distorted16_s3_c2_spc160",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c2_spc160"
+    },
+    {
+      "case": "notch_distorted16_s3_c2_spc20",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c2_spc20"
+    },
+    {
+      "case": "notch_distorted16_s3_c2_spc320",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c2_spc320"
+    },
+    {
+      "case": "notch_distorted16_s3_c2_spc40",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c2_spc40"
+    },
+    {
+      "case": "notch_distorted16_s3_c2_spc640",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c2_spc640"
+    },
+    {
+      "case": "notch_distorted16_s3_c5_spc80",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted16_s3_c5_spc80"
+    },
+    {
+      "case": "notch_distorted32_s3_c1_spc80",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted32_s3_c1_spc80"
+    },
+    {
+      "case": "notch_distorted32_s3_c3_spc80",
+      "status": "ok",
+      "source_generated_sha": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+      "durable_path": "verification/custom_runs/selected/notch_distorted32_s3_c3_spc80"
+    }
+  ],
+  "pending": [],
+  "interpretation": "Exact frozen candidate source binds every case; production paths/comments are mapped by the final production source manifest."
+}

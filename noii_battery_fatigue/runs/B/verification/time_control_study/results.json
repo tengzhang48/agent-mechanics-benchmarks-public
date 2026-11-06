@@ -1,0 +1,722 @@
+[
+  {
+    "variant": "H_only",
+    "controls": [
+      0.05,
+      0.0,
+      0.0
+    ],
+    "spc": 20,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 20,
+    "dt": 0.4,
+    "accepted_output_steps": 40,
+    "wall_s": 29.23655157801113,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 914,
+    "accepted": 40,
+    "cutbacks": 10,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 1308,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999997785,
+    "floor_onset_H_gt_1e14": 0.999999999999994,
+    "final_alpha": 2.80995116726443e-07,
+    "accepted_subincrements": 904
+  },
+  {
+    "variant": "H_only",
+    "controls": [
+      0.05,
+      0.0,
+      0.0
+    ],
+    "spc": 80,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 160,
+    "wall_s": 17.254521957976976,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 516,
+    "accepted": 160,
+    "cutbacks": 9,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 864,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999859007,
+    "floor_onset_H_gt_1e14": 0.8999999999999999,
+    "final_alpha": 2.8111037295112703e-07,
+    "accepted_subincrements": 507
+  },
+  {
+    "variant": "absolute1",
+    "controls": [
+      0.05,
+      1.0,
+      0.0
+    ],
+    "spc": 20,
+    "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 1 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 20,
+    "dt": 0.4,
+    "accepted_output_steps": 0,
+    "wall_s": 1.5957860649796203,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": 0.0
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 65,
+    "accepted": 0,
+    "cutbacks": 11,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 59,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999999867,
+    "floor_onset_H_gt_1e14": null,
+    "final_alpha": 3.780004386214686e-09,
+    "accepted_subincrements": 54
+  },
+  {
+    "variant": "absolute1",
+    "controls": [
+      0.05,
+      1.0,
+      0.0
+    ],
+    "spc": 80,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 160,
+    "wall_s": 24.703294738021214,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 753,
+    "accepted": 160,
+    "cutbacks": 17,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 1226,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.0001953124999995032,
+    "floor_onset_H_gt_1e14": 0.8749999999999993,
+    "final_alpha": 2.8098693077568997e-07,
+    "accepted_subincrements": 736
+  },
+  {
+    "variant": "relative01",
+    "controls": [
+      0.05,
+      1.0,
+      0.1
+    ],
+    "spc": 20,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 20,
+    "dt": 0.4,
+    "accepted_output_steps": 40,
+    "wall_s": 29.89492877200246,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": 0.0
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 965,
+    "accepted": 40,
+    "cutbacks": 11,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 1377,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999997785,
+    "floor_onset_H_gt_1e14": 0.8999999999999938,
+    "final_alpha": 2.809481486774219e-07,
+    "accepted_subincrements": 954
+  },
+  {
+    "variant": "relative01",
+    "controls": [
+      0.05,
+      1.0,
+      0.1
+    ],
+    "spc": 80,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 160,
+    "wall_s": 18.533821079006884,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 561,
+    "accepted": 160,
+    "cutbacks": 9,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 920,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999859007,
+    "floor_onset_H_gt_1e14": 0.8999999999999999,
+    "final_alpha": 2.8107904916374816e-07,
+    "accepted_subincrements": 552
+  },
+  {
+    "variant": "loose",
+    "controls": [
+      0.05,
+      5.0,
+      0.2
+    ],
+    "spc": 20,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 20,
+    "dt": 0.4,
+    "accepted_output_steps": 40,
+    "wall_s": 29.223958062008023,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 926,
+    "accepted": 40,
+    "cutbacks": 10,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 1325,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999997785,
+    "floor_onset_H_gt_1e14": 0.9999999999999939,
+    "final_alpha": 2.809858321793966e-07,
+    "accepted_subincrements": 916
+  },
+  {
+    "variant": "loose",
+    "controls": [
+      0.05,
+      5.0,
+      0.2
+    ],
+    "spc": 80,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 160,
+    "wall_s": 17.80205714100157,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 528,
+    "accepted": 160,
+    "cutbacks": 9,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 879,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062499999859007,
+    "floor_onset_H_gt_1e14": 0.8999999999999999,
+    "final_alpha": 2.811040688174609e-07,
+    "accepted_subincrements": 519
+  },
+  {
+    "variant": "gap02",
+    "controls": [
+      0.02,
+      1.0,
+      0.1
+    ],
+    "spc": 20,
+    "status": "failed: StaggeredSolveFailed: solve_steps_staggered: step 1 element requested a smaller increment: element_rk_batch: UEL requested a smaller increment (PNEWDT=0.5); its returned R/K for this call are zeroed by contract and must not be assembled after 10 cutbacks (residual 0.00e+00; per-component |R|=['0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00', '0.000e+00']; dominant comp 0)",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 20,
+    "dt": 0.4,
+    "accepted_output_steps": 0,
+    "wall_s": 2.1450556599884294,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": 0.0
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 75,
+    "accepted": 0,
+    "cutbacks": 11,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 95,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00039062500000000555,
+    "floor_onset_H_gt_1e14": null,
+    "final_alpha": 7.493588835380906e-09,
+    "accepted_subincrements": 64
+  },
+  {
+    "variant": "gap02",
+    "controls": [
+      0.02,
+      1.0,
+      0.1
+    ],
+    "spc": 80,
+    "status": "ok",
+    "problem": {
+      "id": "V_uniform_fatigue_floor",
+      "parameters": {
+        "E": 10.0,
+        "nu": 0.28,
+        "beta": 0.035,
+        "c0": 0.35,
+        "kappa": 1e-05,
+        "D": 0.14,
+        "chi": 0.25,
+        "ell": 0.12,
+        "G_c": 3.5e-06,
+        "alpha_T": 1e-10,
+        "k_fg": 0.5
+      },
+      "loading": {
+        "A": 0.0,
+        "T": 8.0,
+        "N_cyc": 2,
+        "steps_per_cycle": 80
+      },
+      "c_edges": [
+        "all_nodes"
+      ],
+      "notch": null,
+      "constraints": []
+    },
+    "mesh": "structured",
+    "n": 8,
+    "seed": 1,
+    "cycles": 2,
+    "steps_per_cycle": 80,
+    "dt": 0.1,
+    "accepted_output_steps": 160,
+    "wall_s": 30.487688363005873,
+    "history_min_change": {
+      "H": 0.0,
+      "alpha": 0.0,
+      "nodal_damage": -2.220446049250313e-16
+    },
+    "uniform_strain": 0.03,
+    "tol": 1e-08,
+    "element_source_sha256": {
+      "element/uel_contract.json": "304e5ebd566a0597019d27393a35aec4035bebed2aa01d38d9e3ba80be72f891",
+      "element/generated_model.for": "4e09e2ba03c5f04f36c46b34867e8d8720b910a1eace399e58dd2ef1782d4020",
+      "element/model.py": "b008882c784b135cde51bc5993e0cb3184ae4af4ed49ece336e43759f09fa497",
+      "element/generate.py": "a41bcae6d1210af850b76bd9cda759b822c7df2e255743290eed8ca71d71b96b",
+      "element/lump_reaction.py": "05939e9260abeaaacbeaff010aa68c04a9cb86432cdc6cb01fe269d3a164fa24",
+      "element/uel.f90": "1a921246a125238a162734109f1c8baa4352c8d38a74f1fb26c74fd02047b7b1"
+    },
+    "source_identity_note": "supplied alternate-module identity",
+    "attempts": 893,
+    "accepted": 160,
+    "cutbacks": 10,
+    "stopped_early": false,
+    "max_sweeps": 2,
+    "observed_linear_solves_total": 1510,
+    "observed_linear_solves_max": 2,
+    "min_dt": 0.00019531249999968359,
+    "floor_onset_H_gt_1e14": 0.899999999999996,
+    "final_alpha": 2.810841060251765e-07,
+    "accepted_subincrements": 883
+  }
+]

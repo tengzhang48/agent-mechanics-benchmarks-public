@@ -1,0 +1,18 @@
+{
+ "step": 14,
+ "frac_start": 0.08615112304687227,
+ "frac_end": 0.08615722656249726,
+ "dt": 9.765624999991118e-05,
+ "cutback": 10,
+ "sweeps": 0,
+ "raw_residual": Infinity,
+ "scaled_residual": Infinity,
+ "scaled_update": Infinity,
+ "converged": false,
+ "reason": "inner Newton exhausted",
+ "projection_rounds": 0,
+ "newton_method": "staggered",
+ "newton_iterations": 0,
+ "observed_linear_solves": 25,
+ "observed_uel_batch_calls": 181
+}

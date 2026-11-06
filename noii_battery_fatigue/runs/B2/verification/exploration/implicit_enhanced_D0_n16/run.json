@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "problem": "D0",
+  "mesh": "structured",
+  "n": 16,
+  "seed": 0,
+  "cycles": 2,
+  "steps_per_cycle": 40,
+  "dt": 0.2,
+  "wall_s": 20.693677372997627,
+  "accepted_output_steps": 80,
+  "committed_subincrements": 80,
+  "history_min_change": {
+    "H": 0.0,
+    "alpha": 0.0
+  },
+  "d_max_over_run": 0.19609084062937343,
+  "d_min_over_run": 2.942287528120918e-06,
+  "parameters": {
+    "E": 10.0,
+    "nu": 0.28,
+    "beta": 0.035,
+    "c0": 0.35,
+    "kappa": 1e-05,
+    "D": 0.14,
+    "chi": 0.25,
+    "ell": 0.12,
+    "G_c": 3.5e-06,
+    "alpha_T": 0.0001,
+    "k_fg": 0.5
+  },
+  "host": "unmodified fehost.solve, default tol=1e-8",
+  "source_sha256": {
+    "verification/exploration/implicit_enhanced_D0_n16/source_snapshot/0_core.for": "e5dee0f887343e85430ab5e6b09b909323101968761a2f9bf5236132e530bb53",
+    "verification/exploration/implicit_enhanced_D0_n16/source_snapshot/1_modes.f90": "ebb454557d4016bdfc7b1291ecc6e33abb9f154b5508395483c776317d64822c",
+    "verification/exploration/implicit_enhanced_D0_n16/source_snapshot/2_guard.f90": "6407aacd41476431768170114558960aedcb834f2b4dfd83ea393d9832144c96"
+  },
+  "compiled_module": "challenge_5c170dfa781d",
+  "original_source_paths": [
+    "tmp/implicit_enhanced/core.for",
+    "tmp/implicit_enhanced/modes.f90",
+    "tmp/implicit_enhanced/guard.f90"
+  ],
+  "newton_linear_solves": {
+    "min": 2,
+    "max": 5,
+    "mean": 3.4125,
+    "total": 273
+  },
+  "attempts": 80,
+  "accepted": 80,
+  "cutbacks": 0,
+  "stopped_early": false,
+  "rejected_attempts": 0,
+  "min_dt": 0.19999999999999932,
+  "max_sweeps": 2,
+  "max_accepted_sweeps": 2
+}

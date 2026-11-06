@@ -1,0 +1,45 @@
+{
+  "scope": "exact displacement-gradient pressure and drift patch",
+  "dof_names": [
+    "ux",
+    "uy",
+    "c",
+    "d",
+    "q",
+    "vfrac"
+  ],
+  "Lx": 1.3,
+  "Ly": 0.8,
+  "amplitude": 0.03,
+  "damage": 0.27,
+  "q_gradient": [
+    0.0,
+    0.09462085777698863
+  ],
+  "concentration_flux": [
+    0.0,
+    -0.008279325055486505
+  ],
+  "expected_c_residual": [
+    0.005381561286066228,
+    0.005381561286066228,
+    -0.005381561286066228,
+    -0.005381561286066228
+  ],
+  "actual_c_residual": [
+    0.005381561286066228,
+    0.005381561286066228,
+    -0.005381561286066228,
+    -0.005381561286066228
+  ],
+  "q_residual_inf": 2.5216514621864442e-17,
+  "c_residual_error_inf": 0.0,
+  "q_u_tangent_error_inf": 1.6653345369377348e-16,
+  "removed_displacement_broken_control_q_residual": 0.013120758945075757,
+  "source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "intact_constraint_inf": 0.0
+}

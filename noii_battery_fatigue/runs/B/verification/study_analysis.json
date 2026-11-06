@@ -1,0 +1,16 @@
+{
+  "version": "selected",
+  "element_source_sha256": {
+    "element/generated_model.for": "90b72e74a82b697696bbd5ab1ee5f1c6fea2f87d7789bb554dbcb7a2066f88b0",
+    "element/uel.f90": "6cb542ed98964c38f7e72a20597c0cc8a7d0a3c4ca815c2e31a5f23df6e6379e",
+    "element/uel_contract.json": "21184094ae9cc1312d4f1d54279b81b22c786576268fb00ae4f9933610592852"
+  },
+  "completed_runs": 20,
+  "ok_runs": 20,
+  "output_files_audited": 145,
+  "mesh_reference": "D0_structured_64_s1_c5_spc80",
+  "time_reference": "D0_structured_16_s1_c5_spc1280",
+  "all_differences_are_self_convergence_not_independent_full_PDE_error": true,
+  "max_intact_constraint": 4.440892098500626e-16,
+  "max_bridge_relative_error": 4.800674954743045e-12
+}
